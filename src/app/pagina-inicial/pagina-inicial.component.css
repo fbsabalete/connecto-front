@@ -1,0 +1,72 @@
+.global{
+  height: 100vh;
+  background-position: 48% 0%;
+  background-image: url(https://themexriver.com/appilo-theme/main/wp-content/uploads/sites/2/2020/11/slider-bg-1.jpg);
+}
+.tela-um{
+  margin: 0;
+  padding: 0;
+}
+/* nav */
+
+.navbar-brand img{
+  width: 4rem;
+  margin-left: 1rem;
+}
+.nav-item {
+  padding-right: 3rem;
+
+
+}
+.nav-link{
+
+  border: 2px solid transparent;
+  transition: 0.3s;
+  color: rgb(221, 221, 221);
+}
+
+.botao{
+text-align: center;
+color: black;
+width: 100px;
+height: 38px;
+background: #ffffff;
+border: 1px solid #D0AEAE;
+border-radius: 100px;
+
+}
+
+.nav-link:hover{
+  color: white;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #D0AEAE;
+  border-radius: 100px;
+
+  -webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
+-moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
+box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
+}
+
+.botao:hover{
+
+  text-align: center;
+  color: white;
+  width: 100px;
+  height: 38px;
+  background: transparent;
+  border: 2px solid #D0AEAE;
+
+  border-radius: 100px;
+-webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
+-moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
+box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
+
+  transition: 0.3s;
+}
+
+.navbar-toggler-icon{
+  background: white;
+
+}
+/* nav */
