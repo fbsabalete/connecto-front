@@ -14,7 +14,15 @@
 
 .coluna-membro:hover .borda{
   opacity: 100%;
-  transform: translateX(10%);
+  transform: translateX(6%);
+}
+
+.coluna-membro:hover .imagem-perfil{
+  transform: translateX(-6%);
+}
+
+.imagem-perfil{
+  transition: all .5s;
 }
 
 .conteudo{
@@ -122,7 +130,10 @@
 @media (hover: none) {
   .coluna-membro .borda{
       opacity: 100%;
-      transform: translateX(10%);
+      transform: translateX(5%);
+  }
+  .coluna-membro .imagem-perfil{
+      transform: translateX(-5%);
   }
   .social-logo{
       opacity: 1;
