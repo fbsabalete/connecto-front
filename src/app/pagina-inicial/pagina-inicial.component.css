@@ -1,11 +1,13 @@
+
+.vh-90{
+  height: 85vh;
+}
 .global{
   height: 100vh;
   background-position: 48% 0%;
   background-image: url(https://themexriver.com/appilo-theme/main/wp-content/uploads/sites/2/2020/11/slider-bg-1.jpg);
-}
-.tela-um{
-  margin: 0;
-  padding: 0;
+  background-repeat: no-repeat;
+  background-size: auto 150% ;
 }
 /* nav */
 
@@ -36,6 +38,13 @@ border-radius: 100px;
 
 }
 
+.navbar-toggler{
+  background-image: url(../../assets/img/cardapio1.png);
+  background-repeat: no-repeat;
+  background-size: 30px 30px ;
+  justify-content: flex-end;
+}
+
 .nav-link:hover{
   color: white;
   width: 100%;
@@ -58,15 +67,111 @@ box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
   border: 2px solid #D0AEAE;
 
   border-radius: 100px;
--webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
--moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
-box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
+  -webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
 
   transition: 0.3s;
 }
 
-.navbar-toggler-icon{
-  background: white;
+
+/* nav */
+
+/* secção-texto */
+.text {
+  width: 60%;
+  padding-left: 4%;
+}
+
+.titulo{
+  margin-top: 10%;
+  margin-bottom:10% ;
+}
+.subtitulo{
+  width: 90%;
+}
+
+.botao-saiba{
+  margin-top: 5%;
+
+  width: 170px;
+  height: 61px;
+  left: 84px;
+  top: 704px;
+
+  background: linear-gradient(90deg, #D0217E 0%, rgba(109, 44, 144, 0.97) 100%);
+  border: none;
+  border-radius: 100px;
+
+  transition: 0.6s;
 
 }
-/* nav */
+.botao-saiba:hover{
+
+  background: linear-gradient(90deg, rgba(109, 44, 144, 0.97), #D0217E 100%  10%);
+
+  border: 1px solid white;
+  -webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
+-moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
+box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
+
+  transition: 0.6s;
+}
+/* /secção-texto */
+/* carrosel */
+
+
+/* carousel */
+.carrosel {
+  width: 300px;
+ height: 420px;
+ border-radius: 30px;
+ overflow: hidden;
+
+}
+
+.tamanho-imagem {
+  object-fit: cover;
+  width: 300px;
+  height: 100%;
+  transition: 8s;
+}
+.carousel-item.active .efeito-imagem {
+ transform: scale(1.1);
+}
+
+/* /carousel */
+@media (max-width: 650px) {
+
+  .text{
+    padding-left: 10%;
+  }
+  .titulo{
+      margin-top: 40%;
+      width: 150%;
+      font-size: 30px;
+  }
+
+  .subtitulo {
+      margin-top: 40%;
+      width: 150%;
+      font-size: 24px;
+  }
+
+  .botao-saiba{
+      margin-top: 20%;
+  }
+  .nav-item{
+    display: flex;
+    padding: 0;
+    padding-right: 5%;
+    justify-content: flex-end;
+  }
+  .botao{
+    background: none;
+    border:none;
+    text-align: end;
+    color: white;
+  }
+
+}
