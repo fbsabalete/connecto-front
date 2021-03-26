@@ -1,96 +1,101 @@
-<div class="container-fluid ">
+<div class="d-flex flex-column feed ">
+  <div class="container mt-3">
     <div class="row">
-
-
-        <div class=" col-7 d-flex flex-column  feed ">
-
-            <div class="container mt-3">
-                <div class="row">
-                    <div class="col-11 m-auto bg-white p-4 bd card-new-post">
-                        <div class="container-post">
-                            <form class="post">
-                                <div class="d-flex justify-content-between p-1 container-news">
-                                    <img class="rounded-circle mr-1" src="../../assets/img/foto.jpeg" alt="Foto de perfil" width="50px" height="50px">
-                                    <textarea onfocus="aparecer()" name="post" cols="94" rows="2" placeholder="Escreva sua postagem" style="resize: vertical; height: auto;" maxlength="3000"></textarea>
-                                </div>
-                                <div class="sumir mt-3">
-                                    <div class="link-foto b-b">
-                                        <label for="link-foto "> Link Foto </label>
-                                        <input type="text">
-                                    </div>
-
-                                    <div class=" p-1 b-b d-flex justify-content-between check-checkbox ">
-                                        <div class="select">
-                                            <select name="whats-new-post-in" id="tipo-post"> <option value="profile">Post Normal</option><option value="group"> Post Serviço</option></select>
-                                        </div>
-
-                                        <div class="check d-flex ">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                                <label class="form-check-label" for="flexRadioDefault1">
-                                                  Autônomo
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                                <label class="form-check-label" for="flexRadioDefault2">
-                                                  Contratante
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div id="botao" class="botao sumir d-flex justify-content-end mt-3">
-                                        <button> Postar</button>
-                                        <button class="ml-3"> Cancelar</button>
-                                    </div>
-
-
-                                </div>
-
-
-
-
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
+      <div class="col-11 m-auto bg-white p-4 bd card-new-post">
+        <div class="container-post">
+          <form class="post">
+            <div class="d-flex justify-content-between p-1 container-news">
+              <img class="rounded-circle mr-1" src="../../assets/img/foto.jpeg" alt="Foto de perfil" width="50px"
+                height="50px">
+              <textarea onfocus="aparecer()" name="post" cols="94" rows="2" placeholder="Escreva sua postagem"
+                style="resize: vertical; height: auto;" maxlength="3000"></textarea>
             </div>
+            <div class="sumir mt-3">
+              <div class="link-foto b-b">
+                <label for="link-foto "> Link Foto </label>
+                <input type="text">
+              </div>
 
-            <div class="post">
-                <div class="row ">
-                    <div class="col-11 m-auto ">
-                        <div class="titulo-post">
-                            <img src="" alt="">
-                            <h4></h4>
-                        </div>
-                        <div class="texto">
-                            <p></p>
-                        </div>
-                        <div class="img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="interacoes">
-                            <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </div>
-
-                    </div>
+              <div class=" p-1 b-b d-flex justify-content-between check-checkbox ">
+                <div class="select">
+                  <select name="whats-new-post-in" id="tipo-post">
+                    <option value="profile">Post Normal</option>
+                    <option value="group"> Post Serviço</option>
+                  </select>
                 </div>
+
+                <div class="check d-flex ">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Autônomo
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Contratante
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div id="botao" class="botao sumir d-flex justify-content-end mt-3">
+                <button> Postar</button>
+                <button class="ml-3"> Cancelar</button>
+              </div>
             </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content mt-5 px-5" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="nav-perfil" role="tabpanel" aria-labelledby="nav-perfil-tab">
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima voluptatum ipsum, laboriosam cum error ipsa mollitia officiis nobis velit illum hic excepturi perferendis suscipit nam dolores fugiat totam qui. Quasi!</p>
+    </div>
+    <div class="tab-pane fade" id="nav-portfolio" role="tabpanel" aria-labelledby="nav-portfolio-tab">
+      <p>AAAAAAAAAAAAAAAAAAAAAAA</p>
+    </div>
+    <div class="tab-pane fade" id="nav-servicos" role="tabpanel" aria-labelledby="nav-servicos-tab">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptas sed maxime libero ut, natus, dicta provident necessitatibus repellendus, nobis nisi! Atque magni voluptatem dolorem nostrum eligendi modi, id cupiditate.</p>
+    </div>
+    <div class="tab-pane fade" id="nav-vagas" role="tabpanel" aria-labelledby="nav-vagas-tab">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptas sed maxime libero ut, natus, dicta provident necessitatibus repellendus, nobis nisi! Atque magni voluptatem dolorem nostrum eligendi modi, id cupiditate.</p>
+    </div>
+  </div>
 
 
+
+
+
+
+  <!-- <div class="post">
+    <div class="row ">
+      <div class="col-11 m-auto ">
+        <div class="titulo-post">
+          <img src="" alt="">
+          <h4></h4>
+        </div>
+        <div class="texto">
+          <p></p>
+        </div>
+        <div class="img">
+          <img src="" alt="">
+        </div>
+        <div class="interacoes">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
         </div>
 
-
-
+      </div>
     </div>
-
+  </div> -->
 
 
 </div>
