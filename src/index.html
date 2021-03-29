@@ -9,5 +9,24 @@
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    
+
+    window.addEventListener("scroll", naTela);
+    function naTela() {
+      let elementos = document.querySelectorAll(".animacao")
+    console.log(elementos)
+        let windowHeight = window.innerHeight;
+            elementos.forEach(function(element) {
+            let elementPosition = element.getBoundingClientRect();
+            let elementTop = elementPosition.top;
+            if (elementTop < windowHeight) {
+                element.classList.add("na-tela");
+            } else {
+                element.classList.remove("na-tela");
+            }
+        });
+    }
+  </script>
 </body>
 </html>
