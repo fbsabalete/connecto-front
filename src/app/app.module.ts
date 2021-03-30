@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { FeedComponent } from './feed/feed.component';
 import { PostagemComponent } from './postagem/postagem.component';
+import { NovoPostComponent } from './novo-post/novo-post.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { PostagemComponent } from './postagem/postagem.component';
     AppComponent,
     MenuLateralComponent,
     FeedComponent,
-    PostagemComponent
+    PostagemComponent,
+    NovoPostComponent
 
   ],
   imports: [
