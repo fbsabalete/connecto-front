@@ -6,11 +6,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { FeedComponent } from './feed/feed.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MenuLateralComponent,
     FeedComponent
+
   ],
   imports: [
     BrowserModule,
