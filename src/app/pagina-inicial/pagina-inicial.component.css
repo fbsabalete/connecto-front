@@ -1,3 +1,24 @@
+.scroll-down{
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+}
+
+.scroll-min{
+  background-color: transparent!important;
+  transition: all 0.3s ease-in-out;
+}
+
+.scroll-up{
+  background: rgb(152, 59, 206)!important;
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.nav-button-clicked{
+  background: rgb(152, 59, 206)!important;
+}
+
 
 .vh-90{
   height: 85vh;
@@ -11,6 +32,11 @@
   background-size: auto 150% ;
 }
 /* nav */
+
+.collapse.show, .nav-item, .collapsing .nav-item {
+  width: max-content;
+  margin-left: auto;
+}
 
 .navbar-brand img{
   width: 4rem;
@@ -54,8 +80,8 @@ border-radius: 100px;
   border-radius: 100px;
 
   -webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
--moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
-box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
 }
 
 .botao:hover{
@@ -147,19 +173,19 @@ box-shadow:         3px 1px 5px rgba(50, 50, 50, 0.77);
 
   .global{
     padding: 15%;
-    
-  } 
+
+  }
    .titulo{
       margin-top: 40%;
       width: 500%;
-      
-  } 
+
+  }
 
    .subtitulo {
       margin-top: 40%;
       width: 500%;
-      
-  } 
+
+  }
 
   .botao-saiba{
       margin-top: 20%;
@@ -176,7 +202,32 @@ box-shadow:         3px 1px 5px rgba(50, 50, 50, 0.77);
     text-align: end;
     color: white;
   }
+}
 
-  
+@media (max-width: 992px) {
+  .nav-link{
+    border: none;
+  }
+  .nav-link:hover{
+    color: white;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+    transition: 0s;
+  }
+  .botao{
+    text-align: center;
+    color: rgb(221, 221, 221);
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+  }
+  .botao:hover{
+    width: auto;
+    height: auto;
+  }
 
 }
