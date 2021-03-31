@@ -6,93 +6,6 @@ ul {
     list-style: none;
 }
 
-.feed {
-    background-color: rgba(128, 128, 128, 0.13);
-    height: 1500px;
-}
-
-.container-news img {
-    width: 50px;
-    height: 50px;
-}
-
-.card-new-post {
-    border-radius: 0.6rem;
-}
-
-.post textarea {
-    border: solid 1px;
-    border-color: rgba(128, 128, 128, 0.233);
-    border-radius: 20px;
-    overflow: auto;
-    outline: none;
-    padding-left: 7px;
-}
-
-.b-b {
-    border-bottom: solid 1px;
-    color: rgba(128, 128, 128, 0.281);
-}
-
-.form-check {
-    margin-right: 1rem;
-    color: black;
-}
-
-.form-check:checked {
-    background-color: blueviolet;
-}
-
-.sumir {
-    display: none;
-}
-
-.select select,
-.link-foto input {
-    border-radius: 15px;
-    border: solid 1px;
-    border-color: rgba(128, 128, 128, 0.432);
-    outline: none;
-}
-
-.link-foto {
-    margin-bottom: 1rem;
-    padding-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.link-foto label {
-    margin-left: 0.7rem;
-    color: black;
-}
-
-.link-foto input {
-    width: 89%;
-}
-
-.select select:hover {
-    border-color: blueviolet;
-}
-
-.botao button {
-    width: 120px;
-    height: 30px;
-    border-radius: 15px;
-    border: solid 1px;
-    border-color: blueviolet;
-    transition: 1000ms ease;
-}
-
-.botao button:hover {
-    color: white;
-    background-color: blueviolet;
-}
-
-
-/* Postagem  */
-
 .post,
 .img img {
     border-radius: 0.8rem;
@@ -180,9 +93,6 @@ ul {
 }
 
 @media (max-width: 575.98px) {
-    .feed {
-        width: 100vw;
-    }
     .texto {
         padding: 0;
     }
