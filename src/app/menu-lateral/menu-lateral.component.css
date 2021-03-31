@@ -7,19 +7,16 @@ ul {
     list-style: none;
 }
 
-
-/* Menu Lateral */
-
 .logo img {
     width: 5rem;
     margin-bottom: 1rem;
 }
 
 .menu-lateral {
-    background: linear-gradient(180deg, rgba(109, 44, 144, 0.97) 50%, rgba(245, 245, 245, 1) 50%);
-    border-right: solid 1px #e7edf2;
+    background: linear-gradient(180deg, rgba(232, 62, 83, 1) 0%, rgba(40, 40, 91, 1) 50%, rgba(250, 250, 250, 1) 50%);
     width: 300px;
     position: fixed;
+    border-right: solid 1px#e7edf2;
     transition: transform 1s;
     z-index: 1;
 }

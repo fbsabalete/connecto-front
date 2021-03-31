@@ -17,7 +17,7 @@ ul {
     position: absolute;
     right: 0;
     top: 30px;
-    background: linear-gradient(90deg, #D0217E 0%, rgba(109, 44, 144, 0.97) 100%);
+    background-color: rgba(109, 44, 144, 0.97);
     display: flex;
     justify-content: center;
     border-radius: 8px 0 0 8px;
