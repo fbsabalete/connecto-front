@@ -22,6 +22,10 @@ body {
     height: 100%;
 }
 
+.form-group{
+  position: relative;
+}
+
 .form-body {
     background-color: white;
     height: 100%;

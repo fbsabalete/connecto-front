@@ -1,52 +1,74 @@
 <div class="form-body without-side">
-    <div class="website-logo">
-        <a href="index.html">
-            <div class="logo">
-                <img class="logo-size" src="" alt="">
-            </div>
-        </a>
+  <div class="website-logo">
+    <a href="index.html">
+      <div class="logo">
+        <img class="logo-size" src="" alt="">
+      </div>
+    </a>
+  </div>
+  <div class="row">
+    <div class="img-holder">
+      <div class="bg"></div>
+      <div class="info-holder">
+        <img src="images/graphic3.svg" alt="">
+      </div>
     </div>
-    <div class="row">
-        <div class="img-holder">
-            <div class="bg"></div>
-            <div class="info-holder">
-                <img src="images/graphic3.svg" alt="">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items ">
+          <h3 class=" d-flex justify-content-center mb-4 ">Criar Nova Conta</h3>
+          <form>
+            <div class="form-group">
+              <input (keyup)="validaNome($event)" class="form-control" type="text" name="name"
+                placeholder="Nome Completo" required>
+              <div class="invalid-tooltip">Digite um nome válido.</div>
             </div>
-        </div>
-        <div class="form-holder">
-            <div class="form-content">
-                <div class="form-items ">
-                    <h3 class=" d-flex justify-content-center mb-4 ">Criar Nova Conta</h3>
-                    <form>
-                        <input class="form-control" type="text" name="name" placeholder="Nome Completo" required>
-                        <input class="form-control" type="email" name="email" placeholder="E-mail" required>
-                        <input type="text" class="form-control" name="link-foto" placeholder="Link Foto" required>
-                        <input class="form-control" type="password" name="password" placeholder="Senha" required>
-                        <input class="form-control" type="password" name="password" placeholder="Confirmar Senha" required>
-                        <div class="form-button d-flex  flex-column">
-                            <button id="submit" type="submit" class="ibtn">Cadastrar</button>
-                        </div>
-                    </form>
-                    <div class="other-links ">
-                        <div class="text d-flex justify-content-center">Ou faça login com:</div>
-                        <div class="list d-flex justify-content-center ">
-                            <a href="#">
-                                <fa-icon [icon]="faFacebook"></fa-icon>
-                            </a>
-                            <a href="#">
-                                <fa-icon [icon]="faGoogle"></fa-icon>
-                            </a>
-                            <a href="#">
-                                <fa-icon [icon]="faLinkedin"></fa-icon>
-                            </a>
-                        </div>
+            <div class="form-group">
+              <input (keyup)="validaEmail($event)" class="form-control" type="email" name="email" placeholder="E-mail"
+                required>
+              <div class="invalid-tooltip">Digite um email válido.</div>
+            </div>
+            <div class="form-group">
+              <input (keyup)="validaFoto($event)" type="text" class="form-control is-valid" name="link-foto"
+                placeholder="Link Foto" required>
+              <div class="invalid-tooltip">A URL deve conter uma foto ou ser vazia.</div>
+            </div>
+            <div class="form-group">
+              <input (keyup)="validaSenha($event)" class="form-control" type="password" name="password"
+                placeholder="Senha" required>
+              <div class="invalid-tooltip">A senha deve conter entre 5 e 12 caracteres.</div>
+            </div>
 
-                    </div>
-                    <div class="page-links d-flex justify-content-end">
-                        <a href="#">Fazer Login</a>
-                    </div>
-                </div>
+            <div class="form-group">
+              <input class="form-control" type="password" name="password" placeholder="Confirmar Senha" required>
+              <div class="invalid-tooltip">As senhas devem ser iguais.</div>
+
             </div>
+
+            <div class="form-button d-flex  flex-column">
+              <button id="submit" type="submit" class="ibtn">Cadastrar</button>
+            </div>
+          </form>
+          <div class="other-links ">
+            <div class="text d-flex justify-content-center">Ou faça login com:</div>
+            <div class="list d-flex justify-content-center ">
+              <a href="#">
+                <fa-icon [icon]="faFacebook"></fa-icon>
+              </a>
+              <a href="#">
+                <fa-icon [icon]="faGoogle"></fa-icon>
+              </a>
+              <a href="#">
+                <fa-icon [icon]="faLinkedin"></fa-icon>
+              </a>
+            </div>
+
+          </div>
+          <div class="page-links d-flex justify-content-end">
+            <a href="#">Fazer Login</a>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
