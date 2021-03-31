@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaibaMaisComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    window.addEventListener('scroll', this.naTela)
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  naTela() {
+    let elementos = document.querySelectorAll(".animacao")
+    let windowHeight = window.innerHeight;
+    elementos.forEach(function (element) {
+      let elementPosition = element.getBoundingClientRect();
+      let elementTop = elementPosition.top;
+      if (elementTop < windowHeight) {
+        element.classList.add("na-tela");
+      } else {
+        element.classList.remove("na-tela");
+      }
+    });
   }
 
 }
