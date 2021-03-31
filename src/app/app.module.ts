@@ -5,16 +5,20 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { FeedComponent } from './feed/feed.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuLateralComponent,
-    FeedComponent
+    FeedComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
