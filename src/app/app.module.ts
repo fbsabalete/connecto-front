@@ -6,6 +6,7 @@ import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { FeedComponent } from './feed/feed.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { NovoPostComponent } from './novo-post/novo-post.component';
+import { AmigosComponent } from './amigos/amigos.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { NovoPostComponent } from './novo-post/novo-post.component';
     MenuLateralComponent,
     FeedComponent,
     PostagemComponent,
-    NovoPostComponent
+    NovoPostComponent,
+    AmigosComponent
 
   ],
   imports: [

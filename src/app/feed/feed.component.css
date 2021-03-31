@@ -1,94 +1,151 @@
+body {
+    overflow-x: hidden;
+}
+
 ul {
-  list-style: none;
+    list-style: none;
+}
+
+.container-feed {
+    margin-left: 300px;
 }
 
 .feed {
-  background-color: rgba(128, 128, 128, 0.13);
-  margin-left: 300px;
+    background-color: #f5f5f586;
 }
 
 .container-news img {
-  width: 50px;
-  height: 50px;
+    width: 50px;
+    height: 50px;
 }
 
 .card-new-post {
-  border-radius: 0.6rem;
+    border-radius: 0.6rem;
 }
 
 .post textarea {
-  border: solid 1px;
-  border-color: rgba(128, 128, 128, 0.233);
-  border-radius: 20px;
-  overflow: auto;
-  outline: none;
-  padding-left: 7px;
+    border: solid 1px;
+    border-color: rgba(128, 128, 128, 0.233);
+    border-radius: 20px;
+    overflow: auto;
+    outline: none;
+    padding-left: 7px;
 }
 
 .b-b {
-  border-bottom: solid 1px;
-  color: rgba(128, 128, 128, 0.281);
+    border-bottom: solid 1px;
+    color: rgba(128, 128, 128, 0.281);
 }
 
 .form-check {
-  margin-right: 1rem;
-  color: black;
+    margin-right: 1rem;
+    color: black;
 }
 
 .form-check:checked {
-  background-color: blueviolet;
+    background-color: blueviolet;
 }
 
 .sumir {
-  display: none;
+    display: none;
 }
 
 .select select,
 .link-foto input {
-  border-radius: 15px;
-  border: solid 1px;
-  border-color: rgba(128, 128, 128, 0.432);
-  outline: none;
+    border-radius: 15px;
+    border: solid 1px;
+    border-color: rgba(128, 128, 128, 0.432);
+    outline: none;
 }
 
 .link-foto {
-  margin-bottom: 1rem;
-  padding-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .link-foto label {
-  margin-left: 0.7rem;
-  color: black;
+    margin-left: 0.7rem;
+    color: black;
 }
 
 .link-foto input {
-  width: 89%;
+    width: 89%;
 }
 
 .select select:hover {
-  border-color: blueviolet;
+    border-color: blueviolet;
 }
 
 .botao button {
-  width: 120px;
-  height: 30px;
-  border-radius: 15px;
-  border: solid 1px;
-  border-color: blueviolet;
-  transition: 1000ms ease;
+    width: 120px;
+    height: 30px;
+    border-radius: 15px;
+    border: solid 1px;
+    border-color: blueviolet;
+    transition: 1000ms ease;
 }
 
 .botao button:hover {
-  color: white;
-  background-color: blueviolet;
+    color: white;
+    background-color: blueviolet;
 }
 
-@media (max-width: 576px){
-.feed{
-  margin-top: 30px;
-  margin-left: 0;
+
+/* amigos */
+
+.borda-amigos {
+    border-left: solid 1px #e7edf2;
+    background-color: #f5f5f586;
 }
+
+.container-amigos {
+    height: 600px;
+    background-color: white;
+    margin: auto;
+    margin-top: 28px;
+    border-radius: 10px;
+}
+
+.amigo-img::after {
+    content: '';
+    position: absolute;
+    left: 31px;
+    width: 40px;
+    height: 40px;
+    border: solid 3px rgba(109, 44, 144, 0.97);
+    border-radius: 50%;
+}
+
+.header-amigo h3 {
+    color: #4f515b;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.header-amigo h3::after {
+    content: '';
+    position: absolute;
+    left: 31px;
+    top: 53px;
+    width: 3rem;
+    height: 0.2rem;
+    background-color: rgba(109, 44, 144, 0.97);
+}
+
+.texto-amigo h5 {
+    color: #4f515b;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 576px) {
+    .feed {
+        margin-top: 30px;
+        margin-left: 0;
+    }
 }
