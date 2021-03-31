@@ -7,7 +7,9 @@
 
         <div class="card-avatar col-10 d-flex  flex-column  align-items-center shadow-lg ">
             <div class="info d-flex flex-column justify-content-center align-items-center">
-                <img src="../../assets/img/foto.jpeg" alt="" width="150px" height="150px">
+                <div class="shape">
+
+                </div>
                 <h3>Leonardo Cintra</h3>
             </div>
 
@@ -28,16 +30,22 @@
         <div class="icones-menu col-md-10">
             <ul class="nav lista-icones mb-3" id="nav-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="nav-perfil-tab" data-toggle="pill" href="#nav-perfil" role="tab" aria-controls="nav-perfil" aria-selected="true"><img src="../../assets/img/people-outline.svg" alt=""> <span>Perfil</span></a>
+                    <a class="nav-link active" id="nav-perfil-tab" data-toggle="pill" href="#nav-perfil" role="tab" aria-controls="nav-perfil" aria-selected="true">
+                        <fa-icon [icon]="faUserAlt"></fa-icon> <span>Perfil</span></a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="nav-portfolio-tab" data-toggle="pill" href="#nav-portfolio" role="tab" aria-controls="nav-portfolio" aria-selected="false"><img src="../../assets/img/images-outline.svg" alt=""> <span>Portifolio</span></a>
+                    <a class="nav-link" id="nav-portfolio-tab" data-toggle="pill" href="#nav-portfolio" role="tab" aria-controls="nav-portfolio" aria-selected="false">
+                        <fa-icon [icon]="faImages"></fa-icon> <span>Portifolio</span></a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="nav-servicos-tab" data-toggle="pill" href="#nav-servicos" role="tab" aria-controls="nav-servicos" aria-selected="false"><img src="../../assets/img/hammer-outline.svg" alt=""> <span>Serviços</span></a>
+                    <a class="nav-link" id="nav-servicos-tab" data-toggle="pill" href="#nav-servicos" role="tab" aria-controls="nav-servicos" aria-selected="false">
+                        <fa-icon [icon]="faSuitCase"></fa-icon> <span>Serviços</span>
+
+                    </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="nav-vagas-tab" data-toggle="pill" href="#nav-vagas" role="tab" aria-controls="nav-vagas" aria-selected="false"><img src="../../assets/img/star-outline.svg" alt=""> <span>Vagas</span></a>
+                    <a class="nav-link" id="nav-vagas-tab" data-toggle="pill" href="#nav-vagas" role="tab" aria-controls="nav-vagas" aria-selected="false">
+                        <fa-icon [icon]="faStar"></fa-icon> <span>Vagas</span></a>
                 </li>
             </ul>
         </div>

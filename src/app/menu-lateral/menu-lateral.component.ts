@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { faImages, faStar } from '@fortawesome/free-regular-svg-icons';
+import { faSuitcase, faUserAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-menu-lateral',
@@ -6,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-lateral.component.css']
 })
 export class MenuLateralComponent implements OnInit {
+
+  faStar = faStar
+  faSuitCase = faSuitcase
+  faUserAlt =faUserAlt
+  faImages = faImages
 
   constructor() { }
 

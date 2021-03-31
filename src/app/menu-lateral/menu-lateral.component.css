@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;700&display=swap');
 body {
     overflow-x: hidden;
 }
@@ -38,6 +39,12 @@ ul {
     border-color: rgba(128, 128, 128, 0.281);
 }
 
+.card-texto p,
+.card-texto span {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+}
+
 .card-texto ul {
     display: flex;
     list-style: none;
@@ -52,14 +59,29 @@ ul {
     padding: 00.5rem;
 }
 
-.info img {
-    width: 5rem;
-    height: 5rem;
+.shape {
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 50%;
+    border: solid 2px #838daa;
+}
+
+.info::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-image: url(../../assets/img/foto.jpeg);
+    background-size: cover;
+    background-position: 60% 80%;
 }
 
 .info h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
 }
 
 .icones-menu {
@@ -85,7 +107,10 @@ ul {
 
 .lista-icones span {
     font-size: 1rem;
-    color: rgba(128, 128, 128, 0.753);
+    color: #838daa;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    transition: 0.3s;
 }
 
 .lista-icones img {
@@ -94,6 +119,11 @@ ul {
 
 .lista-icones li {
     width: 90px;
+}
+
+.lista-icones li fa-icon {
+    color: #838daa;
+    transition: 0.3s;
 }
 
 @media (max-width: 576px) {
