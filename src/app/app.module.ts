@@ -7,6 +7,7 @@ import { EquipeComponent } from './equipe/equipe.component';
 import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
 import { SaibaMaisComponent } from './saiba-mais/saiba-mais.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { RodapeComponent } from './rodape/rodape.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     EquipeComponent,
     PaginaInicialComponent,
     SaibaMaisComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    RodapeComponent
   ],
   imports: [
     BrowserModule,

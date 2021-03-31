@@ -3,6 +3,7 @@
   height: 85vh;
 }
 .global{
+  padding: 0% 19%;
   height: 100vh;
   background-position: 48% 0%;
   background-image: url(https://themexriver.com/appilo-theme/main/wp-content/uploads/sites/2/2020/11/slider-bg-1.jpg);
@@ -79,17 +80,18 @@ box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
 
 /* secção-texto */
 .text {
-  width: 60%;
-  padding-left: 4%;
+  width: 30%;
+  padding-left: 3%;
+  padding-right: 10%;
 }
 
-.titulo{
+/* .titulo{
   margin-top: 10%;
   margin-bottom:10% ;
 }
 .subtitulo{
   width: 90%;
-}
+} */
 
 .botao-saiba{
   margin-top: 5%;
@@ -113,7 +115,7 @@ box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
   border: 1px solid white;
   -webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
 -moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
-box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
+box-shadow:         3px 1px 5px rgba(50, 50, 50, 0.77);
 
   transition: 0.6s;
 }
@@ -143,20 +145,21 @@ box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
 /* /carousel */
 @media (max-width: 650px) {
 
-  .text{
-    padding-left: 10%;
-  }
-  .titulo{
+  .global{
+    padding: 15%;
+    
+  } 
+   .titulo{
       margin-top: 40%;
-      width: 150%;
-      font-size: 30px;
-  }
+      width: 500%;
+      
+  } 
 
-  .subtitulo {
+   .subtitulo {
       margin-top: 40%;
-      width: 150%;
-      font-size: 24px;
-  }
+      width: 500%;
+      
+  } 
 
   .botao-saiba{
       margin-top: 20%;
@@ -173,5 +176,7 @@ box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
     text-align: end;
     color: white;
   }
+
+  
 
 }
