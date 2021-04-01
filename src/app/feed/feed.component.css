@@ -21,6 +21,7 @@ ul {
 .borda-amigos {
     border-left: solid 1px #e7edf2;
     background-color: #f5f5f586;
+    margin-left: 53.5%;
 }
 
 .container-amigos {
@@ -69,7 +70,7 @@ ul {
     .container-feed {
         width: 100%;
         margin: 0;
-        height: 1000px;
+        height: 3000px;
     }
     .borda-amigos {
         display: none;
