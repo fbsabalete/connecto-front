@@ -1,5 +1,9 @@
+import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faFacebook, faGooglePlus, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { AuthService } from '../service/auth.service';
+import { UsuarioLogin } from '../model/UsuarioLogin';
 
 
 @Component({
@@ -13,9 +17,32 @@ export class LoginComponent implements OnInit {
   faLinkedin = faLinkedin;
   faGoogle  = faGooglePlus;
 
-  constructor() { }
+  user: UsuarioLogin = new UsuarioLogin()
+  constructor(
+    private router: Router,
+    private auth: AuthService
+  ) { }
 
   ngOnInit(): void {
   }
 
+
+  logar(){
+    this.auth.entrar(this.user).subscribe((resp: UsuarioLogin)=>{
+      this.user = resp
+
+      environment.fotoPerfil = this.user.fotoPerfil
+      environment.id  = this.user.id
+      environment.nomeCompleto = this.user.nomeCompleto
+      environment.tipoAdmin = this.user.tipoAdmin
+      environment.token = this.user.token
+
+      this.router.navigate([''])
+
+    } ,erro => {
+      if(erro.status == 500 ){
+        alert('Email ou senha incorreta')
+      }
+    })
+  }
 }

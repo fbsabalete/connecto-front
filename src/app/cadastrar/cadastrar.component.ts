@@ -1,6 +1,9 @@
+import { Usuario } from './../model/Usuario';
 import { taggedTemplate } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faFacebook, faGooglePlus, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { AuthService } from '../service/auth.service';
 
 
 @Component({
@@ -20,7 +23,13 @@ export class CadastrarComponent implements OnInit {
 
   confirmarSenha: String
 
-  constructor() { }
+  user: Usuario = new Usuario()
+
+  constructor(
+   private auth: AuthService,
+   private router: Router
+  ) {
+  }
 
   ngOnInit(): void {
   }
@@ -43,8 +52,8 @@ export class CadastrarComponent implements OnInit {
   }
 
   confirmSenha(event: any){
-    // this.confirmarSenha = event.target.value;
-    // this.senhaValida = this.validation(this.confirmarSenha != this.user.senha, event)
+     this.confirmarSenha = event.target.value;
+     this.senhaValida = this.validation(this.confirmarSenha != this.user.senha, event)
   }
 
   validation(condicao: boolean, event:any){
@@ -68,11 +77,11 @@ export class CadastrarComponent implements OnInit {
     // this.user.tipo = this.tipoUsuario;
 
     if(this.nomeValido && this.emailValido && this.senhaValida && this.fotoValida){
-      // this.authService.cadastrar(this.user).subscribe((resp) => {
-      //   this.user = resp;
-      //   this.router.navigate(["/login"]);
-      //   alert("Usuário cadastrado com sucesso.")
-      // })
+      this.auth.cadastrar(this.user).subscribe((resp) => {
+      this.user = resp;
+      this.router.navigate(["/entrar"]);
+       alert("Usuário cadastrado com sucesso.")
+      })
     }else{
       alert("Preencha corretamente os dados.")
     }

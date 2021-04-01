@@ -19,34 +19,34 @@
           <h3 class=" d-flex justify-content-center mb-4 ">Criar Nova Conta</h3>
           <form>
             <div class="form-group">
-              <input (keyup)="validaNome($event)" class="form-control" type="text" name="name"
+              <input [(ngModel)]="user.nomeCompleto" (keyup)="validaNome($event)" class="form-control" type="text" name="name"
                 placeholder="Nome Completo" required>
               <div class="invalid-tooltip">Digite um nome válido.</div>
             </div>
             <div class="form-group">
-              <input (keyup)="validaEmail($event)" class="form-control" type="email" name="email" placeholder="E-mail"
+              <input [(ngModel)]="user.email" (keyup)="validaEmail($event)" class="form-control" type="email" name="email" placeholder="E-mail"
                 required>
               <div class="invalid-tooltip">Digite um email válido.</div>
             </div>
             <div class="form-group">
-              <input (keyup)="validaFoto($event)" type="text" class="form-control is-valid" name="link-foto"
-                placeholder="Link Foto" required>
+              <input [(ngModel)]="user.fotoPerfil" (keyup)="validaFoto($event)" type="text" class="form-control is-valid" name="link-foto"
+                placeholder="Link Foto">
               <div class="invalid-tooltip">A URL deve conter uma foto ou ser vazia.</div>
             </div>
             <div class="form-group">
-              <input (keyup)="validaSenha($event)" class="form-control" type="password" name="password"
+              <input [(ngModel)]="user.senha" (keyup)="validaSenha($event)" class="form-control" type="password" name="password"
                 placeholder="Senha" required>
               <div class="invalid-tooltip">A senha deve conter entre 5 e 12 caracteres.</div>
             </div>
 
             <div class="form-group">
-              <input class="form-control" type="password" name="password" placeholder="Confirmar Senha" required>
+              <input (keyup)="confirmSenha($event)" class="form-control" type="password" name="password" placeholder="Confirmar Senha" required>
               <div class="invalid-tooltip">As senhas devem ser iguais.</div>
 
             </div>
 
             <div class="form-button d-flex  flex-column">
-              <button id="submit" type="submit" class="ibtn">Cadastrar</button>
+              <button id="submit" type="submit" class="ibtn" (click)="cadastrar()">Cadastrar</button>
             </div>
           </form>
           <div class="other-links ">
