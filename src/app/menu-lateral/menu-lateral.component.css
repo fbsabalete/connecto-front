@@ -123,6 +123,10 @@ ul {
     transition: 0.3s;
 }
 
+.menu fa-icon {
+    color: rebeccapurple;
+}
+
 @media (max-width: 576px) {
     .menu-lateral {
         transform: translateX(-300px);
