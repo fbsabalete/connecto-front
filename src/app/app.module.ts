@@ -7,6 +7,7 @@ import { FeedComponent } from './feed/feed.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { NovoPostComponent } from './novo-post/novo-post.component';
 import { AmigosComponent } from './amigos/amigos.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AmigosComponent } from './amigos/amigos.component';
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
