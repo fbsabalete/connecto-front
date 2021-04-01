@@ -8,6 +8,8 @@ import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.componen
 import { SaibaMaisComponent } from './saiba-mais/saiba-mais.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { LoginComponent } from './login/login.component';
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { RodapeComponent } from './rodape/rodape.component';
     PaginaInicialComponent,
     SaibaMaisComponent,
     LandingPageComponent,
-    RodapeComponent
+    RodapeComponent,
+    LoginComponent,
+    CadastrarComponent
   ],
   imports: [
     BrowserModule,
