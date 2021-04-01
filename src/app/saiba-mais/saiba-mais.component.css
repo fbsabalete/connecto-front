@@ -8,14 +8,19 @@
         opacity: 0;
         transform: translateX(-300px);
     }
-    
+
     .animacao.direita{
         opacity: 0;
         transform: translateX(300px);
     }
-    
+
     .animacao.direita.na-tela, .animacao.esquerda.na-tela{
         opacity: 100%;
         transform: translateX(0);
-        transition: all 1s linear; 
+        transition: all 1s linear;
     }
+
+a.text-connecto{
+
+  color:rgb(152, 59, 206); ;
+}
