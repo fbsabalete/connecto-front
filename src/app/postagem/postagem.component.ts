@@ -11,6 +11,10 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 })
 export class PostagemComponent implements OnInit {
 
+  public comentarios = []
+  public textoComentario ;
+  clique = false;
+
   faThumbsUp = faThumbsUp;
   faComments = faComments;
   faWhatsapp = faWhatsapp;
@@ -22,6 +26,14 @@ export class PostagemComponent implements OnInit {
 
   curtir(){
     document.querySelector('.gostei').classList.add("ativo");
+  }
+
+  pegarComentario(){
+    this.comentarios.push(this.textoComentario)
+  }
+
+  clicado(){
+    this.clique = true;
   }
 
 }
