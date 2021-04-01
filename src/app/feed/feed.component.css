@@ -7,7 +7,8 @@ ul {
 }
 
 .container-feed {
-    margin-left: 300px;
+    width: 81vw;
+    margin-left: auto;
 }
 
 .feed {
@@ -65,8 +66,12 @@ ul {
 }
 
 @media (max-width: 576px) {
-    .feed {
-        margin-top: 30px;
-        margin-left: 0;
+    .container-feed {
+        width: 100%;
+        margin: 0;
+        height: 1000px;
+    }
+    .borda-amigos {
+        display: none;
     }
 }

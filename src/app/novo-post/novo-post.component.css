@@ -84,3 +84,11 @@ ul {
     color: white;
     background-color: blueviolet;
 }
+
+@media (max-width: 576px) {
+    .card-new-post {
+        width: 85vw;
+        margin: 0;
+        padding: 0;
+    }
+}
