@@ -1,78 +1,77 @@
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 .container-feed {
-    width: 81vw;
-    margin-left: auto;
+  margin-left: 300px;
 }
 
 .feed {
-    background-color: #f5f5f586;
+  background-color: #f5f5f586;
 }
-
 
 /* amigos */
 
 .borda-amigos {
-    border-left: solid 1px #e7edf2;
-    background-color: #f5f5f586;
-    margin-left: 53.5%;
+  border-left: solid 1px #e7edf2;
+  background-color: #f5f5f586;
+  right: 0;
+  top: 0;
 }
 
 .container-amigos {
-    height: 600px;
-    background-color: white;
-    margin: auto;
-    margin-top: 28px;
-    border-radius: 10px;
+  height: 600px;
+  background-color: white;
+  margin: auto;
+  margin-top: 28px;
+  border-radius: 10px;
 }
 
 .amigo-img::after {
-    content: '';
-    position: absolute;
-    left: 31px;
-    width: 40px;
-    height: 40px;
-    border: solid 3px rgba(109, 44, 144, 0.97);
-    border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 31px;
+  width: 40px;
+  height: 40px;
+  border: solid 3px rgba(109, 44, 144, 0.97);
+  border-radius: 50%;
 }
 
 .header-amigo h3 {
-    color: #4f515b;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
-    font-size: 1.3rem;
+  color: #4f515b;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
 }
 
 .header-amigo h3::after {
-    content: '';
-    position: absolute;
-    left: 31px;
-    top: 53px;
-    width: 3rem;
-    height: 0.2rem;
-    background-color: rgba(109, 44, 144, 0.97);
+  content: "";
+  position: absolute;
+  left: 31px;
+  top: 53px;
+  width: 3rem;
+  height: 0.2rem;
+  background-color: rgba(109, 44, 144, 0.97);
 }
 
 .texto-amigo h5 {
-    color: #4f515b;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 400;
-    font-size: 0.8rem;
+  color: #4f515b;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 576px) {
-    .container-feed {
-        width: 100%;
-        margin: 0;
-        height: 3000px;
-    }
-    .borda-amigos {
-        display: none;
-    }
+  .container-feed {
+    width: 100%;
+    margin: 0;
+    height: 3000px;
+  }
+  .borda-amigos {
+    display: none;
+  }
 }
