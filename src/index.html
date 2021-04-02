@@ -1,38 +1,31 @@
 <!doctype html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="utf-8">
-  <title>Connecto</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css"
-    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Connecto</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
 
 <body>
-  <app-root></app-root>
-  <script>
+    <app-root></app-root>
+    <script>
+        function aparecer() {
+            document.querySelector('.botao').style.display = "inline-block";
+            document.querySelector('.sumir').style.display = "block";
+        }
 
-
-    // window.addEventListener("scroll", naTela);
-    // function naTela() {
-    //   let elementos = document.querySelectorAll(".animacao")
-    //   let windowHeight = window.innerHeight;
-    //   elementos.forEach(function (element) {
-    //     let elementPosition = element.getBoundingClientRect();
-    //     let elementTop = elementPosition.top;
-    //     if (elementTop < windowHeight) {
-    //       element.classList.add("na-tela");
-    //     } else {
-    //       element.classList.remove("na-tela");
-    //     }
-    //   });
-    // }
-  </script>
+        function cancelar() {
+            document.querySelector('.botao').style.display = "none";
+            document.querySelector('.sumir').style.display = "none";
+        }
+    </script>
 </body>
 
 </html>

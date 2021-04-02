@@ -1,0 +1,210 @@
+body {
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+.container-news img {
+    width: 50px;
+    height: 50px;
+}
+
+.card-new-post {
+    border-radius: 0.6rem;
+}
+
+.post textarea {
+    border: solid 1px;
+    border-color: rgba(128, 128, 128, 0.233);
+    border-radius: 20px;
+    overflow: auto;
+    outline: none;
+    padding-left: 7px;
+}
+
+.b-b {
+    border-bottom: solid 1px;
+    color: rgba(128, 128, 128, 0.281);
+}
+
+.form-check {
+    margin-right: 1rem;
+    color: black;
+}
+
+.form-check:checked {
+    background-color: blueviolet;
+}
+
+.sumir {
+    display: none;
+}
+
+.select select,
+.link-foto input {
+    border-radius: 15px;
+    border: solid 1px;
+    border-color: rgba(128, 128, 128, 0.432);
+    outline: none;
+}
+
+.link-foto {
+    margin-bottom: 1rem;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link-foto label {
+    margin-left: 0.7rem;
+    color: black;
+}
+
+.link-foto input {
+    width: 89%;
+}
+
+.select select:hover {
+    border-color: blueviolet;
+}
+
+.botao button {
+    width: 120px;
+    height: 30px;
+    border-radius: 15px;
+    border: solid 1px;
+    border-color: blueviolet;
+    transition: 1000ms ease;
+}
+
+.botao button:hover {
+    color: white;
+    background-color: blueviolet;
+}
+
+.post,
+.img img {
+    border-radius: 0.8rem;
+}
+
+.etiqueta {
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    background-color: rgba(109, 44, 144, 0.97);
+    display: flex;
+    justify-content: center;
+    border-radius: 8px 0 0 8px;
+    align-items: center;
+}
+
+.etiqueta p {
+    padding: 0;
+    color: white;
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+}
+
+.texto h4 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.texto p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #838daa;
+}
+
+.list-icones li {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.list-icones li:hover {
+    color: #6D2C90;
+}
+
+.zap {
+    color: rgb(44, 44, 44);
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.zap:hover {
+    color: #6D2C90;
+}
+
+.gostei.ativo {
+    color: #6D2C90;
+}
+
+.header h5 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+}
+
+.header span {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.conteudo {
+    margin-left: 35px;
+    width: 550px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: rgba(128, 128, 128, 0.062);
+    display: flex;
+    justify-content: start;
+    padding-left: 25px;
+    align-items: center;
+}
+
+.conteudo p {
+    color: black;
+}
+
+.container-news #text-area-post {
+    outline: auto #6D2C90;
+}
+
+.comentario .container-news img {
+    height: 30px;
+    width: 30px;
+}
+
+@media (max-width: 575.98px) {
+    .post {
+        width: 85vw;
+        padding: 20px;
+    }
+    .texto h4 {
+        margin-left: 20px;
+    }
+    .texto p {
+        margin-top: 20px;
+        text-align: justify;
+    }
+    .conteudo {
+        width: 100%;
+        height: 45px;
+        margin: 0;
+        padding: 0;
+    }
+    .conteudo p {
+        font-size: 12px;
+        padding: 15px;
+        text-align: justify;
+        color: black;
+    }
+}

@@ -1,0 +1,75 @@
+<div class="mt-5">
+    <div class="row ">
+        <div class="col-11 m-auto bg-white post shadow-sm ">
+            <div class="row p-md-4 ">
+                <div class=" col-1 img-avatar ">
+                    <img class="rounded-circle " src="../../assets/img/foto.jpeg" alt="foto-perfil" width="50px" height="50px">
+                </div>
+                <div class=" col-10 texto mt-2">
+                    <h4> Leonardo Cintra</h4>
+                    <p>Sou profissional da categoria de pintura residencial,instalações de antenas, cameras de segurança e cerca eletricas. Estou localizado no bairro Conjunto Habitacional Brás Cubas em Mogi das Cruzes.</p>
+                    <div class="img">
+                        <img src="../../assets/img/pintor.jpg" alt="" width="100%">
+                    </div>
+                    <div class="interacoes mt-3">
+                        <ul class="d-flex justify-content-around list-icones p-0">
+                            <li class="gostei" (click)="curtir()">
+                                <fa-icon [icon]="faThumbsUp"></fa-icon> Gostei</li>
+                            <li (click)="clicado()">
+                                <fa-icon [icon]="faComments"></fa-icon> Comentar</li>
+                            <li>
+
+                                <a class="zap a" href="">
+                                    <fa-icon [icon]="faWhatsapp"></fa-icon>
+                                    Contato</a>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="colocar">
+
+                        <div *ngFor="let comentario of comentarios" class="comentario-post pt-md-3">
+                            <div class="header d-flex ">
+                                <div class="img-comentario mr-1">
+                                    <img class="rounded-circle " src="../../assets/img/foto.jpeg" alt="" width="30px" height="30px">
+                                </div>
+                                <h5 class="mr-1 mt-0"> Leonardo Cintra</h5>
+                                <span class="">comentou</span>
+                            </div>
+                            <div class="conteudo">
+                                <p class="p-md-0 m-md-0"> {{comentario}} </p>
+                            </div>
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+                    <div *ngIf="clique" class="comentario">
+                        <div class="d-flex justify-content-between p-1 container-news">
+                            <div class="img-comentario">
+                                <img class="rounded-circle mr-1" src="../../assets/img/foto.jpeg" alt="Foto de perfil" width="30px" height="30px">
+                            </div>
+                            <textarea id="text-area-post" cols="94" rows="2" placeholder="Escreva seu comentario" [(ngModel)]="textoComentario"></textarea>
+                        </div>
+                        <div id="botao" class="botao  d-flex mt-3">
+                            <button (click)="pegarComentario()">Postar</button>
+                            <button (click)="clique = false" class="ml-3"> Cancelar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="etiqueta">
+                <p> PINTURA</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

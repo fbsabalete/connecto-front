@@ -1,7 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EquipeComponent } from './equipe/equipe.component';
@@ -14,6 +13,12 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
+import { FeedComponent } from './feed/feed.component';
+import { PostagemComponent } from './postagem/postagem.component';
+import { NovoPostComponent } from './novo-post/novo-post.component';
+import { AmigosComponent } from './amigos/amigos.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +29,13 @@ import { FormsModule } from '@angular/forms';
     LandingPageComponent,
     RodapeComponent,
     LoginComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    MenuLateralComponent,
+    FeedComponent,
+    PostagemComponent,
+    NovoPostComponent,
+    AmigosComponent
+
   ],
   imports: [
     BrowserModule,
