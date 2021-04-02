@@ -5,6 +5,8 @@ export const environment = {
   nomeCompleto: "",
   fotoPerfil: "",
   token: "",
-  tipoAdmin: ""
+  tipoAdmin: "",
+  server: "http://localhost",
+  port: ":8080"
 
 };

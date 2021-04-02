@@ -7,26 +7,28 @@
                         <div class="img-nova-post">
                             <img class="rounded-circle mr-1" src="{{foto}}" alt="Foto de perfil" width="50px" height="50px">
                         </div>
-                        <textarea (focus)="aparecer()" cols="94" rows="2" placeholder="Escreva sua postagem" style="resize: vertical; height: auto;" maxlength="3000"></textarea>
+                        <textarea name="descricao" [(ngModel)]="postagem.descricaoPost" (focus)="aparecer()" cols="94" rows="2" placeholder="Escreva sua postagem" style="resize: vertical; height: auto;" maxlength="3000"></textarea>
                     </div>
                     <div class="sumir mt-3">
                         <div class="link-foto b-b">
-                            <label for="link-foto "> Link Foto </label>
-                            <input type="text">
+                            <label for="link-foto"> Link Foto </label>
+                            <input type="text" name="link-foto" [(ngModel)]="postagem.linkImagem">
                         </div>
 
-                        <div class=" p-1 b-b d-flex justify-content-between check-checkbox ">
+                        <div class="p-1 b-b d-flex justify-content-between check-checkbox">
                             <div class="select">
-                                <select id="tipo-post"> <option value="Post Normal">Post Normal</option><option value="Post Servico"> Post Serviço</option></select>
+                                <select name="categoria" id="categoria" [(ngModel)]="idTema" (change)="findByIdTema()">
+                                  <option *ngFor="let item of listaTema" value="{{item.id}}">{{item.descricao}}</option>
+                                </select>
                             </div>
 
                             <div class="check d-flex ">
                                 <div class="form-check">
-                                    <input value="disponivel" class="form-check-input" type="radio" id="autonomo" name="tipo-servico">
+                                    <input (click)="prestador($event)" value="disponivel" class="form-check-input" type="radio" id="autonomo" name="tipo-servico">
                                     <label class="form-check-label" for="autonomo">Disponivel para serviço</label>
                                 </div>
                                 <div class="form-check">
-                                    <input value="buscando" class="form-check-input" type="radio" id="contratante" name="tipo-servico">
+                                    <input (click)="prestador($event)" value="buscando" class="form-check-input" type="radio" id="contratante" name="tipo-servico">
                                     <label class="form-check-label" for="contratante">Buscando profisional</label>
                                 </div>
                             </div>
@@ -34,7 +36,7 @@
                         </div>
 
                         <div id="botao" class="botao sumir d-flex justify-content-end mt-3">
-                            <button> Postar</button>
+                            <button (click)="publicar()"> Postar</button>
                             <button class="ml-3" (click)="cancelar()"> Cancelar</button>
                         </div>
 
