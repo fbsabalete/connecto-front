@@ -18,6 +18,7 @@ import { FeedComponent } from './feed/feed.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { NovoPostComponent } from './novo-post/novo-post.component';
 import { AmigosComponent } from './amigos/amigos.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AmigosComponent } from './amigos/amigos.component';
     FeedComponent,
     PostagemComponent,
     NovoPostComponent,
-    AmigosComponent
+    AmigosComponent,
+    InicioComponent
 
   ],
   imports: [

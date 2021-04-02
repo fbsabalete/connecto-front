@@ -63,16 +63,9 @@ ul {
     border: solid 2px #838daa;
 }
 
-.info::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background-image: url(../../assets/img/foto.jpeg);
-    background-size: cover;
-    background-position: 60% 80%;
+.foto-perfil{
+  width: 4rem;
+  height: 4rem;
 }
 
 .info h3 {

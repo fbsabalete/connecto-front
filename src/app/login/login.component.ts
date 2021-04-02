@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       environment.tipoAdmin = this.user.tipoAdmin
       environment.token = this.user.token
 
-      this.router.navigate([''])
+      this.router.navigate(['/feed'])
 
     } ,erro => {
       if(erro.status == 500 ){

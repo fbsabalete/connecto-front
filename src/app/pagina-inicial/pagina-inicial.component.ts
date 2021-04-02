@@ -1,21 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pagina-inicial',
   templateUrl: './pagina-inicial.component.html',
   styleUrls: ['./pagina-inicial.component.css']
 })
-export class PaginaInicialComponent implements OnInit {
+export class PaginaInicialComponent implements OnInit, OnDestroy {
 
   clicked = false;
   lastScroll: number = 0;
 
   constructor() {
-    window.addEventListener("scroll", this.hideNav)
   }
 
   ngOnInit() {
+    window.addEventListener("scroll", this.hideNav)
   }
+
+  ngOnDestroy(){
+    window.removeEventListener("scroll", this.hideNav);
+  }
+
 
   hideNav() {
     let scroll = window.scrollY;

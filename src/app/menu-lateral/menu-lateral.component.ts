@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import { faImages, faStar, faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 import { faBars, faSuitcase, faUserAlt } from '@fortawesome/free-solid-svg-icons';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Component({
@@ -17,10 +19,12 @@ export class MenuLateralComponent implements OnInit {
   faTimesCircle = faTimesCircle
   icon = faBars
 
+  nome = environment.nomeCompleto
+  foto = environment.fotoPerfil
+
   constructor() { }
 
   ngOnInit() {
-
   }
   menuAtivo: boolean = false;
 
@@ -40,3 +44,5 @@ export class MenuLateralComponent implements OnInit {
   }
 
 }
+
+
