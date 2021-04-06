@@ -55,6 +55,17 @@ export class PostNewComponent implements OnInit {
     })
   }
 
+  cadastrarTema(){
+    this.tema.descricao = this.tema.categoria
+    this.temaService.postTema(this.tema).subscribe((resp) => {
+      this.tema = resp;
+      this.tema = new Tema();
+      this.findAllTemas();
+
+    })
+
+  }
+
   findByIdUser(){
     this.auth.getByIdUser(environment.id).subscribe((resp: Usuario) => {
       this.user = resp;

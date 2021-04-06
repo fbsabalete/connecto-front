@@ -37,6 +37,38 @@
 
                         </div>
 
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn botao-categoria" data-toggle="modal" data-target="#exampleModal">
+                                                  + Categoria
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade p-0" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title " id="exampleModalLabel">Cadastrar Nova Categoria</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group d-flex justify-content-center align-items-center">
+
+                                                <input [(ngModel)]="tema.categoria" name="categoria" type="text" class="categoria" placeholder="Digite uma nova categoria" id="categoria">
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+
+                                        <button (click)="cadastrarTema()" type="button" class="btn " data-dismiss="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div id="botao" class="botao sumir d-flex justify-content-end mt-3">
                             <button (click)="publicar()"> Postar</button>
                             <button class="ml-3" (click)="cancelar()"> Cancelar</button>
@@ -46,6 +78,10 @@
                     </div>
 
                 </form>
+
+
+
+
             </div>
 
         </div>
