@@ -20,6 +20,8 @@ export class FeedComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagem: Postagem[]
+  listaPostagemServico: Postagem[]
+  listaPostagemVagas: Postagem[]
 
   ngOnInit() {
     this.postagens();
@@ -41,7 +43,15 @@ export class FeedComponent implements OnInit {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
 
       this.listaPostagem = resp
-
+      this.listaPostagemServico = []
+      this.listaPostagemVagas = []
+      this.listaPostagem.forEach((item)=>{
+        if(item.prestadorServicos){
+          this.listaPostagemServico.push(item)
+        } else {
+          this.listaPostagemVagas.push(item)
+        }
+      })
       this.listaPostagem.reverse()
 
 
