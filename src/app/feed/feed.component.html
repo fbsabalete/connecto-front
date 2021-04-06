@@ -6,6 +6,8 @@
                 <div class="col-md-12">
                     <app-post-new (lista)="onLista()"></app-post-new>
                     <app-postagem *ngFor="let item of listaPostagem">
+                        <img class=" foto rounded-circle " src="{{item.usuario.fotoPerfil}}" alt="foto-perfil" width="50px" height="50px">
+                        <h4 class="nome"> {{item.usuario.nomeCompleto}}</h4>
                         <p>{{item.descricaoPost}}</p>
                         <img src="{{item.linkImagem}}" alt="" width="100%">
                         <p class="etiqueta"> {{item.tema.descricao}} </p>
