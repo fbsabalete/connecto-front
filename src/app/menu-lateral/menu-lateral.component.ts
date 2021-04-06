@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import { faImages, faStar, faTimesCircle } from '@fortawesome/free-regular-svg-icons';
-import { faBars, faSuitcase, faUserAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faLayerGroup, faSignOutAlt, faSuitcase, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import { environment } from 'src/environments/environment.prod';
 
 
@@ -18,11 +19,15 @@ export class MenuLateralComponent implements OnInit {
   faBars  = faBars
   faTimesCircle = faTimesCircle
   icon = faBars
+  faSignOutAlt = faSignOutAlt
+  faLayerGroup = faLayerGroup
 
   nome = environment.nomeCompleto
   foto = environment.fotoPerfil
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -41,6 +46,15 @@ export class MenuLateralComponent implements OnInit {
       menu.classList.remove("ativo");
     }
     this.menuAtivo = !this.menuAtivo;
+  }
+
+  sair() {
+    environment.fotoPerfil = ''
+    environment.tipoAdmin = ''
+    environment.id = 0
+    environment.nomeCompleto = ''
+    environment.token = ''
+    this.router.navigate([''])
   }
 
 }
