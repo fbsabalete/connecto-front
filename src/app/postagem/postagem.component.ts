@@ -1,3 +1,5 @@
+import { environment } from 'src/environments/environment.prod';
+
 import { Component, OnInit } from '@angular/core';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +12,8 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./postagem.component.css']
 })
 export class PostagemComponent implements OnInit {
-
+  foto = environment.fotoPerfil
+  nome = environment.nomeCompleto
   public comentarios = []
   public textoComentario ;
   clique = false;

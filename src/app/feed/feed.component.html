@@ -3,11 +3,14 @@
     <div class="  d-flex flex-column feed col-md-8 ">
         <div class="container mt-3">
             <div class="row d-flex flex-column justify-content-center ">
-              <div class="col-md-12">
-                <app-novo-post></app-novo-post>
-                <app-postagem></app-postagem>
-                <app-postagem></app-postagem>
-              </div>
+                <div class="col-md-12">
+                    <app-post-new (lista)="onLista()"></app-post-new>
+                    <app-postagem *ngFor="let item of listaPostagem">
+                        <p>{{item.descricaoPost}}</p>
+                        <img src="{{item.linkImagem}}" alt="" width="100%">
+                        <p class="etiqueta"> {{item.tema.descricao}} </p>
+                    </app-postagem>
+                </div>
             </div>
         </div>
         <!-- <div class="tab-content mt-5 px-5" id="pills-tabContent">

@@ -7,6 +7,7 @@ export const environment = {
   token: "",
   tipoAdmin: "",
   server: "http://localhost",
-  port: ":8080"
+  port: ":8080",
+  listaPost: []
 
 };

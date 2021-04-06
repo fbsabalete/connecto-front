@@ -1,3 +1,4 @@
+import { PostNewComponent } from './feed/post-new/post-new.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -36,7 +37,8 @@ import { InicioComponent } from './inicio/inicio.component';
     PostagemComponent,
     NovoPostComponent,
     AmigosComponent,
-    InicioComponent
+    InicioComponent,
+    PostNewComponent
 
   ],
   imports: [
