@@ -18,7 +18,7 @@
                         <div class="p-1 b-b d-flex justify-content-between check-checkbox">
                             <div class="select">
                                 <select name="categoria" id="categoria" [(ngModel)]="idTema" (change)="findByIdTema()">
-                                <option *ngFor="let item of listaTema" value="{{item.id}}">{{item.descricao}}</option>
+                                <option *ngFor="let item of listaTema" value="{{item.id}}">{{item.categoria}}</option>
                               </select>
 
                             </div>

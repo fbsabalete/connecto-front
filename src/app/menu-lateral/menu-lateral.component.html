@@ -34,7 +34,7 @@
                 <fa-icon [icon]="faLayerGroup"></fa-icon> <span>Feed</span></a>
               </li>
               <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="nav-perfil-tab" data-toggle="pill" href="#nav-perfil" role="tab" aria-controls="nav-perfil" aria-selected="true">
+                    <a [routerLink]="['/perfil', id]" class="nav-link active" id="nav-perfil-tab" data-toggle="pill" href="#nav-perfil" role="tab" aria-controls="nav-perfil" aria-selected="true">
                         <fa-icon [icon]="faUserAlt"></fa-icon> <span>Perfil</span></a>
                 </li>
                 <li class="nav-item" role="presentation">
