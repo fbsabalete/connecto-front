@@ -24,6 +24,7 @@ export class MenuLateralComponent implements OnInit {
 
   nome = environment.nomeCompleto
   foto = environment.fotoPerfil
+  id = environment.id
 
   constructor(
     private router: Router

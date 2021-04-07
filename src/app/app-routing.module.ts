@@ -10,9 +10,9 @@ import { PerfilComponent } from './perfil/perfil.component';
 const routes: Routes = [
   { path: '' , component: LandingPageComponent },
   { path: 'entrar', component: LoginComponent},
-  {path: 'cadastrar', component: CadastrarComponent},
+  { path: 'cadastrar', component: CadastrarComponent},
   { path: 'feed', component: InicioComponent },
-  {path: 'perfil', component: PerfilComponent}
+  { path: 'perfil/:id', component: PerfilComponent}
 ];
 
 @NgModule({
