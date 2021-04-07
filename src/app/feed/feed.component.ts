@@ -26,7 +26,6 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
     this.postagens();
-
   }
 
 
@@ -54,7 +53,8 @@ export class FeedComponent implements OnInit {
         }
       })
       this.listaPostagem.reverse()
-
+      this.listaPostagemServico.reverse()
+      this.listaPostagemVagas.reverse()
 
     })
   }
