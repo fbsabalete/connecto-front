@@ -38,7 +38,7 @@
                         <fa-icon [icon]="faUserAlt"></fa-icon> <span>Perfil</span></a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="nav-portfolio-tab" data-toggle="pill" href="#nav-portfolio" role="tab" aria-controls="nav-portfolio" aria-selected="false">
+                    <a [routerLink]="['/perfil', id, 'portfolio']" class="nav-link" id="nav-portfolio-tab" data-toggle="pill" href="#nav-portfolio" role="tab" aria-controls="nav-portfolio" aria-selected="false">
                         <fa-icon [icon]="faImages"></fa-icon> <span>Portifolio</span></a>
                 </li>
                 <li class="nav-item" role="presentation">

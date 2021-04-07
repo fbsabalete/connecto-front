@@ -13,12 +13,12 @@
 <div class=" d-flex  border-bottom ">
   <ul class="nav nav-tabs d-flex align-items-center justify-content-between m-auto" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active show d-flex align-items-center flex-column" id="profile-tab" data-toggle="tab"
+      <a [ngClass]="!checarUrl() ? 'show active': ''" class="nav-link d-flex align-items-center flex-column" id="profile-tab" data-toggle="tab"
         href="#perfil" role="tab" aria-controls="profile" aria-selected="false"><img src="../../assets/img/post.svg"
           alt=""><span>Postagens</span> </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link d-flex align-items-center flex-column" id="contact-tab" data-toggle="tab" href="#contato"
+      <a [ngClass]="checarUrl() ? 'show active': ''" class="nav-link d-flex align-items-center flex-column" id="contact-tab" data-toggle="tab" href="#contato"
         role="tab" aria-controls="contact" aria-selected="false"><img src="../../assets/img/resume.svg" alt="">
         <span>Portifolio</span></a>
     </li>
@@ -76,7 +76,7 @@
               </div>
             </div>
           </div>
-          <div class="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
+          <div [ngClass]="!checarUrl() ? 'show active': ''" class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
             <app-postagem *ngFor="let item of user.postagem">
               <img class="foto rounded-circle" src="{{ user.fotoPerfil }}" alt="foto-perfil" width="50px"
                 height="50px" />
@@ -87,7 +87,7 @@
             </app-postagem>
           </div>
 
-          <div class="tab-pane fade p-4" id="contato" role="tabpanel" aria-labelledby="contact-tab">
+          <div [ngClass]="checarUrl() ? 'show active': ''" class="tab-pane fade p-4" id="contato" role="tabpanel" aria-labelledby="contact-tab">
             <div class="row justify-content-between borda-bottom">
             <h2>Portfólio</h2>
             <button type="button" class="botao" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" aria-hidden="true"></i>  Adicionar</button>

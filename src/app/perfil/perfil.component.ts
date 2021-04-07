@@ -24,6 +24,7 @@ export class PerfilComponent implements OnInit {
   reverse = true;
 
   idLogado = environment.id
+  url = this.router.url.split('/').pop();
 
   constructor(
     private authService: AuthService,
@@ -34,8 +35,15 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit(){
     this.idUser = this.route.snapshot.params['id']
-    this.findByIdUser(this.idUser)
 
+    this.findByIdUser(this.idUser)
+  }
+
+  checarUrl(){
+    if(this.url == "portfolio"){
+      return true;
+    }
+    return false;
   }
 
   listarServicos(){

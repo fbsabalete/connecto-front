@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'entrar', component: LoginComponent},
   { path: 'cadastrar', component: CadastrarComponent},
   { path: 'feed', component: InicioComponent },
-  { path: 'perfil/:id', component: PerfilComponent}
+  { path: 'perfil/:id', component: PerfilComponent},
+  { path: 'perfil/:id/portfolio', component: PerfilComponent}
 ];
 
 @NgModule({
