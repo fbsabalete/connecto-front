@@ -21,6 +21,8 @@ import { NovoPostComponent } from './novo-post/novo-post.component';
 import { AmigosComponent } from './amigos/amigos.component';
 import { InicioComponent } from './inicio/inicio.component';
 
+import { PerfilComponent } from './perfil/perfil.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +40,9 @@ import { InicioComponent } from './inicio/inicio.component';
     NovoPostComponent,
     AmigosComponent,
     InicioComponent,
-    PostNewComponent
-
+    PostNewComponent,
+    PortfolioComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

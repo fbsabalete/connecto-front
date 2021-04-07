@@ -1,0 +1,90 @@
+.background{
+  background: #ebe4e4;
+}
+
+.voltar{
+  position: fixed;
+ z-index: 1000;
+  top: 30px;
+  left:30px;
+
+  width: 20px;
+  height: 20px;
+
+}
+
+.borda-branca{
+  border: 1.5px solid white;
+}
+
+.capa{
+  position: relative;
+  height: 45vh;
+  background-image: url(https://w7.pngwing.com/pngs/403/18/png-transparent-purple-smoke-ink-desktop-display-resolution-smoke-paint-smoke-color-purple-violet-computer-wallpaper.png );
+  background-size: cover;
+}
+
+.foto-perfil{
+   width: 200px;
+   border-radius: 10%;
+  border: 2px solid white;
+ }
+
+ .foto-nome{
+
+  position: absolute;
+  bottom: -35%;
+
+ }
+.nav{
+  height: 15vh;
+  background-color: white;
+}
+
+
+.nav img{
+  width: 30px;
+  transition: all 0.3s;
+}
+
+.nav-item a{
+border: none;
+
+}
+
+.nav-item a.active{
+  border-color: none;
+  font-weight: bold;
+}
+
+.nav-item a.active img{
+  filter: invert(15%) sepia(93%) saturate(5198%) hue-rotate(294deg) brightness(92%) contrast(115%);
+
+}
+
+.nav-tabs{
+  border: none;
+}
+
+.borda{
+ border-radius: 15px;
+ border: 1.5px solid #dbd2d2;
+
+}
+
+.nav-item a{
+  text-decoration: none;
+  color: black;
+}
+
+.color-roxo{
+color: #9f19a3;
+}
+
+.edit{
+  right: 25px;
+  top: 50%;
+}
+
+
+
