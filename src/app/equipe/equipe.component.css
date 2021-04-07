@@ -2,7 +2,7 @@
   position: absolute;
   overflow: hidden;
   border-radius: 50%;
-  width: 80%;
+  width: 60%;
   background-color: gray;
   z-index: 1;
 }
@@ -142,7 +142,7 @@
 
 @media (max-width: 576px){
   .coluna-membro{
-      height: 90vw;
+      height: 70vw;
   }
   h2{
       font-size: 2rem;
@@ -151,25 +151,19 @@
 
 @media (min-width: 576px){
   .coluna-membro{
-      height: 250px;
+      height: 200px;
   }
 }
 
 @media (min-width: 768px){
   .coluna-membro{
-      height: 240px;
+      height: 195px;
   }
 }
 
 @media (min-width: 992px){
   .coluna-membro{
-      height: 280px;
-  }
-}
-
-@media (min-width: 992px){
-  .coluna-membro{
-      height: 330px;
+      height: 255px;
   }
 }
 
