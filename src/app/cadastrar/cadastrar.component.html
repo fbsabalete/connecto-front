@@ -42,7 +42,11 @@
             <div class="form-group">
               <input (keyup)="confirmSenha($event)" class="form-control" type="password" name="password" placeholder="Confirmar Senha" required>
               <div class="invalid-tooltip">As senhas devem ser iguais.</div>
-
+            </div>
+            <div class="form-group">
+              <input [(ngModel)]="user.telefone" (keyup)="validaTelefone($event)" type="text" class="form-control " name="telefone"
+                placeholder="Telefone">
+              <div class="invalid-tooltip">O telefone deve conter o DDD.</div>
             </div>
 
             <div class="form-button d-flex  flex-column">

@@ -1,6 +1,6 @@
 <div class="voltar">
   <a>
-    <img src="../../assets/img/previous.png" alt="" width="20px" class="rounded-circle borda-branca bg-white">
+    <img src="../../assets/img/previous.png" alt="" width="30px" class="rounded-circle borda-branca bg-white">
   </a>
 </div>
 <div class="container-fluid  capa">
@@ -29,11 +29,12 @@
     </li>
   </ul>
 
-  <div class="edit position-absolute ">
-    <a>
+  <!-- <div class="edit position-absolute ">
+    <a href="#editarPerfil" data-toggle="modal" data-target="#editarPerfil">
       <img src="../../assets/img/edit.png" alt="" width="30px">
     </a>
-  </div>
+  </div> -->
+
 </div>
 
 
@@ -70,10 +71,23 @@
               <p class="infC">Telefone: {{ user.telefone }}</p>
               <p class="infC">E-mail: {{ user.email }}</p>
 
-              <h4 class="mt-2">Serviços Prestados</h4>
+              <h4 class="mt-2 mb-3">Serviços Prestados</h4>
               <div *ngFor="let item of listaCategoria">
                 <p class="infC">{{item}}</p>
               </div>
+
+              <div class="edit position-absolute ">
+                <a href="#editarPerfil" data-toggle="modal" data-target="#editarPerfil">
+                  <img src="../../assets/img/edit.png" alt="" width="30px">
+                </a>
+              </div>
+
+              <!-- Botão para acionar modal -->
+               <!--  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarPerfil">
+                  Abrir modal de demonstração
+                </button> -->
+                  <!-- Botão para acionar modal -->
+
             </div>
           </div>
           <div [ngClass]="!checarUrl() ? 'show active': ''" class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
@@ -255,6 +269,62 @@
             <img class="imagem-modal" src="{{portfolio.urlImagem}}" alt="">
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="editarPerfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Perfil</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <input [(ngModel)]="user.nomeCompleto" (keyup)="validaNome($event)" class="form-control" type="text" name="name"
+            placeholder="Nome Completo" required>
+          <div class="invalid-tooltip">Digite um nome válido.</div>
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.email" (keyup)="validaEmail($event)" class="form-control" type="email" name="email" placeholder="E-mail"
+            required>
+          <div class="invalid-tooltip">Digite um email válido.</div>
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.fotoPerfil" (keyup)="validaFoto($event)" type="text" class="form-control is-valid" name="link-foto"
+            placeholder="Link Foto">
+          <div class="invalid-tooltip">A URL deve conter uma foto ou ser vazia.</div>
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.senha" (keyup)="validaSenha($event)" class="form-control" type="password" name="password"
+            placeholder="Senha" required>
+          <div class="invalid-tooltip">A senha deve conter entre 5 e 12 caracteres.</div>
+        </div>
+
+        <div class="form-group">
+          <input (keyup)="confirmSenha($event)" class="form-control" type="password" name="password" placeholder="Confirmar Senha" required>
+          <div class="invalid-tooltip">As senhas devem ser iguais.</div>
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.telefone" (keyup)="validaTelefone($event)" type="text" class="form-control " name="telefone"
+            placeholder="Telefone">
+          <div class="invalid-tooltip">O telefone deve conter o DDD.</div>
+        </div>
+        <textarea name="descricao" [(ngModel)]="user.sobreMim" cols="63" rows="5" placeholder="Sobre mim" style="resize: vertical; height: auto;" maxlength="3000"></textarea>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+        <button (click)='atualizar()' data-dismiss="modal" type="button" class="btn ibtn">Salvar</button>
       </div>
     </div>
   </div>

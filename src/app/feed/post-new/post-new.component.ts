@@ -60,7 +60,6 @@ export class PostNewComponent implements OnInit {
       this.tema = resp;
       this.tema = new Tema();
       this.findAllTemas();
-
     })
 
   }

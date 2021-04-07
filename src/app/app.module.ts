@@ -41,7 +41,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     InicioComponent,
     PostNewComponent,
     PortfolioComponent,
-    PerfilComponent
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,12 +49,14 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    OrderModule
+    OrderModule,
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
