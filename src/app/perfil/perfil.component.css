@@ -69,7 +69,7 @@ border: none;
 .borda{
  border-radius: 15px;
  border: 1.5px solid #dbd2d2;
- 
+
 
 }
 
@@ -220,6 +220,15 @@ color: #9f19a3;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
   font-size: 0.8rem;
+}
+
+.img-modal-container{
+  height: 70vh;
+  object-fit: contain;
+}
+
+.imagem-modal{
+  height: 100%;
 }
 
 @media (max-width: 576px) {

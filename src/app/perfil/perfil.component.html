@@ -95,7 +95,7 @@
             <section class="container">
               <div class="row row-cols-md-2">
                 <app-portfolio class="col d-flex justify-content-center" *ngFor="let item of user.portfolio | orderBy : key : reverse">
-                  <img class="imagem-card" src="{{item.urlImagem}}">
+                  <img role="button" (click)='findByIdPortfolio(item.id)' data-toggle="modal" data-target="#modalVerFoto" class="imagem-card" src="{{item.urlImagem}}">
                   <h5 id="texto-portfolio">{{item.descricao}}</h5>
                   <a href="" (click)='findByIdPortfolio(item.id)' *ngIf='user.id == idLogado' class="deletar"  data-toggle="modal" data-target="#modalDeletar" ><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
                 </app-portfolio>
@@ -235,6 +235,26 @@
       <div class="modal-footer">
 
         <button (click)="deletarPortfolio()" type="button" class="btn " data-dismiss="modal">Deletar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade p-0" id="modalVerFoto" tabindex="-1" aria-labelledby="modalVerFoto" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modalVerFotoLabel">{{portfolio.descricao}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12 img-modal-container d-flex justify-content-center">
+            <img class="imagem-modal" src="{{portfolio.urlImagem}}" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </div>
