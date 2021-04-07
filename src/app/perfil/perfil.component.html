@@ -6,7 +6,7 @@
 <div class="container-fluid  capa">
   <div class="foto-nome d-flex flex-column align-items-center ml-5">
     <img class="foto-perfil " src="{{user.fotoPerfil}}" alt="">
-    <p class="nome font-weight-bolder text-black mt-2">{{user.nomeCompleto}}</p>
+    <p class="nome font-weight-bolder mt-2">{{user.nomeCompleto}}</p>
   </div>
 
 </div>
@@ -86,14 +86,18 @@
               <p class="etiqueta">{{ item.tema.categoria }}</p>
             </app-postagem>
           </div>
+
           <div class="tab-pane fade p-4" id="contato" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="row justify-content-between borda-bottom">
             <h2>Portfólio</h2>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Adicionar items</button>
+            <button type="button" class="botao" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" aria-hidden="true"></i>  Adicionar</button>
+          </div>
             <section class="container">
               <div class="row row-cols-md-2">
                 <app-portfolio class="col d-flex justify-content-center" *ngFor="let item of user.portfolio | orderBy : key : reverse">
                   <img class="imagem-card" src="{{item.urlImagem}}">
                   <h5 id="texto-portfolio">{{item.descricao}}</h5>
+                  <a href="" (click)='findByIdPortfolio(item.id)' *ngIf='user.id == idLogado' class="deletar"  data-toggle="modal" data-target="#modalDeletar" ><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
                 </app-portfolio>
               </div>
             </section>
@@ -113,7 +117,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title " id="exampleModalLabel">Cadastrar Nova Categoria</h5>
+        <h5 class="modal-title " id="exampleModalLabel">Adicionar foto ao portfolio</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -134,6 +138,31 @@
       <div class="modal-footer">
 
         <button (click)="cadastrarPortfolio()" type="button" class="btn " data-dismiss="modal">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade p-0" id="modalDeletar" tabindex="-1" aria-labelledby="modalDeletar" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title " id="modalDeletarLabel">Deseja deletar essa foto ?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <app-portfolio class="col d-flex justify-content-center">
+          <img class="imagem-card" src="{{portfolio.urlImagem}}">
+          <h5 id="texto-portfolio">{{portfolio.descricao}}</h5>
+        </app-portfolio>
+
+      </div>
+      <div class="modal-footer">
+
+        <button (click)="deletarPortfolio()" type="button" class="btn " data-dismiss="modal">Deletar</button>
       </div>
     </div>
   </div>

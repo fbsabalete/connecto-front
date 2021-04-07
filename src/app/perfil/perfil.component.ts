@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment.prod';
 import { PortfolioService } from './../service/portfolio.service';
 import { Portfolio } from './../model/Portfolio';
 import { AuthService } from './../service/auth.service';
@@ -21,6 +22,8 @@ export class PerfilComponent implements OnInit {
 
   key = 'data';
   reverse = true;
+
+  idLogado = environment.id
 
   constructor(
     private authService: AuthService,
@@ -62,6 +65,23 @@ export class PerfilComponent implements OnInit {
     this.portfolioService.postPortfolio(this.portfolio).subscribe((resp) =>{
       this.portfolio = resp;
       this.findByIdUser(this.idUser)
+      this.portfolio = new Portfolio()
     })
+  }
+
+  findByIdPortfolio(id:number){
+    this.portfolioService.getByIdPortfolio(id).subscribe((resp: Portfolio)=>{
+      this.portfolio = resp
+    })
+  }
+
+  deletarPortfolio(){
+    this.portfolioService.deletePortfolio(this.portfolio.id).subscribe(()=>{
+
+      this.findByIdUser(this.idUser)
+      this.portfolio = new Portfolio()
+    })
+
+
   }
 }

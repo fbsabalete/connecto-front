@@ -148,5 +148,31 @@ color: #9f19a3;
   background: linear-gradient(90deg, #D0217E 0%, rgba(109, 44, 144, 0.97) 100%);
 }
 
+.botao{
+  width: 120px;
+  height: 30px;
+  border-radius: 15px;
+  border: solid 1px;
+  border-color: blueviolet;
+  transition: 1000ms ease;
+}
 
+.botao:hover {
+  color: white;
+  background-color: blueviolet;
+}
 
+.borda-bottom {
+  border-bottom: 2px solid slategrey;
+}
+
+.deletar{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+}
+
+.nome{
+  color: black;
+}
