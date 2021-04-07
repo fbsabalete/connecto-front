@@ -51,12 +51,13 @@ export class PostNewComponent implements OnInit {
       this.postagem = resp;
       this.postagem = new Postagem();
       this.lista.emit()
+      console.log(this.postagem.prestadorServicos)
 
     })
   }
 
   cadastrarTema(){
-    this.tema.descricao = this.tema.categoria
+
     this.temaService.postTema(this.tema).subscribe((resp) => {
       this.tema = resp;
       this.tema = new Tema();

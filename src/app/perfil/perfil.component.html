@@ -1,99 +1,93 @@
 <div class="voltar">
-  <a>
-    <img src="../../assets/img/previous.png" alt="" width="20px" class="rounded-circle borda-branca bg-white">
-  </a>
+    <a>
+        <img src="../../assets/img/previous.png" alt="" width="20px" class="rounded-circle borda-branca bg-white">
+    </a>
 </div>
 <div class="container-fluid  capa">
-  <div class="foto-nome d-flex flex-column align-items-center ml-5">
-    <img class="foto-perfil " src="{{user.fotoPerfil}}" alt="">
-    <p class="nome font-weight-bolder text-black mt-2">{{user.nomeCompleto}}</p>
-  </div>
+    <div class="foto-nome d-flex flex-column align-items-center ml-5">
+        <img class="foto-perfil " src="{{user.fotoPerfil}}" alt="">
+        <p class="nome font-weight-bolder text-black mt-2">{{user.nomeCompleto}}</p>
+    </div>
 
 </div>
 <div class=" d-flex  border-bottom ">
-  <ul class="nav nav-tabs d-flex align-items-center justify-content-between m-auto" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active show d-flex align-items-center flex-column" id="profile-tab" data-toggle="tab" href="#perfil"
-      role="tab" aria-controls="profile" aria-selected="false"><img src="../../assets/img/post.svg"
-      alt=""><span>Postagens</span> </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link d-flex align-items-center flex-column" id="contact-tab" data-toggle="tab" href="#contato"
-      role="tab" aria-controls="contact" aria-selected="false"><img src="../../assets/img/resume.svg" alt="">
-      <span>Portifolio</span></a>
-    </li>
-    <li class="nav-item ">
-      <a class="nav-link d-flex align-items-center flex-column" id="home-tab" data-toggle="tab" href="#home"
-        role="tab" aria-controls="home" aria-selected="true"><img src="../../assets/img/user (1).svg"
-          alt=""><span>Informações</span> </a>
-    </li>
-  </ul>
+    <ul class="nav nav-tabs d-flex align-items-center justify-content-between m-auto" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active show d-flex align-items-center flex-column" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile" aria-selected="false"><img src="../../assets/img/post.svg" alt=""><span>Postagens</span> </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center flex-column" id="contact-tab" data-toggle="tab" href="#contato" role="tab" aria-controls="contact" aria-selected="false"><img src="../../assets/img/resume.svg" alt="">
+                <span>Portifolio</span></a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link d-flex align-items-center flex-column" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><img src="../../assets/img/user (1).svg" alt=""><span>Informações</span> </a>
+        </li>
+    </ul>
 
-  <div class="edit position-absolute ">
-    <a >
-      <img src="../../assets/img/edit.png" alt="" width="30px">
-    </a>
-  </div>
+    <div class="edit position-absolute ">
+        <a>
+            <img src="../../assets/img/edit.png" alt="" width="30px">
+        </a>
+    </div>
 </div>
 
 
 
 <div class="container-fluid bg-light">
-  <div class="row pt-3">
-    <div class="col-md-3  ">
-      <div class="col-md-12 borda pt-3 bg-white">
-        <div class="row d-flex justify-content-center ">
-          <div class="col-md-6 text-center">
-            <p class="mb-0 color-roxo font-weight-bold ">5</p>
-            <p class="text-secondary">Conexões</p>
-          </div>
-          <div class="col-md-6 text-center">
-            <p class="mb-0 color-roxo font-weight-bold" >6</p>
-            <p class="text-secondary">Serviços</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center ">
-            <h3 class="border-top pt-2">Sobre Mim</h3>
-            <p class="text-justify p-4 text-secondary"> {{user.sobreMim}} </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="col-md-12 borda pt-3 bg-white">
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div>
-              <h4 class="mt-0">Informações de Contato</h4>
-              <p class="infC">Nome: {{user.nomeCompleto}} </p>
-              <p class="infC">Telefone: {{ user.telefone }}</p>
-              <p class="infC">E-mail: {{ user.email }}</p>
-
-              <h4 class="mt-2">Serviços Prestados</h4>
-              <div *ngFor="let item of listaCategoria">
-                <p class="infC">{{item}}</p>
-              </div>
+    <div class="row pt-3">
+        <div class="col-md-3  ">
+            <div class="col-md-12 borda pt-3 bg-white">
+                <div class="row d-flex justify-content-center ">
+                    <div class="col-md-6 text-center">
+                        <p class="mb-0 color-roxo font-weight-bold ">5</p>
+                        <p class="text-secondary">Conexões</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <p class="mb-0 color-roxo font-weight-bold">6</p>
+                        <p class="text-secondary">Serviços</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center ">
+                        <h3 class="border-top pt-2">Sobre Mim</h3>
+                        <p class="text-justify p-4 text-secondary"> {{user.sobreMim}} </p>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
-            <app-postagem *ngFor="let item of user.postagem">
-              <img class="foto rounded-circle" src="{{ user.fotoPerfil }}" alt="foto-perfil"
-                  width="50px" height="50px" />
-              <h4 class="nome">{{ user.nomeCompleto }}</h4>
-              <p>{{ item.descricaoPost }}</p>
-              <img src="{{ item.linkImagem }}" alt="" width="100%" />
-              <p class="etiqueta">{{ item.tema.categoria }}</p>
-          </app-postagem>
-          </div>
-          <div class="tab-pane fade" id="contato" role="tabpanel" aria-labelledby="contact-tab"></div>
         </div>
-      </div>
+        <div class="col-md-6">
+            <div class="col-md-12 borda pt-3 bg-white">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div>
+                            <h4 class="mt-0">Informações de Contato</h4>
+                            <p class="infC">Nome: {{user.nomeCompleto}} </p>
+                            <p class="infC">Telefone: {{ user.telefone }}</p>
+                            <p class="infC">E-mail: {{ user.email }}</p>
+
+                            <h4 class="mt-2">Serviços Prestados</h4>
+                            <div *ngFor="let item of listaCategoria">
+                                <p class="infC">{{item}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
+                        <app-postagem *ngFor="let item of user.postagem">
+                            <img class="foto rounded-circle" src="{{ user.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
+                            <h4 class="nome">{{ user.nomeCompleto }}</h4>
+                            <p>{{ item.descricaoPost }}</p>
+                            <img src="{{ item.linkImagem }}" alt="" width="100%" />
+                            <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
+                        </app-postagem>
+                    </div>
+                    <div class="tab-pane fade" id="contato" role="tabpanel" aria-labelledby="contact-tab"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 ">
+            <div class="col-md-12 borda pt-3 bg-white">
+                airline_seat_individual_suite
+            </div>
+        </div>
     </div>
-    <div class="col-md-3 ">
-      <div class="col-md-12 borda pt-3 bg-white">
-      airline_seat_individual_suite
-      </div>
-    </div>
-  </div>
 </div>

@@ -7,32 +7,30 @@
                         <div class="tab-pane fade active show" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
                             <app-post-new (lista)="onLista()"></app-post-new>
                             <app-postagem *ngFor="let item of listaPostagem">
-                                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil"
-                                    width="50px" height="50px" />
-                                <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
-                                <p>{{ item.descricaoPost }}</p>
-                                <img src="{{ item.linkImagem }}" alt="" width="100%" />
-                                <p class="etiqueta">{{ item.tema.categoria }}</p>
+                                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
+                                <h4 class="nome ml-2">{{ item.usuario.nomeCompleto }}</h4>
+                                <p class=" text-justify"> {{ item.descricaoPost }}</p>
+                                <img class=" rounded-lg " src="{{ item.linkImagem }}" alt="" width="100%" height="350px" />
+                                <p class="etiqueta2 p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
+                                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.usuario.prestadorServicos ? 'Disponivel ' : 'Buscando ' + item.tema.categoria}}</p>
                             </app-postagem>
                         </div>
                         <div class="tab-pane fade" id="nav-servicos" role="tabpanel" aria-labelledby="nav-servicos-tab">
                             <app-postagem *ngFor="let item of listaPostagemServico">
-                                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil"
-                                    width="50px" height="50px" />
+                                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
                                 <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
                                 <p>{{ item.descricaoPost }}</p>
                                 <img src="{{ item.linkImagem }}" alt="" width="100%" />
-                                <p class="etiqueta">{{ item.tema.categoria }}</p>
+                                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
                             </app-postagem>
                         </div>
                         <div class="tab-pane fade" id="nav-vagas" role="tabpanel" aria-labelledby="nav-vagas-tab">
                             <app-postagem *ngFor="let item of listaPostagemVagas">
-                                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil"
-                                    width="50px" height="50px" />
+                                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
                                 <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
                                 <p>{{ item.descricaoPost }}</p>
                                 <img src="{{ item.linkImagem }}" alt="" width="100%" />
-                                <p class="etiqueta">{{ item.tema.categoria }}</p>
+                                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
                             </app-postagem>
                         </div>
                     </div>
@@ -64,9 +62,7 @@
                 <div class="teste mb-2 mt-4 ml-3">
                     <div class="amigo d-flex align-items-center">
                         <div class="amigo-img mr-2">
-                            <img class="rounded-circle"
-                                src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/3/6050ee5fe1cff-bpthumb.jpg"
-                                alt="" width="40px" height="40px" />
+                            <img class="rounded-circle" src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/3/6050ee5fe1cff-bpthumb.jpg" alt="" width="40px" height="40px" />
                         </div>
                         <div class="texto-amigo">
                             <h5 class="m-0">Manoel Souza</h5>
@@ -77,9 +73,7 @@
                 <div class="teste mb-2 ml-3">
                     <div class="amigo d-flex align-items-center">
                         <div class="amigo-img mr-2">
-                            <img class="rounded-circle"
-                                src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/6/5e2cccd55f95b-bpthumb.jpg"
-                                alt="" width="40px" height="40px" />
+                            <img class="rounded-circle" src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/6/5e2cccd55f95b-bpthumb.jpg" alt="" width="40px" height="40px" />
                         </div>
                         <div class="texto-amigo">
                             <h5 class="m-0">Renata Oliveira</h5>
@@ -90,9 +84,7 @@
                 <div class="teste mb-2 ml-3">
                     <div class="amigo d-flex align-items-center">
                         <div class="amigo-img mr-2">
-                            <img class="rounded-circle"
-                                src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/14/5e2d01291b6b9-bpthumb.jpg"
-                                alt="" width="40px" height="40px" />
+                            <img class="rounded-circle" src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/14/5e2d01291b6b9-bpthumb.jpg" alt="" width="40px" height="40px" />
                         </div>
                         <div class="texto-amigo">
                             <h5 class="m-0">Robson Nunes</h5>
@@ -103,9 +95,7 @@
                 <div class="teste mb-2 ml-3">
                     <div class="amigo d-flex align-items-center">
                         <div class="amigo-img mr-2">
-                            <img class="rounded-circle"
-                                src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/9/5e2ce3f5bcd91-bpthumb.jpg"
-                                alt="" width="40px" height="40px" />
+                            <img class="rounded-circle" src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/9/5e2ce3f5bcd91-bpthumb.jpg" alt="" width="40px" height="40px" />
                         </div>
                         <div class="texto-amigo">
                             <h5 class="m-0">Joaquim Gouveia</h5>
@@ -116,9 +106,7 @@
                 <div class="teste ml-3">
                     <div class="amigo d-flex align-items-center">
                         <div class="amigo-img mr-2">
-                            <img class="rounded-circle"
-                                src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/12/5e2cfd5d1d7c0-bpthumb.jpg"
-                                alt="" width="40px" height="40px" />
+                            <img class="rounded-circle" src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/12/5e2cfd5d1d7c0-bpthumb.jpg" alt="" width="40px" height="40px" />
                         </div>
                         <div class="texto-amigo">
                             <h5 class="m-0">Amanda Lopes</h5>

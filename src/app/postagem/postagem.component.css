@@ -91,17 +91,32 @@ ul {
 }
 
 .etiqueta {
+    width: 200px;
+    height: 25px;
+    position: absolute;
+    right: 200px;
+    top: 0px;
+    background-color: #6D2E8D;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 8px 8px;
+    align-items: center;
+}
+
+
+/* .etiqueta2 {
+
     width: 100px;
     height: 30px;
     position: absolute;
-    right: 0;
-    top: 30px;
+    right: 0px;
+    top: 25px;
     background-color: rgba(109, 44, 144, 0.97);
     display: flex;
     justify-content: center;
     border-radius: 8px 0 0 8px;
     align-items: center;
-}
+} */
 
 .etiqueta p {
     padding: 0;
@@ -160,7 +175,7 @@ ul {
 
 .conteudo {
     margin-left: 35px;
-    width: 550px;
+    width: 430px;
     height: 60px;
     border-radius: 30px;
     background-color: rgba(128, 128, 128, 0.062);

@@ -23,6 +23,7 @@ export class FeedComponent implements OnInit {
   listaPostagemServico: Postagem[]
   listaPostagemVagas: Postagem[]
 
+
   ngOnInit() {
     this.postagens();
 
