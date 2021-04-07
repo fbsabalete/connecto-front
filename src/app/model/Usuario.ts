@@ -9,5 +9,7 @@ export class Usuario{
   public senha: string
   public tipoAdmin: string
   public postagem: Postagem[]
+  public telefone: string
+  public sobreMim: string
 
 }

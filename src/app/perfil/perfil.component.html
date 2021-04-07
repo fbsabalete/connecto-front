@@ -55,9 +55,7 @@
         <div class="row">
           <div class="col-md-12 text-center ">
             <h3 class="border-top pt-2">Sobre Mim</h3>
-            <p class="text-justify p-4 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos neque
-              praesentium dicta inventore commodi! Quod, quibusdam, inventore laborum nemo aut, quis perferendis
-              laudantium sapiente natus ex eos repellat debitis explicabo? </p>
+            <p class="text-justify p-4 text-secondary"> {{user.sobreMim}} </p>
           </div>
         </div>
       </div>
@@ -65,7 +63,19 @@
     <div class="col-md-6">
       <div class="col-md-12 borda pt-3 bg-white">
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab">Postagens</div>
+          <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div>
+              <h4 class="mt-0">Informações de Contato</h4>
+              <p class="infC">Nome: {{user.nomeCompleto}} </p>
+              <p class="infC">Telefone: {{ user.telefone }}</p>
+              <p class="infC">E-mail: {{ user.email }}</p>
+
+              <h4 class="mt-2">Serviços Prestados</h4>
+              <div *ngFor="let item of listaCategoria">
+                <p class="infC">{{item}}</p>
+              </div>
+            </div>
+          </div>
           <div class="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
             <app-postagem *ngFor="let item of user.postagem">
               <img class="foto rounded-circle" src="{{ user.fotoPerfil }}" alt="foto-perfil"
