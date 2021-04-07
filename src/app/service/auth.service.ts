@@ -30,4 +30,8 @@ export class AuthService {
       headers: {'Authorization':environment.token}
     })
   }
+
+  atualizar(user: Usuario): Observable<Usuario>{
+    return this.http.put<Usuario>(this.baseUrl, user, { headers: {'Authorization': environment.token}})
+  }
 }

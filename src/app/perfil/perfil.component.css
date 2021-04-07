@@ -91,5 +91,9 @@ color: #9f19a3;
   margin-bottom: 0;
 }
 
-
+.ibtn{
+  background: linear-gradient(90deg, #D0217E 0%, rgba(109, 44, 144, 0.97) 100%);
+  color: #fff;
+  box-shadow: 0 0 0 rgb(0 0 0 / 16%);
+}
 

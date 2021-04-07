@@ -24,6 +24,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,8 +43,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     InicioComponent,
     PostNewComponent,
     PortfolioComponent,
-    PerfilComponent
-  ],
+    PerfilComponent,
+   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
