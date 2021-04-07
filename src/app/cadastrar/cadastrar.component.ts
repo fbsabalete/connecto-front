@@ -20,6 +20,7 @@ export class CadastrarComponent implements OnInit {
   emailValido: boolean = false;
   senhaValida: boolean = false;
   fotoValida: boolean = true;
+  telefoneValido: boolean = false;
 
   confirmarSenha: String
 
@@ -45,6 +46,10 @@ export class CadastrarComponent implements OnInit {
   validaFoto(event: any){
     let regex = /\.(jpe?g|png)$/i
     this.fotoValida = this.validation(!regex.test(event.target.value) && event.target.value.length != 0, event)
+  }
+
+  validaTelefone(event: any){
+    this.telefoneValido = this.validation(event.target.value.length != 11, event);
   }
 
   validaSenha(event: any){
