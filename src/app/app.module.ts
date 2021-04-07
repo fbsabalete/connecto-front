@@ -17,9 +17,9 @@ import { FormsModule } from '@angular/forms';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { FeedComponent } from './feed/feed.component';
 import { PostagemComponent } from './postagem/postagem.component';
-import { NovoPostComponent } from './novo-post/novo-post.component';
 import { AmigosComponent } from './amigos/amigos.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 import { PerfilComponent } from './perfil/perfil.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
@@ -37,7 +37,6 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     MenuLateralComponent,
     FeedComponent,
     PostagemComponent,
-    NovoPostComponent,
     AmigosComponent,
     InicioComponent,
     PostNewComponent,
@@ -49,7 +48,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     FontAwesomeModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy,

@@ -1,3 +1,5 @@
+import { PortfolioService } from './../service/portfolio.service';
+import { Portfolio } from './../model/Portfolio';
 import { AuthService } from './../service/auth.service';
 import { Usuario } from './../model/Usuario';
 import { Component, OnInit } from '@angular/core';
@@ -15,10 +17,17 @@ export class PerfilComponent implements OnInit {
   user: Usuario = new Usuario()
   listaCategoria: string[]
 
+  portfolio: Portfolio = new Portfolio()
+
+  key = 'data';
+  reverse = true;
+
   constructor(
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private portfolioService: PortfolioService
+    ) { }
 
   ngOnInit(){
     this.idUser = this.route.snapshot.params['id']
@@ -45,6 +54,14 @@ export class PerfilComponent implements OnInit {
           this.listaCategoria.push(item.tema.categoria)
         }
       })
+    })
+  }
+
+  cadastrarPortfolio(){
+    this.portfolio.usuario = this.user
+    this.portfolioService.postPortfolio(this.portfolio).subscribe((resp) =>{
+      this.portfolio = resp;
+      this.findByIdUser(this.idUser)
     })
   }
 }

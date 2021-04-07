@@ -13,24 +13,24 @@
 <div class=" d-flex  border-bottom ">
   <ul class="nav nav-tabs d-flex align-items-center justify-content-between m-auto" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active show d-flex align-items-center flex-column" id="profile-tab" data-toggle="tab" href="#perfil"
-      role="tab" aria-controls="profile" aria-selected="false"><img src="../../assets/img/post.svg"
-      alt=""><span>Postagens</span> </a>
+      <a class="nav-link active show d-flex align-items-center flex-column" id="profile-tab" data-toggle="tab"
+        href="#perfil" role="tab" aria-controls="profile" aria-selected="false"><img src="../../assets/img/post.svg"
+          alt=""><span>Postagens</span> </a>
     </li>
     <li class="nav-item">
       <a class="nav-link d-flex align-items-center flex-column" id="contact-tab" data-toggle="tab" href="#contato"
-      role="tab" aria-controls="contact" aria-selected="false"><img src="../../assets/img/resume.svg" alt="">
-      <span>Portifolio</span></a>
+        role="tab" aria-controls="contact" aria-selected="false"><img src="../../assets/img/resume.svg" alt="">
+        <span>Portifolio</span></a>
     </li>
     <li class="nav-item ">
-      <a class="nav-link d-flex align-items-center flex-column" id="home-tab" data-toggle="tab" href="#home"
-        role="tab" aria-controls="home" aria-selected="true"><img src="../../assets/img/user (1).svg"
+      <a class="nav-link d-flex align-items-center flex-column" id="home-tab" data-toggle="tab" href="#home" role="tab"
+        aria-controls="home" aria-selected="true"><img src="../../assets/img/user (1).svg"
           alt=""><span>Informações</span> </a>
     </li>
   </ul>
 
   <div class="edit position-absolute ">
-    <a >
+    <a>
       <img src="../../assets/img/edit.png" alt="" width="30px">
     </a>
   </div>
@@ -48,7 +48,7 @@
             <p class="text-secondary">Conexões</p>
           </div>
           <div class="col-md-6 text-center">
-            <p class="mb-0 color-roxo font-weight-bold" >6</p>
+            <p class="mb-0 color-roxo font-weight-bold">6</p>
             <p class="text-secondary">Serviços</p>
           </div>
         </div>
@@ -78,21 +78,62 @@
           </div>
           <div class="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
             <app-postagem *ngFor="let item of user.postagem">
-              <img class="foto rounded-circle" src="{{ user.fotoPerfil }}" alt="foto-perfil"
-                  width="50px" height="50px" />
+              <img class="foto rounded-circle" src="{{ user.fotoPerfil }}" alt="foto-perfil" width="50px"
+                height="50px" />
               <h4 class="nome">{{ user.nomeCompleto }}</h4>
               <p>{{ item.descricaoPost }}</p>
               <img src="{{ item.linkImagem }}" alt="" width="100%" />
               <p class="etiqueta">{{ item.tema.categoria }}</p>
-          </app-postagem>
+            </app-postagem>
           </div>
-          <div class="tab-pane fade" id="contato" role="tabpanel" aria-labelledby="contact-tab"></div>
+          <div class="tab-pane fade p-4" id="contato" role="tabpanel" aria-labelledby="contact-tab">
+            <h2>Portfólio</h2>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Adicionar items</button>
+            <section class="container">
+              <div class="row row-cols-md-2">
+                <app-portfolio class="col d-flex justify-content-center" *ngFor="let item of user.portfolio | orderBy : key : reverse">
+                  <img class="imagem-card" src="{{item.urlImagem}}">
+                  <h5 id="texto-portfolio">{{item.descricao}}</h5>
+                </app-portfolio>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </div>
     <div class="col-md-3 ">
       <div class="col-md-12 borda pt-3 bg-white">
-      airline_seat_individual_suite
+        airline_seat_individual_suite
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade p-0" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title " id="exampleModalLabel">Cadastrar Nova Categoria</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group d-flex flex-column justify-content-center align-items-center">
+
+              <input [(ngModel)]="portfolio.urlImagem" name="imagem-url" type="text" class="form-control input-portfolio"
+                placeholder="Insira a URL da imagem" id="imagem-url">
+
+              <input [(ngModel)]="portfolio.descricao" name="descricao-portfolio" type="text" class="form-control input-portfolio mt-3"
+              placeholder="Insira uma descrição" id="descricao-portfolio">
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+
+        <button (click)="cadastrarPortfolio()" type="button" class="btn " data-dismiss="modal">Salvar</button>
       </div>
     </div>
   </div>

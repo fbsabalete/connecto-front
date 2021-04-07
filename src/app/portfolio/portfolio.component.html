@@ -1,15 +1,11 @@
-<section class="container">
-  <h2>Pórtfolio</h2>
-  <div class="row row-cols-md-2">
-    <div class="col d-flex justify-content-center">
+
+    <div class="col d-flex justify-content-center pt-4">
       <div class="card content-card text-white">
         <div class="card-img-div card-img">
-          <img src="https://imgur.com/Egk4bFP.png" class="imagem-card" alt="...">
+          <ng-content select=".imagem-card" class="imagem-card"></ng-content>
         </div>
         <div class="card-img-overlay">
-          <h5>Clone da Landing page Red Bull</h5>
+          <ng-content select="#texto-portfolio"></ng-content>
         </div>
       </div>
     </div>
-  </div>
-</section>
