@@ -86,7 +86,10 @@
             <div>
               <h4 class="mt-0">Informações de Contato</h4>
               <p class="infC">Nome: {{user.nomeCompleto}} </p>
-              <p class="infC">Telefone: {{ user.telefone }}</p>
+              <p class="infC">Telefone: {{ user.telefone }}
+                <a target="_blank" class="verde" href="https://api.whatsapp.com/send?phone=55{{user.telefone}}&text=Ol%C3%A1%2C%20{{user.nomeCompleto}}!%20Tudo%20bem%3F%20Encontrei%20seu%20perfil%20na%20Connecto%2C%20tenho%20interesse%20nos%20seus%20servi%C3%A7os!">
+                  <fa-icon [icon]="faWhatsapp"></fa-icon></a>
+              </p>
               <p class="infC">E-mail: {{ user.email }}</p>
 
               <h4 class="mt-2 mb-3">Serviços Prestados</h4>

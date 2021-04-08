@@ -4,6 +4,7 @@ import { Postagem } from './../model/Postagem';
 
 import { Component, OnInit } from '@angular/core';
 import { Tema } from '../model/Tema';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-feed',
@@ -22,6 +23,7 @@ export class FeedComponent implements OnInit {
   listaTemas: Tema[];
   listaFiltrada: Postagem[] = [];
 
+  faWhatsapp = faWhatsapp;
 
   ngOnInit() {
     this.postagens();
