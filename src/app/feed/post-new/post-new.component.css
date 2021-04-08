@@ -135,8 +135,21 @@ ul {
 
 @media (max-width: 576px) {
     .card-new-post {
-        width: 85vw;
+        width: 90vw;
         margin: 0;
         padding: 0;
+    }
+    .check-checkbox {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-check label {
+        font-size: 0.7rem;
+    }
+    .modal-header h5 {
+        margin-left: 3.5rem;
+    }
+    .modal-header h5::after {
+        left: 77px;
     }
 }

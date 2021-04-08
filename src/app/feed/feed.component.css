@@ -18,6 +18,7 @@ ul {
 /* amigos */
 
 .borda-amigos {
+    width: 365px;
     border-left: solid 1px #e7edf2;
     background-color: #f5f5f586;
     right: 0;
@@ -226,7 +227,7 @@ ul {
 
 .conteudo {
     margin-left: 35px;
-    width: 550px;
+    width: 250px;
     height: 60px;
     border-radius: 30px;
     background-color: rgba(128, 128, 128, 0.062);
@@ -272,5 +273,11 @@ ul {
         padding: 15px;
         text-align: justify;
         color: black;
+    }
+    .tab-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }

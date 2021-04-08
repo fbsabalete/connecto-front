@@ -51,6 +51,7 @@ export class PostNewComponent implements OnInit {
       this.postagem = resp;
       this.postagem = new Postagem();
       this.lista.emit()
+      console.log(this.postagem.prestadorServicos)
 
     })
   }

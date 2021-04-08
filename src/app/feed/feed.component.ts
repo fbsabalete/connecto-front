@@ -4,8 +4,6 @@ import { Postagem } from './../model/Postagem';
 
 import { Component, OnInit } from '@angular/core';
 import { Tema } from '../model/Tema';
-import { environment } from 'src/environments/environment.prod';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-feed',
@@ -23,6 +21,7 @@ export class FeedComponent implements OnInit {
   listaFiltro: string[] = [];
   listaTemas: Tema[];
   listaFiltrada: Postagem[] = [];
+
 
   ngOnInit() {
     this.postagens();
@@ -57,6 +56,8 @@ export class FeedComponent implements OnInit {
         }
       });
       this.listaPostagem.reverse();
+      this.listaPostagemServico.reverse()
+      this.listaPostagemVagas.reverse()
       this.listaFiltrada = this.listaPostagemServico;
     });
   }

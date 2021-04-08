@@ -1,18 +1,20 @@
-<div class="row d-flex flex container-feed">
+<div class="row d-flex flex container-feed ">
   <div class="d-flex flex-column feed col-md-8">
     <div class="container mt-3">
       <div class="row d-flex flex-column justify-content-center">
-        <div class="col-md-12">
-          <div class="tab-content mt-5 px-5" id="pills-tabContent">
+        <div class="col-12">
+          <div class="tab-content mt-5 px-3 px-sm-1 " id="pills-tabContent">
             <div class="tab-pane fade active show" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
               <app-post-new (lista)="onLista()"></app-post-new>
               <app-postagem *ngFor="let item of listaPostagem">
-                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px"
+                <img class="foto rounded-circle mr-2" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px"
                   height="50px" />
-                <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
-                <p>{{ item.descricaoPost }}</p>
-                <img src="{{ item.linkImagem }}" alt="" width="100%" />
-                <p class="etiqueta">{{ item.tema.categoria }}</p>
+                <h4 class="nome m-0">{{ item.usuario.nomeCompleto }}</h4>
+                <p class=" text-justify mt-3"> {{ item.descricaoPost }}</p>
+                <img class=" rounded-lg " src="{{ item.linkImagem }}" alt="" width="100%" />
+                <p class="etiqueta2 p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
+                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.prestadorServicos ? 'Disponivel ' +
+                  item.tema.categoria : 'Buscando ' + item.tema.categoria}}</p>
               </app-postagem>
             </div>
             <div class="tab-pane fade" id="nav-servicos" role="tabpanel" aria-labelledby="nav-servicos-tab">
@@ -34,14 +36,13 @@
                   </div>
                 </div>
               </div>
-
               <app-postagem *ngFor="let item of listaFiltrada">
                 <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px"
                   height="50px" />
                 <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
                 <p>{{ item.descricaoPost }}</p>
                 <img src="{{ item.linkImagem }}" alt="" width="100%" />
-                <p class="etiqueta">{{ item.tema.categoria }}</p>
+                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
               </app-postagem>
             </div>
             <div class="tab-pane fade" id="nav-vagas" role="tabpanel" aria-labelledby="nav-vagas-tab">
@@ -51,97 +52,85 @@
                 <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
                 <p>{{ item.descricaoPost }}</p>
                 <img src="{{ item.linkImagem }}" alt="" width="100%" />
-                <p class="etiqueta">{{ item.tema.categoria }}</p>
+                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
               </app-postagem>
             </div>
           </div>
         </div>
       </div>
+
+
     </div>
-    <!-- <div class="tab-content mt-5 px-5" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="nav-perfil" role="tabpanel" aria-labelledby="nav-perfil-tab">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima voluptatum ipsum, laboriosam cum error ipsa mollitia officiis nobis velit illum hic excepturi perferendis suscipit nam dolores fugiat totam qui. Quasi!</p>
-        </div>
-        <div class="tab-pane fade" id="nav-portfolio" role="tabpanel" aria-labelledby="nav-portfolio-tab">
-            <p>AAAAAAAAAAAAAAAAAAAAAAA</p>
-        </div>
-        <div class="tab-pane fade" id="nav-servicos" role="tabpanel" aria-labelledby="nav-servicos-tab">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptas sed maxime libero ut, natus, dicta provident necessitatibus repellendus, nobis nisi! Atque magni voluptatem dolorem nostrum eligendi modi, id cupiditate.</p>
-        </div>
-        <div class="tab-pane fade" id="nav-vagas" role="tabpanel" aria-labelledby="nav-vagas-tab">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptas sed maxime libero ut, natus, dicta provident necessitatibus repellendus, nobis nisi! Atque magni voluptatem dolorem nostrum eligendi modi, id cupiditate.</p>
-        </div>
-    </div>
-     -->
   </div>
-  <div class="col-md-3 d-sm-none d-md-block vh-100 borda-amigos position-fixed ">
-    <div class="row bg-white">
-      <div class="col-8 container-amigos shadow-sm">
-        <div class="header-amigo mt-4 ml-3">
-          <h3>Amigos</h3>
-        </div>
-        <div class="teste mb-2 mt-4 ml-3">
-          <div class="amigo d-flex align-items-center">
-            <div class="amigo-img mr-2">
-              <img class="rounded-circle"
-                src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/3/6050ee5fe1cff-bpthumb.jpg"
-                alt="" width="40px" height="40px" />
-            </div>
-            <div class="texto-amigo">
-              <h5 class="m-0">Manoel Souza</h5>
-            </div>
+</div>
+
+<div class="container-fluid d-sm-none d-md-block vh-100 borda-amigos position-fixed">
+  <div class="row">
+    <div class="col-8 container-amigos shadow-sm">
+      <div class="header-amigo mt-4 ml-3">
+        <h3>Amigos</h3>
+      </div>
+      <div class="teste mb-2 mt-4 ml-3">
+        <div class="amigo d-flex align-items-center">
+          <div class="amigo-img mr-2">
+            <img class="rounded-circle"
+              src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/3/6050ee5fe1cff-bpthumb.jpg"
+              alt="" width="40px" height="40px" />
+          </div>
+          <div class="texto-amigo">
+            <h5 class="m-0">Manoel Souza</h5>
           </div>
         </div>
+      </div>
 
-        <div class="teste mb-2 ml-3">
-          <div class="amigo d-flex align-items-center">
-            <div class="amigo-img mr-2">
-              <img class="rounded-circle"
-                src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/6/5e2cccd55f95b-bpthumb.jpg"
-                alt="" width="40px" height="40px" />
-            </div>
-            <div class="texto-amigo">
-              <h5 class="m-0">Renata Oliveira</h5>
-            </div>
+      <div class="teste mb-2 ml-3">
+        <div class="amigo d-flex align-items-center">
+          <div class="amigo-img mr-2">
+            <img class="rounded-circle"
+              src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/6/5e2cccd55f95b-bpthumb.jpg"
+              alt="" width="40px" height="40px" />
+          </div>
+          <div class="texto-amigo">
+            <h5 class="m-0">Renata Oliveira</h5>
           </div>
         </div>
+      </div>
 
-        <div class="teste mb-2 ml-3">
-          <div class="amigo d-flex align-items-center">
-            <div class="amigo-img mr-2">
-              <img class="rounded-circle"
-                src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/14/5e2d01291b6b9-bpthumb.jpg"
-                alt="" width="40px" height="40px" />
-            </div>
-            <div class="texto-amigo">
-              <h5 class="m-0">Robson Nunes</h5>
-            </div>
+      <div class="teste mb-2 ml-3">
+        <div class="amigo d-flex align-items-center">
+          <div class="amigo-img mr-2">
+            <img class="rounded-circle"
+              src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/14/5e2d01291b6b9-bpthumb.jpg"
+              alt="" width="40px" height="40px" />
+          </div>
+          <div class="texto-amigo">
+            <h5 class="m-0">Robson Nunes</h5>
           </div>
         </div>
+      </div>
 
-        <div class="teste mb-2 ml-3">
-          <div class="amigo d-flex align-items-center">
-            <div class="amigo-img mr-2">
-              <img class="rounded-circle"
-                src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/9/5e2ce3f5bcd91-bpthumb.jpg"
-                alt="" width="40px" height="40px" />
-            </div>
-            <div class="texto-amigo">
-              <h5 class="m-0">Joaquim Gouveia</h5>
-            </div>
+      <div class="teste mb-2 ml-3">
+        <div class="amigo d-flex align-items-center">
+          <div class="amigo-img mr-2">
+            <img class="rounded-circle"
+              src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/9/5e2ce3f5bcd91-bpthumb.jpg"
+              alt="" width="40px" height="40px" />
+          </div>
+          <div class="texto-amigo">
+            <h5 class="m-0">Joaquim Gouveia</h5>
           </div>
         </div>
+      </div>
 
-        <div class="teste ml-3">
-          <div class="amigo d-flex align-items-center">
-            <div class="amigo-img mr-2">
-              <img class="rounded-circle"
-                src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/12/5e2cfd5d1d7c0-bpthumb.jpg"
-                alt="" width="40px" height="40px" />
-            </div>
-            <div class="texto-amigo">
-              <h5 class="m-0">Amanda Lopes</h5>
-            </div>
+      <div class="teste ml-3">
+        <div class="amigo d-flex align-items-center">
+          <div class="amigo-img mr-2">
+            <img class="rounded-circle"
+              src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/12/5e2cfd5d1d7c0-bpthumb.jpg"
+              alt="" width="40px" height="40px" />
+          </div>
+          <div class="texto-amigo">
+            <h5 class="m-0">Amanda Lopes</h5>
           </div>
         </div>
       </div>
