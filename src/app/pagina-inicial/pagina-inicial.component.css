@@ -1,3 +1,43 @@
+/* Teste letreiro pg inicial */
+.cw-100{
+  width: 300vw;
+}
+.d-none {
+  display: none;
+}
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40pt;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.typing {
+  position: relative;
+  display: inline-block;
+}
+.typing::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  color: black;
+  background: white;
+  animation: typing 1s ease-out alternate infinite;
+}
+@keyframes typing {
+  to {
+    width: 0;
+ }
+}
+
+
+
+
+/* Teste letreiro pg inicial */
+
+
+
 .scroll-down{
   transform: translateY(-100%);
   transition: all 0.3s ease-in-out;
@@ -24,7 +64,7 @@
   height: 85vh;
 }
 .global{
-  padding: 0% 19%;
+ /*  padding: 0% 19%; */
   height: 100vh;
   background-position: 48% 0%;
   background-image: url(https://themexriver.com/appilo-theme/main/wp-content/uploads/sites/2/2020/11/slider-bg-1.jpg);
@@ -111,18 +151,12 @@ border-radius: 100px;
   padding-right: 10%;
 }
 
-/* .titulo{
-  margin-top: 10%;
-  margin-bottom:10% ;
-}
-.subtitulo{
-  width: 90%;
-} */
+
 
 .botao-saiba{
   margin-top: 5%;
 
-  width: 170px;
+  width: 200px;
   height: 61px;
   left: 84px;
   top: 704px;
@@ -151,18 +185,20 @@ box-shadow:         3px 1px 5px rgba(50, 50, 50, 0.77);
 
 /* carousel */
 .carrosel {
-  width: 300px;
- height: 420px;
+ width: 90%;
+ height: 395px;
  border-radius: 30px;
  overflow: hidden;
+
 
 }
 
 .tamanho-imagem {
   object-fit: cover;
-  width: 300px;
+  width: 100%;
   height: 100%;
   transition: 8s;
+
 }
 .carousel-item.active .efeito-imagem {
  transform: scale(1.1);
@@ -226,4 +262,30 @@ box-shadow:         3px 1px 5px rgba(50, 50, 50, 0.77);
     height: auto;
   }
 
+}
+
+/* Texto Categorias */
+
+
+.d-none {
+  display: none;
+}
+
+.typing {
+  position: relative;
+  display: inline-block;
+}
+.typing::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  color: 1d1f20;
+  background: white;
+  animation: typing 1s ease-out alternate infinite;
+}
+@keyframes typing {
+  to {
+      width: 0;
+ }
 }

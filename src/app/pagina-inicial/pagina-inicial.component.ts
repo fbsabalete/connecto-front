@@ -9,12 +9,29 @@ export class PaginaInicialComponent implements OnInit, OnDestroy {
 
   clicked = false;
   lastScroll: number = 0;
+  contador: number = 0
+  i: number = 0
+  listaNomes: string[] = ["Pintura", "Marcenaria", "Limpeza", "Construção"]
 
   constructor() {
   }
 
   ngOnInit() {
     window.addEventListener("scroll", this.hideNav)
+    var item = <HTMLElement>document.querySelector(".typing")
+    item.onanimationiteration = () => {
+
+      if(this.contador == 1){
+        item.innerHTML = this.listaNomes[this.i]
+        this.i++;
+        this.contador=0
+      }else{
+        this.contador++;
+      }
+
+      if(this.i>=this.listaNomes.length)this.i=0
+
+    }
   }
 
   ngOnDestroy(){
@@ -54,4 +71,6 @@ export class PaginaInicialComponent implements OnInit, OnDestroy {
     this.clicked = !this.clicked;
   }
 
+
 }
+
