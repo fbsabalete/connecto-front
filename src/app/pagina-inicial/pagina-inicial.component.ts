@@ -11,7 +11,7 @@ export class PaginaInicialComponent implements OnInit, OnDestroy {
   lastScroll: number = 0;
   contador: number = 0
   i: number = 0
-  listaNomes: string[] = ["Pintor", "Marcenaria", "Manicure"]
+  listaNomes: string[] = ["Pintura", "Marcenaria", "Limpeza", "Construção"]
 
   constructor() {
   }
