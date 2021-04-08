@@ -1,6 +1,6 @@
-<div class="container mt-5">
+<div class="container mt-5 ">
     <div class="row ">
-        <div class=" col-md-11  m-auto bg-white p-4 bd card-new-post shadow">
+        <div class=" col-md-12  m-auto bg-white p-4 bd card-new-post shadow">
             <div class=" container-post">
                 <form class="post">
                     <div class="d-flex justify-content-between p-1 container-news">
@@ -17,14 +17,16 @@
 
                         <div class="p-1 b-b d-flex justify-content-between check-checkbox">
                             <div class="select">
+
                                 <select name="categoria" id="categoria" [(ngModel)]="idTema" (change)="findByIdTema()">
+
                                 <option *ngFor="let item of listaTema" value="{{item.id}}">{{item.categoria}}</option>
                               </select>
 
                             </div>
 
 
-                            <div class="check d-flex ">
+                            <div class="check d-flex  ">
                                 <div class="form-check">
                                     <input (click)="prestador($event)" value="disponivel" class="form-check-input" type="radio" id="autonomo" name="tipo-servico">
                                     <label class="form-check-label" for="autonomo">Disponivel para serviço</label>
@@ -43,11 +45,11 @@
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade p-0" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade p-0 " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title " id="exampleModalLabel">Cadastrar Nova Categoria</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Nova Categoria</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                           <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -69,7 +71,7 @@
                             </div>
                         </div>
 
-                        <div id="botao" class="botao sumir d-flex justify-content-end mt-3">
+                        <div id="botao" class="botao sumir d-flex  justify-content-center    mt-3">
                             <button (click)="publicar()"> Postar</button>
                             <button class="ml-3" (click)="cancelar()"> Cancelar</button>
                         </div>

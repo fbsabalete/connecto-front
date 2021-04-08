@@ -94,7 +94,7 @@ ul {
     width: 200px;
     height: 25px;
     position: absolute;
-    right: 200px;
+    right: 35%;
     top: 0px;
     background-color: #6D2E8D;
     display: flex;
@@ -102,21 +102,6 @@ ul {
     border-radius: 0 0 8px 8px;
     align-items: center;
 }
-
-
-/* .etiqueta2 {
-
-    width: 100px;
-    height: 30px;
-    position: absolute;
-    right: 0px;
-    top: 25px;
-    background-color: rgba(109, 44, 144, 0.97);
-    display: flex;
-    justify-content: center;
-    border-radius: 8px 0 0 8px;
-    align-items: center;
-} */
 
 .etiqueta p {
     padding: 0;
@@ -199,10 +184,7 @@ ul {
 }
 
 @media (max-width: 575.98px) {
-    .post {
-        width: 85vw;
-        padding: 20px;
-    }
+    .post {}
     .texto h4 {
         margin-left: 20px;
     }
@@ -221,5 +203,12 @@ ul {
         padding: 15px;
         text-align: justify;
         color: black;
+    }
+    .etiqueta {
+        right: 17%;
+        transform: scaleX(0.7);
+    }
+    .img-avatar {
+        margin-top: 2rem;
     }
 }
