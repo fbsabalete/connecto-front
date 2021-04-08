@@ -1,3 +1,4 @@
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { TemaService } from './../service/tema.service';
 import { PostagemService } from './../service/postagem.service';
 import { Postagem } from './../model/Postagem';
@@ -20,8 +21,8 @@ export class FeedComponent implements OnInit {
 
   listaFiltro: string[] = [];
   listaTemas: Tema[];
-  listaFiltrada: Postagem[] = [];
-
+  listaFiltradaServico: Postagem[] = [];
+  listaFiltradaVagas: Postagem [] = [];
 
   ngOnInit() {
     this.postagens();
@@ -58,15 +59,18 @@ export class FeedComponent implements OnInit {
       this.listaPostagem.reverse();
       this.listaPostagemServico.reverse()
       this.listaPostagemVagas.reverse()
-      this.listaFiltrada = this.listaPostagemServico;
+      this.listaFiltradaServico = this.listaPostagemServico;
+      this.listaFiltradaVagas = this.listaPostagemVagas;
     });
   }
 
   checkLength(){
     if (this.listaFiltro.length > 0) {
-      this.listaFiltrada = [];
+      this.listaFiltradaServico = [];
+      this.listaFiltradaVagas = [];
     }else{
-      this.listaFiltrada = this.listaPostagemServico;
+      this.listaFiltradaServico = this.listaPostagemServico;
+      this.listaFiltradaVagas = this.listaPostagemVagas;
     }
   }
 
@@ -84,35 +88,22 @@ export class FeedComponent implements OnInit {
 
     this.listaPostagemServico.forEach((resp) => {
       this.listaFiltro.forEach((e) => {
-        if(resp.tema.categoria == e && !this.listaFiltrada.includes(resp)){
-          this.listaFiltrada.push(resp)
+        if(resp.tema.categoria == e && !this.listaFiltradaServico.includes(resp)){
+          this.listaFiltradaServico.push(resp)
+        }
+      })
+    })
+    this.listaPostagemVagas.forEach((resp) => {
+      this.listaFiltro.forEach((e) => {
+        if(resp.tema.categoria == e && !this.listaFiltradaVagas.includes(resp)){
+          this.listaFiltradaVagas.push(resp)
         }
       })
     })
 
     if (this.listaFiltro.length == 0) {
-      this.listaFiltrada = this.listaPostagemServico;
+      this.listaFiltradaServico = this.listaPostagemServico;
+      this.listaFiltradaVagas = this.listaPostagemVagas;
     }
-
-    // if (event.target.checked) {
-    //   this.listaFiltrada = this.listaPostagemServico.filter((resp) => {
-    //     this.listaFiltro.forEach((e) => {
-    //       if (resp.tema.categoria == e && !this.listaFiltrada.includes(resp)) {
-    //         this.listaFiltrada.push(resp);
-    //       }
-    //     });
-    //   });
-    // }
   }
-
-  //   this.listaPostagemServico.filter((resp) => {
-  //     var igual: boolean
-  //     this.listaFiltro.forEach((e) => {
-  //       igual = resp.tema.categoria == e;
-  //       if(igual)return igual;
-  //     })
-  //     return igual;
-  //   })
-  //
-  // }
 }

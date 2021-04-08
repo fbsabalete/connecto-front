@@ -7,7 +7,7 @@
             <div class="tab-pane fade active show" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
               <app-post-new (lista)="onLista()"></app-post-new>
               <app-postagem *ngFor="let item of listaPostagem">
-                <img class="foto rounded-circle mr-2" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px"
+                <img [routerLink]="['/perfil', item.usuario.id]" role="button" class="foto rounded-circle mr-2" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px"
                   height="50px" />
                 <h4 class="nome m-0">{{ item.usuario.nomeCompleto }}</h4>
                 <p class=" text-justify mt-3"> {{ item.descricaoPost }}</p>
@@ -21,14 +21,14 @@
               <div class="filtros d-flex justify-content-end">
 
                 <div class="btn-group dropleft">
-                  <button (click)="findAllTema()" type="button" class="btn btn-secondary dropdown-toggle"
+                  <button (click)="findAllTema()" type="button" class="mr-3 botao dropdown-toggle"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Filtros
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <form class="pl-5">
+                    <form class="pl-2">
                       <div class="form-group" *ngFor="let item of listaTemas">
-                        <input (change)="atualizarFiltros($event)" class="form-check-input" type="checkbox"
+                        <input (change)="atualizarFiltros($event)" class="form-check-inline" type="checkbox"
                           value="{{item.categoria}}" id="{{item.categoria}}">
                         <label for="{{item.categoria}}">{{item.categoria}}</label>
                       </div>
@@ -36,7 +36,7 @@
                   </div>
                 </div>
               </div>
-              <app-postagem *ngFor="let item of listaFiltrada">
+              <app-postagem *ngFor="let item of listaFiltradaServico">
                 <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px"
                   height="50px" />
                 <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
@@ -46,7 +46,25 @@
               </app-postagem>
             </div>
             <div class="tab-pane fade" id="nav-vagas" role="tabpanel" aria-labelledby="nav-vagas-tab">
-              <app-postagem *ngFor="let item of listaPostagemVagas">
+              <div class="filtros d-flex justify-content-end">
+
+                <div class="btn-group dropleft">
+                  <button (click)="findAllTema()" type="button" class=" mr-3 botao dropdown-toggle"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filtros
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <form class="pl-2">
+                      <div class="form-group" *ngFor="let item of listaTemas">
+                        <input (change)="atualizarFiltros($event)" class="form-check-input" type="checkbox"
+                          value="{{item.categoria}}" id="{{item.categoria}}">
+                        <label for="{{item.categoria}}">{{item.categoria}}</label>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <app-postagem *ngFor="let item of listaFiltradaVagas">
                 <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px"
                   height="50px" />
                 <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
