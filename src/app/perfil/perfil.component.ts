@@ -58,6 +58,10 @@ export class PerfilComponent implements OnInit {
     return false;
   }
 
+  zerarPortfolio(){
+    this.portfolio = new Portfolio();
+  }
+
   listarServicos() {
     this.user.postagem.forEach((resp) => {
       this.listaCategoria = [];

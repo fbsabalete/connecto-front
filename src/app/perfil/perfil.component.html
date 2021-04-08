@@ -122,7 +122,7 @@
           <div [ngClass]="checarUrl() ? 'show active': ''" class="tab-pane fade p-4" id="contato" role="tabpanel" aria-labelledby="contact-tab">
             <div class="row justify-content-between borda-bottom">
             <h2>Portfólio</h2>
-            <button type="button" class="botao" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" aria-hidden="true"></i>  Adicionar</button>
+            <button (click)="zerarPortfolio()" type="button" class="botao" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" aria-hidden="true"></i>  Adicionar</button>
           </div>
             <section class="container">
               <div class="row row-cols-sm-2 row-cols-md-1 row-cols-lg-2">

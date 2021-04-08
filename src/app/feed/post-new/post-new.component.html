@@ -1,90 +1,95 @@
 <div class="container mt-5">
-    <div class="row ">
-        <div class=" col-md-11  m-auto bg-white p-4 bd card-new-post shadow">
-            <div class=" container-post">
-                <form class="post">
-                    <div class="d-flex justify-content-between p-1 container-news">
-                        <div class="img-nova-post">
-                            <img class="rounded-circle mr-1" src="{{foto}}" alt="Foto de perfil" width="50px" height="50px">
-                        </div>
-                        <textarea name="descricao" [(ngModel)]="postagem.descricaoPost" (focus)="aparecer()" cols="94" rows="2" placeholder="Escreva sua postagem" style="resize: vertical; height: auto;" maxlength="3000"></textarea>
-                    </div>
-                    <div class="sumir mt-3">
-                        <div class="link-foto b-b">
-                            <label for="link-foto"> Link Foto </label>
-                            <input type="text" name="link-foto" [(ngModel)]="postagem.linkImagem">
-                        </div>
+  <div class="row ">
+    <div class=" col-md-11  m-auto bg-white p-4 bd card-new-post shadow">
+      <div class=" container-post">
+        <form class="post">
+          <div class="d-flex justify-content-between p-1 container-news">
+            <div class="img-nova-post">
+              <img class="rounded-circle mr-1" src="{{foto}}" alt="Foto de perfil" width="50px" height="50px">
+            </div>
+            <textarea name="descricao" [(ngModel)]="postagem.descricaoPost" (focus)="aparecer()" cols="94" rows="2"
+              placeholder="Escreva sua postagem" style="resize: vertical; height: auto;" maxlength="3000"></textarea>
+          </div>
+          <div class="sumir mt-3">
+            <div class="link-foto b-b">
+              <label for="link-foto"> Link Foto </label>
+              <input type="text" name="link-foto" [(ngModel)]="postagem.linkImagem">
+            </div>
 
-                        <div class="p-1 b-b d-flex justify-content-between check-checkbox">
-                            <div class="select">
-                                <select name="categoria" id="categoria" [(ngModel)]="idTema" (change)="findByIdTema()">
-                                <option *ngFor="let item of listaTema" value="{{item.id}}">{{item.categoria}}</option>
-                              </select>
+            <div class="p-1 b-b d-flex justify-content-between check-checkbox">
+              <div class="select">
+                <select name="categoria" id="categoria" [(ngModel)]="idTema" (change)="findByIdTema()">
+                  <option *ngFor="let item of listaTema" value="{{item.id}}">{{item.categoria}}</option>
+                </select>
 
-                            </div>
-
-
-                            <div class="check d-flex ">
-                                <div class="form-check">
-                                    <input (click)="prestador($event)" value="disponivel" class="form-check-input" type="radio" id="autonomo" name="tipo-servico">
-                                    <label class="form-check-label" for="autonomo">Disponivel para serviço</label>
-                                </div>
-                                <div class="form-check">
-                                    <input (click)="prestador($event)" value="buscando" class="form-check-input" type="radio" id="contratante" name="tipo-servico">
-                                    <label class="form-check-label" for="contratante">Buscando profisional</label>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn botao-categoria" data-toggle="modal" data-target="#exampleModal">
-                                                  + Categoria
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade p-0" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title " id="exampleModalLabel">Cadastrar Nova Categoria</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                          <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="form-group d-flex justify-content-center align-items-center">
-
-                                                <input [(ngModel)]="tema.categoria" name="categoria" type="text" class="categoria" placeholder="Digite uma nova categoria" id="categoria">
-
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-
-                                        <button (click)="cadastrarTema()" type="button" class="btn " data-dismiss="modal">Salvar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="botao" class="botao sumir d-flex justify-content-end mt-3">
-                            <button (click)="publicar()"> Postar</button>
-                            <button class="ml-3" (click)="cancelar()"> Cancelar</button>
-                        </div>
+              </div>
 
 
-                    </div>
-
-                </form>
-
-
-
+              <div class="check d-flex ">
+                <div class="form-check">
+                  <input (click)="prestador($event)" value="disponivel" class="form-check-input" type="radio"
+                    id="autonomo" name="tipo-servico">
+                  <label class="form-check-label" for="autonomo">Disponivel para serviço</label>
+                </div>
+                <div class="form-check">
+                  <input (click)="prestador($event)" value="buscando" class="form-check-input" type="radio"
+                    id="contratante" name="tipo-servico">
+                  <label class="form-check-label" for="contratante">Buscando profisional</label>
+                </div>
+              </div>
 
             </div>
 
-        </div>
+            <!-- Button trigger modal -->
+            <button (click)="zerarCategoria()" type="button" class="btn botao-categoria" data-toggle="modal" data-target="#exampleModal">
+              + Categoria
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade p-0" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title " id="exampleModalLabel">Cadastrar Nova Categoria</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group d-flex justify-content-center align-items-center">
+
+                        <input [(ngModel)]="tema.categoria" name="categoria" type="text" class="categoria"
+                          placeholder="Digite uma nova categoria" id="categoria">
+
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+
+                    <button (click)="cadastrarTema()" type="button" class="btn " data-dismiss="modal">Salvar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="botao" class="botao sumir d-flex justify-content-end mt-3">
+              <button (click)="publicar()"> Postar</button>
+              <button class="ml-3" (click)="cancelar()"> Cancelar</button>
+            </div>
+
+
+          </div>
+
+        </form>
+
+
+
+
+      </div>
+
     </div>
+  </div>
 
 </div>

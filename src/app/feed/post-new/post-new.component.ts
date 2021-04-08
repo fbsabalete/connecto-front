@@ -90,6 +90,10 @@ export class PostNewComponent implements OnInit {
     }
   }
 
+  zerarCategoria(){
+    this.tema = new Tema();
+  }
+
 
   // STYLE
   aparecer() {
