@@ -23,6 +23,7 @@ export class FeedComponent implements OnInit {
   listaTemas: Tema[];
   listaFiltradaServico: Postagem[] = [];
   listaFiltradaVagas: Postagem [] = [];
+  faWhatsapp = faWhatsapp;
 
   ngOnInit() {
     this.postagens();

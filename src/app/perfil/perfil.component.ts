@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from '../model/Postagem';
 import { environment } from 'src/environments/environment.prod';
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-perfil',
@@ -21,6 +22,7 @@ export class PerfilComponent implements OnInit {
   portfolio: Portfolio = new Portfolio();
 
   faChevronCircleLeft = faChevronCircleLeft
+  faWhatsapp = faWhatsapp;
 
   key = 'data';
   reverse = true;
@@ -34,6 +36,8 @@ export class PerfilComponent implements OnInit {
   telefoneValido: boolean = true;
 
   confirmarSenha: String;
+
+
 
   constructor(
     private authService: AuthService,
