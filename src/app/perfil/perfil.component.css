@@ -2,15 +2,29 @@
   background: #ebe4e4;
 }
 
+.height-95px{
+  height: 95px;
+}
+
 .voltar {
   position: fixed;
   z-index: 1000;
   top: 30px;
   left: 30px;
-
-  width: 20px;
-  height: 20px;
 }
+
+.voltar-a{
+  color: #8a068f;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 1s;
+}
+
+.voltar-a:hover{
+  color: #720775;
+  transform: scale(1.1);
+}
+
 
 .borda-branca {
   border: 1.5px solid white;
@@ -238,3 +252,11 @@
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .foto-nome{
+    left: 10%;
+    right: 10%;
+  }
+}
+

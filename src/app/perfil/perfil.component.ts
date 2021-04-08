@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from '../model/Postagem';
 import { environment } from 'src/environments/environment.prod';
+import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-perfil',
@@ -18,6 +19,8 @@ export class PerfilComponent implements OnInit {
   listaCategoria: string[];
 
   portfolio: Portfolio = new Portfolio();
+
+  faChevronCircleLeft = faChevronCircleLeft
 
   key = 'data';
   reverse = true;
