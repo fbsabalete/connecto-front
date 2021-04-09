@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'feed', component: InicioComponent },
   { path: 'perfil/:id', component: PerfilComponent},
   { path: 'perfil/:id/portfolio', component: PerfilComponent},
-  { path: 'sobre-nos', component: SobreNosComponent}
+  { path: 'sobre-nos', component: SobreNosComponent},
+
 ];
 
 @NgModule({
