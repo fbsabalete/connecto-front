@@ -91,10 +91,11 @@ ul {
 }
 
 .etiqueta {
-    width: 200px;
+    width: auto;
     height: 25px;
     position: absolute;
-    right: 35%;
+    right: 20%;
+    left: 20%;
     top: 0px;
     background-color: #6D2E8D;
     display: flex;
