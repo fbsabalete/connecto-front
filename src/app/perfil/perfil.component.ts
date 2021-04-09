@@ -51,7 +51,7 @@ export class PerfilComponent implements OnInit {
       this.router.navigate(['/entrar']);
     }
     this.idUser = this.route.snapshot.params['id'];
-
+    window.scroll(0,0);
     this.findByIdUser(this.idUser);
   }
 

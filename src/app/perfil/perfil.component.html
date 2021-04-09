@@ -97,7 +97,7 @@
                 <p class="infC">{{item}}</p>
               </div>
 
-              <div class="edit position-absolute ">
+              <div *ngIf='user.id == idLogado' class="edit position-absolute ">
                 <a href="#editarPerfil" data-toggle="modal" data-target="#editarPerfil">
                   <img src="../../assets/img/edit.png" alt="" width="30px">
                 </a>
@@ -118,14 +118,15 @@
               <h4 class="nome">{{ user.nomeCompleto }}</h4>
               <p>{{ item.descricaoPost }}</p>
               <img src="{{ item.linkImagem }}" alt="" width="100%" />
-              <p class="etiqueta">{{ item.tema.categoria }}</p>
+              <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.prestadorServicos ? 'Disponivel ' +
+                item.tema.categoria : 'Buscando ' + item.tema.categoria}}</p>
             </app-postagem>
           </div>
 
           <div [ngClass]="checarUrl() ? 'show active': ''" class="tab-pane fade p-4" id="contato" role="tabpanel" aria-labelledby="contact-tab">
             <div class="row justify-content-between borda-bottom">
             <h2>Portfólio</h2>
-            <button (click)="zerarPortfolio()" type="button" class="botao" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" aria-hidden="true"></i>  Adicionar</button>
+            <button *ngIf='user.id == idLogado' (click)="zerarPortfolio()" type="button" class="botao" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" aria-hidden="true"></i>  Adicionar</button>
           </div>
             <section class="container">
               <div class="row row-cols-sm-2 row-cols-md-1 row-cols-lg-2">

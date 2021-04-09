@@ -215,6 +215,10 @@
   font-size: 1.3rem;
 }
 
+.etiqueta p{
+  color: white;
+}
+
 .header-amigo h3::after {
   content: "";
   position: absolute;
