@@ -7,7 +7,46 @@
 /* -----------------------------------
   1 - General Styles
 ------------------------------------*/
+/* cadastrar animacao */
+.group 			  {
+  position:relative;
+  margin-bottom:15px;
+}
 
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:black;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:16px;
+  top:15px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+.form-H{
+  height: 50px;
+}
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:2px;
+  font-weight: bold;
+  font-size:11px;
+  transform: translateY(-3px);
+  letter-spacing: 0.5px;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+/* cadastrar animacao */
 *,
 body {
     font-family: 'Lato', sans-serif;

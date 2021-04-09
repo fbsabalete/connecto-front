@@ -16,8 +16,16 @@
                     <h3 class="d-flex justify-content-center mb-4">Login</h3>
 
                     <form>
-                        <input [(ngModel)]="user.email" class="form-control" type="text" name="username" placeholder="E-mail" required>
-                        <input [(ngModel)]="user.senha" class="form-control" type="password" name="password" placeholder="Senha" required>
+                      <div class="group">
+                        <input [(ngModel)]="user.email" class="form-control form-H" type="text" name="username" placeholder="" required>
+                        <label for="username">E-mail</label>
+                      </div>
+
+                      <div class="group">
+                        <input [(ngModel)]="user.senha" class="form-control form-H" type="password" name="password" placeholder="" required>
+                        <label for="password">Senha</label>
+                      </div>
+
                         <div class="form-button d-flex flex-column">
                             <button id="submit" type="submit" class="ibtn" (click)="logar()">Login</button>
                             <a class=" d-flex justify-content-center mt-1" href="forget17.html">Esqueceu a senha?</a>
