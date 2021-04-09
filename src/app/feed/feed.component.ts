@@ -27,6 +27,7 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
     this.postagens();
+    window.scroll(0,0)
     this.checkLength();
   }
 

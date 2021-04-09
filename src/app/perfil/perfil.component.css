@@ -63,12 +63,11 @@
 
 .nav-item a.active {
   border-color: none;
-  font-weight: bold;
+  border-bottom: 2px solid #9f19a3;
 }
 
 .nav-item a.active img {
-  filter: invert(15%) sepia(93%) saturate(5198%) hue-rotate(294deg)
-    brightness(92%) contrast(115%);
+  filter: invert(19%) sepia(46%) saturate(3099%) hue-rotate(263deg) brightness(96%) contrast(92%);
 }
 
 .nav-tabs {
