@@ -1,173 +1,155 @@
 <div class="row d-flex flex container-feed ">
-  <div class="d-flex flex-column feed col-md-8">
-    <div class="container mt-3">
-      <div class="row d-flex flex-column justify-content-center">
-        <div class="col-12">
-          <div class="tab-content mt-5 px-3 px-sm-1 " id="pills-tabContent">
-            <div class="tab-pane fade active show" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
-              <app-post-new (lista)="onLista()"></app-post-new>
-              <app-postagem *ngFor="let item of listaPostagem">
-                <img [routerLink]="['/perfil', item.usuario.id]" role="button" class="foto rounded-circle mr-2" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px"
-                  height="50px" />
-                <h4 class="nome m-0">{{ item.usuario.nomeCompleto }}</h4>
-                <p class=" text-justify mt-3"> {{ item.descricaoPost }}</p>
-                <img class=" rounded-lg " src="{{ item.linkImagem }}" alt="" width="100%" />
-                <p class="etiqueta2 p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
-                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.prestadorServicos ? 'Disponivel ' +
-                  item.tema.categoria : 'Buscando ' + item.tema.categoria}}</p>
+    <div class="d-flex flex-column feed col-md-8">
+        <div class="container mt-3">
+            <div class="row d-flex flex-column justify-content-center">
+                <div class="col-12">
+                    <div class="tab-content mt-5 px-3 px-sm-1 " id="pills-tabContent">
+                        <div class="tab-pane fade active show" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
+                            <app-post-new (lista)="onLista()"></app-post-new>
+                            <app-postagem *ngFor="let item of listaPostagem">
+                                <img [routerLink]="['/perfil', item.usuario.id]" role="button" class="foto rounded-circle mr-2" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
+                                <h4 class="nome m-0">{{ item.usuario.nomeCompleto }}</h4>
+                                <p class=" text-justify mt-3"> {{ item.descricaoPost }}</p>
+                                <img class=" rounded-lg " src="{{ item.linkImagem }}" alt="" width="100%" />
+                                <p class="etiqueta2 p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
+                                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.prestadorServicos ? 'Disponivel ' + item.tema.categoria : 'Buscando ' + item.tema.categoria}}</p>
 
-                  <a target="_blank" class="zap a" href="https://api.whatsapp.com/send?phone=55{{item.usuario.telefone}}&text=Ol%C3%A1%20{{item.usuario.nomeCompleto}}%2C%20vi%20sua%20publica%C3%A7%C3%A3o%20na%20Connecto%20e%20tenho%20interesse%20no%20seu%20servi%C3%A7o%20!!">
-                    <fa-icon [icon]="faWhatsapp"></fa-icon>
-                    Contato</a>
-              </app-postagem>
-            </div>
-            <div class="tab-pane fade" id="nav-servicos" role="tabpanel" aria-labelledby="nav-servicos-tab">
-              <div class="filtros d-flex justify-content-end">
+                                <a target="_blank" class="zap a" href="https://api.whatsapp.com/send?phone=55{{item.usuario.telefone}}&text=Ol%C3%A1%20{{item.usuario.nomeCompleto}}%2C%20vi%20sua%20publica%C3%A7%C3%A3o%20na%20Connecto%20e%20tenho%20interesse%20no%20seu%20servi%C3%A7o%20!!">
+                                    <fa-icon [icon]="faWhatsapp"></fa-icon>
+                                    Contato</a>
+                            </app-postagem>
+                        </div>
+                        <div class="tab-pane fade" id="nav-servicos" role="tabpanel" aria-labelledby="nav-servicos-tab">
+                            <div class="filtros d-flex justify-content-end">
 
-                <div class="btn-group dropleft">
-                  <button (click)="findAllTema()" type="button" class="mr-3 botao dropdown-toggle"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="btn-group dropleft">
+                                    <button (click)="findAllTema()" type="button" class="mr-3 botao dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Filtros
                   </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <form class="pl-2">
-                      <div class="form-group" *ngFor="let item of listaTemas">
-                        <input (change)="atualizarFiltros($event)" class="form-check-inline" type="checkbox"
-                          value="{{item.categoria}}" id="{{item.categoria}}">
-                        <label for="{{item.categoria}}">{{item.categoria}}</label>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-              <app-postagem *ngFor="let item of listaFiltradaServico">
-                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px"
-                  height="50px" />
-                <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
-                <p>{{ item.descricaoPost }}</p>
-                <img src="{{ item.linkImagem }}" alt="" width="100%" />
-                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <form class="pl-2">
+                                            <div class="form-group" *ngFor="let item of listaTemas">
+                                                <input (change)="atualizarFiltros($event)" class="form-check-inline" type="checkbox" value="{{item.categoria}}" id="{{item.categoria}}">
+                                                <label for="{{item.categoria}}">{{item.categoria}}</label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <app-postagem *ngFor="let item of listaFiltradaServico">
+                                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
+                                <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
+                                <p>{{ item.descricaoPost }}</p>
+                                <img src="{{ item.linkImagem }}" alt="" width="100%" />
+                                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
 
-                <a target="_blank" class="zap a" href="https://api.whatsapp.com/send?phone=55{{item.usuario.telefone}}&text=Ol%C3%A1%20{{item.usuario.nomeCompleto}}%2C%20vi%20sua%20publica%C3%A7%C3%A3o%20na%20Connecto%20e%20tenho%20interesse%20no%20seu%20servi%C3%A7o%20!!">
-                  <fa-icon [icon]="faWhatsapp"></fa-icon>
-                  Contato</a>
+                                <a target="_blank" class="zap a" href="https://api.whatsapp.com/send?phone=55{{item.usuario.telefone}}&text=Ol%C3%A1%20{{item.usuario.nomeCompleto}}%2C%20vi%20sua%20publica%C3%A7%C3%A3o%20na%20Connecto%20e%20tenho%20interesse%20no%20seu%20servi%C3%A7o%20!!">
+                                    <fa-icon [icon]="faWhatsapp"></fa-icon>
+                                    Contato</a>
 
-              </app-postagem>
-            </div>
-            <div class="tab-pane fade" id="nav-vagas" role="tabpanel" aria-labelledby="nav-vagas-tab">
-              <div class="filtros d-flex justify-content-end">
+                            </app-postagem>
+                        </div>
+                        <div class="tab-pane fade" id="nav-vagas" role="tabpanel" aria-labelledby="nav-vagas-tab">
+                            <div class="filtros d-flex justify-content-end">
 
-                <div class="btn-group dropleft">
-                  <button (click)="findAllTema()" type="button" class=" mr-3 botao dropdown-toggle"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="btn-group dropleft">
+                                    <button (click)="findAllTema()" type="button" class=" mr-3 botao dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Filtros
                   </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <form class="pl-2">
-                      <div class="form-group" *ngFor="let item of listaTemas">
-                        <input (change)="atualizarFiltros($event)" class="form-check-input" type="checkbox"
-                          value="{{item.categoria}}" id="{{item.categoria}}">
-                        <label for="{{item.categoria}}">{{item.categoria}}</label>
-                      </div>
-                    </form>
-                  </div>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <form class="pl-2">
+                                            <div class="form-group" *ngFor="let item of listaTemas">
+                                                <input (change)="atualizarFiltros($event)" class="form-check-input" type="checkbox" value="{{item.categoria}}" id="{{item.categoria}}">
+                                                <label for="{{item.categoria}}">{{item.categoria}}</label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <app-postagem *ngFor="let item of listaFiltradaVagas">
+                                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
+                                <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
+                                <p>{{ item.descricaoPost }}</p>
+                                <img src="{{ item.linkImagem }}" alt="" width="100%" />
+                                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
+
+                                <a target="_blank" class="zap a" href="https://api.whatsapp.com/send?phone=55{{item.usuario.telefone}}&text=Ol%C3%A1%20{{item.usuario.nomeCompleto}}%2C%20vi%20sua%20publica%C3%A7%C3%A3o%20na%20Connecto%20e%20tenho%20interesse%20no%20seu%20servi%C3%A7o%20!!">
+                                    <fa-icon [icon]="faWhatsapp"></fa-icon>
+                                    Contato</a>
+
+
+
+                            </app-postagem>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <app-postagem *ngFor="let item of listaFiltradaVagas">
-                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px"
-                  height="50px" />
-                <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
-                <p>{{ item.descricaoPost }}</p>
-                <img src="{{ item.linkImagem }}" alt="" width="100%" />
-                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
-
-                <a target="_blank" class="zap a" href="https://api.whatsapp.com/send?phone=55{{item.usuario.telefone}}&text=Ol%C3%A1%20{{item.usuario.nomeCompleto}}%2C%20vi%20sua%20publica%C3%A7%C3%A3o%20na%20Connecto%20e%20tenho%20interesse%20no%20seu%20servi%C3%A7o%20!!">
-                  <fa-icon [icon]="faWhatsapp"></fa-icon>
-                  Contato</a>
-
-
-
-              </app-postagem>
             </div>
-          </div>
+
+
         </div>
-      </div>
-
-
     </div>
-  </div>
 </div>
 
 <div class="container-fluid d-sm-none d-md-block vh-100 borda-amigos position-fixed">
-  <div class="row">
-    <div class="col-8 container-amigos shadow-sm">
-      <div class="header-amigo mt-4 ml-3">
-        <h3>Amigos</h3>
-      </div>
-      <div class="teste mb-2 mt-4 ml-3">
-        <div class="amigo d-flex align-items-center">
-          <div class="amigo-img mr-2">
-            <img class="rounded-circle"
-              src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/3/6050ee5fe1cff-bpthumb.jpg"
-              alt="" width="40px" height="40px" />
-          </div>
-          <div class="texto-amigo">
-            <h5 class="m-0">Manoel Souza</h5>
-          </div>
-        </div>
-      </div>
+    <div class="row">
+        <div class="col-8 container-amigos shadow-sm">
+            <div class="header-amigo mt-4 ml-3">
+                <h3>Amigos</h3>
+            </div>
+            <div class="teste mb-2 mt-4 ml-3">
+                <div class="amigo d-flex align-items-center">
+                    <div class="amigo-img mr-2">
+                        <img class="rounded-circle" src="https://image.freepik.com/fotos-gratis/retrato-de-homem-branco-isolado_53876-40306.jpg" alt="" width="40px" height="40px" />
+                    </div>
+                    <div class="texto-amigo">
+                        <h5 class="m-0">Manoel Souza</h5>
+                    </div>
+                </div>
+            </div>
 
-      <div class="teste mb-2 ml-3">
-        <div class="amigo d-flex align-items-center">
-          <div class="amigo-img mr-2">
-            <img class="rounded-circle"
-              src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/6/5e2cccd55f95b-bpthumb.jpg"
-              alt="" width="40px" height="40px" />
-          </div>
-          <div class="texto-amigo">
-            <h5 class="m-0">Renata Oliveira</h5>
-          </div>
-        </div>
-      </div>
+            <div class="teste mb-2 ml-3">
+                <div class="amigo d-flex align-items-center">
+                    <div class="amigo-img mr-2">
+                        <img class="rounded-circle" src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/6/5e2cccd55f95b-bpthumb.jpg" alt="" width="40px" height="40px" />
+                    </div>
+                    <div class="texto-amigo">
+                        <h5 class="m-0">Renata Oliveira</h5>
+                    </div>
+                </div>
+            </div>
 
-      <div class="teste mb-2 ml-3">
-        <div class="amigo d-flex align-items-center">
-          <div class="amigo-img mr-2">
-            <img class="rounded-circle"
-              src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/14/5e2d01291b6b9-bpthumb.jpg"
-              alt="" width="40px" height="40px" />
-          </div>
-          <div class="texto-amigo">
-            <h5 class="m-0">Robson Nunes</h5>
-          </div>
-        </div>
-      </div>
+            <div class="teste mb-2 ml-3">
+                <div class="amigo d-flex align-items-center">
+                    <div class="amigo-img mr-2">
+                        <img class="rounded-circle" src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/14/5e2d01291b6b9-bpthumb.jpg" alt="" width="40px" height="40px" />
+                    </div>
+                    <div class="texto-amigo">
+                        <h5 class="m-0">Robson Nunes</h5>
+                    </div>
+                </div>
+            </div>
 
-      <div class="teste mb-2 ml-3">
-        <div class="amigo d-flex align-items-center">
-          <div class="amigo-img mr-2">
-            <img class="rounded-circle"
-              src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/9/5e2ce3f5bcd91-bpthumb.jpg"
-              alt="" width="40px" height="40px" />
-          </div>
-          <div class="texto-amigo">
-            <h5 class="m-0">Joaquim Gouveia</h5>
-          </div>
-        </div>
-      </div>
+            <div class="teste mb-2 ml-3">
+                <div class="amigo d-flex align-items-center">
+                    <div class="amigo-img mr-2">
+                        <img class="rounded-circle" src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/9/5e2ce3f5bcd91-bpthumb.jpg" alt="" width="40px" height="40px" />
+                    </div>
+                    <div class="texto-amigo">
+                        <h5 class="m-0">Joaquim Gouveia</h5>
+                    </div>
+                </div>
+            </div>
 
-      <div class="teste ml-3">
-        <div class="amigo d-flex align-items-center">
-          <div class="amigo-img mr-2">
-            <img class="rounded-circle"
-              src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/12/5e2cfd5d1d7c0-bpthumb.jpg"
-              alt="" width="40px" height="40px" />
-          </div>
-          <div class="texto-amigo">
-            <h5 class="m-0">Amanda Lopes</h5>
-          </div>
+            <div class="teste ml-3">
+                <div class="amigo d-flex align-items-center">
+                    <div class="amigo-img mr-2">
+                        <img class="rounded-circle" src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/12/5e2cfd5d1d7c0-bpthumb.jpg" alt="" width="40px" height="40px" />
+                    </div>
+                    <div class="texto-amigo">
+                        <h5 class="m-0">Amanda Lopes</h5>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
