@@ -18,7 +18,26 @@ export class PaginaInicialComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     window.addEventListener("scroll", this.hideNav)
-    var item = <HTMLElement>document.querySelector(".typing")
+    this.animations();
+
+  }
+
+  ngOnDestroy(){
+    window.removeEventListener("scroll", this.hideNav);
+  }
+
+  animations(){
+    var item = <HTMLElement>document.querySelector("#letreiro")
+
+    window.onblur = () => {
+      item.classList.remove("typing")
+      this.contador=0
+      this.i=0
+    }
+    window.onfocus = () => {
+      item.classList.add("typing")
+    }
+
     item.onanimationiteration = () => {
 
       if(this.contador == 1){
@@ -32,10 +51,8 @@ export class PaginaInicialComponent implements OnInit, OnDestroy {
       if(this.i>=this.listaNomes.length)this.i=0
 
     }
-  }
 
-  ngOnDestroy(){
-    window.removeEventListener("scroll", this.hideNav);
+
   }
 
 

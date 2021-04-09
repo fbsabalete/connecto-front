@@ -5,14 +5,19 @@
 .d-none {
   display: none;
 }
-h1 {
+/* h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 40pt;
   color: black;
   margin-top: 0;
   margin-bottom: 0;
+} */
+#letreiro{
+  color: #a013b3;
 }
+
 .typing {
+  color: #a013b3;
   position: relative;
   display: inline-block;
 }
@@ -21,7 +26,7 @@ h1 {
   position: absolute;
   right: 0;
   width: 100%;
-  color: black;
+  color: #282350;
   background: white;
   animation: typing 1s ease-out alternate infinite;
 }
