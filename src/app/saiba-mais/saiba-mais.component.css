@@ -23,7 +23,7 @@
     }
 
     .animacao.direita.na-tela, .animacao.esquerda.na-tela{
-        opacity: 100%;
+        opacity: 1;
         transform: translateX(0);
         transition: all 1s linear;
     }

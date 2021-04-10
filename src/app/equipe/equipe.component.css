@@ -13,7 +13,7 @@
 }
 
 .coluna-membro:hover .borda{
-  opacity: 100%;
+  opacity: 1;
   transform: translateX(7%);
 }
 
@@ -129,7 +129,7 @@
 
 @media (hover: none) {
   .coluna-membro .borda{
-      opacity: 100%;
+      opacity: 1;
       transform: translateX(7%);
   }
   .coluna-membro .imagem-perfil{
