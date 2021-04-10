@@ -38,7 +38,7 @@
                                     <div class="form-group d-flex flex-column">
                                         <label for="link-foto"> Escolha uma categoria </label>
                                         <select name="categoria" id="categoria" [(ngModel)]="idTema" (change)="findByIdTema()">
-                                          <option *ngFor="let item of listaTemas" value="{{item.categoria}}">{{item.categoria}}</option>
+                                          <option *ngFor="let item of listaTemas" value="{{item.id}}">{{item.categoria}}</option>
                                         </select>
 
                                     </div>

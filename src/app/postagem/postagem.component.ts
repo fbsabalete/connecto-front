@@ -76,12 +76,8 @@ export class PostagemComponent implements OnInit {
   }
 
   publicar(){
-    let json = JSON.parse(JSON.stringify(this.postagem))
-    console.log(json)
-    this.postagemService.postPostagem(json).subscribe((resp: Postagem) => {
+    this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp;
-
-
     })
   }
 
@@ -106,12 +102,8 @@ export class PostagemComponent implements OnInit {
     });
   }
 
-
-
   postagemModal(){
-
     this.findByIdPostagem();
-
   }
 
 
