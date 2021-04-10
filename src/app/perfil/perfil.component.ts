@@ -21,7 +21,7 @@ export class PerfilComponent implements OnInit {
 
   portfolio: Portfolio = new Portfolio();
 
-  faChevronCircleLeft = faChevronCircleLeft
+  faChevronCircleLeft = faChevronCircleLeft;
   faWhatsapp = faWhatsapp;
 
   key = 'data';
@@ -31,13 +31,13 @@ export class PerfilComponent implements OnInit {
   url = this.router.url.split('/').pop();
   nomeValido: boolean = true;
   emailValido: boolean = true;
-  senhaValida: boolean = true;
+  senhaValida: boolean = false;
   fotoValida: boolean = true;
   telefoneValido: boolean = true;
 
   confirmarSenha: String;
 
-
+  senha: string
 
   constructor(
     private authService: AuthService,
@@ -51,7 +51,7 @@ export class PerfilComponent implements OnInit {
       this.router.navigate(['/entrar']);
     }
     this.idUser = this.route.snapshot.params['id'];
-    window.scroll(0,0);
+    window.scroll(0, 0);
     this.findByIdUser(this.idUser);
   }
 
@@ -62,7 +62,7 @@ export class PerfilComponent implements OnInit {
     return false;
   }
 
-  zerarPortfolio(){
+  zerarPortfolio() {
     this.portfolio = new Portfolio();
   }
 
@@ -140,6 +140,7 @@ export class PerfilComponent implements OnInit {
   }
 
   validaSenha(event: any) {
+    this.user.senha = this.senha
     this.senhaValida = this.validation(
       event.target.value.length < 5 || event.target.value.length > 12,
       event
@@ -170,17 +171,19 @@ export class PerfilComponent implements OnInit {
 
   /* Metodos de Atualizar */
   atualizar() {
-    this.authService.atualizar(this.user).subscribe((resp: Usuario) => {
-      this.user = resp;
+    if (this.nomeValido && this.emailValido && this.senhaValida && this.fotoValida) {
+      this.authService.atualizar(this.user).subscribe((resp: Usuario) => {
+        this.user = resp;
 
-      alert('Usuario atualizado com sucesso, faça o login novamente.');
-      environment.fotoPerfil = '';
-      environment.id = 0;
-      environment.nomeCompleto = '';
-      environment.token = '';
+        alert('Usuario atualizado com sucesso, faça o login novamente.');
+        environment.fotoPerfil = '';
+        environment.id = 0;
+        environment.nomeCompleto = '';
+        environment.token = '';
 
-      this.router.navigate(['/entrar']);
-    });
+        this.router.navigate(['/entrar']);
+      });
+    }
   }
   /* Metodos de Atualizar */
 }

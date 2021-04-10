@@ -327,7 +327,7 @@
           <div class="invalid-tooltip">A URL deve conter uma foto ou ser vazia.</div>
         </div>
         <div class="form-group">
-          <input [(ngModel)]="user.senha" (keyup)="validaSenha($event)" class="form-control" type="password" name="password"
+          <input [(ngModel)]="senha" (keyup)="validaSenha($event)" class="form-control" type="password" name="password"
             placeholder="Senha" required>
           <div class="invalid-tooltip">A senha deve conter entre 5 e 12 caracteres.</div>
         </div>
@@ -341,7 +341,9 @@
             placeholder="Telefone">
           <div class="invalid-tooltip">O telefone deve conter o DDD.</div>
         </div>
-        <textarea name="descricao" [(ngModel)]="user.sobreMim" cols="63" rows="5" placeholder="Sobre mim" style="resize: vertical; height: auto;" maxlength="3000"></textarea>
+        <div class="form-group">
+          <textarea name="descricao" class="form-control" [(ngModel)]="user.sobreMim" rows="5" placeholder="Sobre mim" style="resize: vertical; height: auto;" maxlength="3000"></textarea>
+        </div>
 
       </div>
       <div class="modal-footer">

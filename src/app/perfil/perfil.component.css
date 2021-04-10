@@ -219,6 +219,10 @@
   color: white;
 }
 
+.form-group{
+  position: relative;
+}
+
 .header-amigo h3::after {
   content: "";
   position: absolute;
