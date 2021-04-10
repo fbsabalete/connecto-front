@@ -1,0 +1,114 @@
+<!-- nav -->
+<nav id="navegacao" class="navbar navbar-expand-lg bg-connecto d-flex fixed-top ">
+  <div class="container-fluid ">
+    <div class="container">
+      <a class="navbar-brand " href="#"><img id="logo" src="https://i.imgur.com/nStxt9g.png" alt=""></a>
+      <button (click)='clickCollapse()' class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse font-weight-bold" id="navbarNav">
+        <ul class="navbar-nav ml-auto ">
+          <li class="nav-item">
+            <a class="nav-link" routerLink=''>Home</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" routerLink=''>Sobre</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" routerLink=''>Equipe</a>
+          </li>
+          <li class="nav-item entrar">
+            <a class="nav-link botao  " href="#" tabindex="-1" aria-disabled="true" routerLink='/entrar'>Entrar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <!--/ nav -->
+
+  <!-- Pagina principal -->
+  <div class="container-fluid d-flex justify-content-center  nav-mt">
+  <div class="container flex-column d-flex align-items-center pt-5">
+
+    <div class="row mb-5">
+      <div class="text col-md-12">
+        <h1 class="borda-bottom">Sobre nós</h1>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-between">
+      <div class="col-md-4 ">
+        <div class="d-flex justify-content-center">
+        <img class="w-50 h-60 rounded-circle" src="https://i.imgur.com/MbQ076E.jpg" alt="">
+      </div>
+        <h3  class="text-center pt-4">Gustavo Lima</h3>
+        <p class="text-justify pt-3">Minha trajetória até aqui é de bastante determinação, ânimo e transformação. Determinação para cursar Gestão de Recursos Humanos, ainda que para isso tivesse que persistir em obter uma bolsa de estudos.
+
+          Ânimo mesmo nos momentos de cansaço entre estudo e trabalho, entusiasmando também os colegas.
+
+          Transformação, reinventando-me na área de tecnologia, na qual encontrei mais uma forma de aplicar minhas habilidades técnicas e comportamentais , que foram aperfeiçoados pela Generation Brasil.</p>
+      </div>
+
+      <div class="col-md-4">
+        <div class="d-flex justify-content-center">
+          <img class="w-50 h-60 rounded-circle" src="https://i.imgur.com/7JkeeyC.jpg" alt="">
+       </div>
+        <h3 class="text-center pt-4">Fernando Sabalete</h3>
+        <p class="text-justify pt-3">Sou animado e dedicado, estou sempre sorrindo e desafios apenas me motivam mais. Inspirado pelo meu amor por solucionar problemas, ingressei na área de desenvolvimento e iniciei meus estudos na Generation Brasil para aperfeiçoar minhas habilidades e me desenvolver como o profissional que o futuro precisa.</p>
+      </div>
+
+      <div class="col-md-4">
+        <div class="d-flex justify-content-center">
+          <img class="w-50 h-60 rounded-circle" src="https://i.imgur.com/x0XeQdX.jpg" alt="">
+       </div>
+        <h3 class="text-center pt-4">Victor Araujo</h3>
+        <p class="text-justify pt-3">Amante da tecnologia, busco sempre evoluir estudando cada vez mais para me tornar um desenvolvedor melhor e assim melhorando também as minhas Soft skills.</p>
+      </div>
+
+    </div>
+
+    <div class="row d-flex justify-content-between pt-5">
+      <div class="col-md-4">
+        <div class="d-flex justify-content-center">
+          <img class="w-50 h-60 rounded-circle" src="https://i.imgur.com/XYFLjW4.jpg" alt="">
+       </div>
+        <h3 class="text-center pt-4">Candido Cavaleiro</h3>
+        <p class="text-justify pt-3">Sou engenheiro com transição de carreira acreditando no poder de aprendizado,
+        tive a oportunidade de me formar em um Desenvolvedor Full Stack, pois desde pequeno, sempre muito curioso para entender como as coisas funcionavam e hoje, com mais conhecimento, ver tudo acontecer com minhas próprias mãos é muito gratificante!</p>
+      </div>
+
+      <div class="col-md-4 ">
+        <div class="d-flex justify-content-center">
+          <img class="w-50 h-60 rounded-circle" src="https://i.imgur.com/3cNalBM.png" alt="">
+       </div>
+        <h3 class="text-center pt-4">Leonardo Cintra</h3>
+        <p class="text-justify pt-3"></p>
+      </div>
+
+      <div class="col-md-4">
+        <div class="d-flex justify-content-center">
+          <img class="w-50 h-50 rounded-circle" src="https://i.imgur.com/Q4p2wfi.jpg" alt="">
+       </div>
+        <h3 class="text-center pt-4">Natã Grecu</h3>
+        <p class="text-justify pt-3">Apaixonado
+          pela tecnologia, em busca de novos
+          desafios e principalmente solucioná los. Estou
+          continuamente a procura de conhecimento, para
+          aprimoramento pessoal e profissional. Busco
+          uma forma de influenciar positivamente o
+          mundo, e a partir do desenvolvimento de
+          sistemas, descobri que posso ajudar muitas
+          pessoas e deixar um pouco da minha marca em
+          cada lugar.</p>
+      </div>
+
+    </div>
+
+
+    </div>
+  </div>
+
+    <!-- Pagina principal -->
+    <app-rodape></app-rodape>

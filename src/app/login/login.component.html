@@ -1,0 +1,56 @@
+<div class="form-body without-side ">
+    <div class="row">
+        <div class="img-holder">
+            <div class="bg"></div>
+            <div class="info-holder">
+                <img src="images/graphic3.svg" alt="">
+            </div>
+        </div>
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <div class="img=logo d-flex justify-content-center mb-3">
+                        <img width="70px" src="../../assets/img/connecto.svg" alt="">
+                    </div>
+
+                    <h3 class="d-flex justify-content-center mb-4">Login</h3>
+
+                    <form>
+                      <div class="group">
+                        <input [(ngModel)]="user.email" class="form-control form-H" type="text" name="username" placeholder="" required>
+                        <label for="username">E-mail</label>
+                      </div>
+
+                      <div class="group">
+                        <input [(ngModel)]="user.senha" class="form-control form-H" type="password" name="password" placeholder="" required>
+                        <label for="password">Senha</label>
+                      </div>
+
+                        <div class="form-button d-flex flex-column">
+                            <button id="submit" type="submit" class="ibtn" (click)="logar()">Login</button>
+                            <a class=" d-flex justify-content-center mt-1" href="forget17.html">Esqueceu a senha?</a>
+                        </div>
+                    </form>
+                    <div class="other-links">
+                        <div class="text d-flex justify-content-center">Ou faça login com:</div>
+                        <div class="list d-flex justify-content-center">
+                            <a href="#">
+                                <fa-icon [icon]="faFacebook"></fa-icon>
+                            </a>
+                            <a href="#">
+                                <fa-icon [icon]="faGoogle"></fa-icon>
+                            </a>
+                            <a href="#">
+                                <fa-icon [icon]="faLinkedin"></fa-icon>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="page-links d-flex justify-content-end">
+                        <a routerLink='/cadastrar'>Criar Conta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

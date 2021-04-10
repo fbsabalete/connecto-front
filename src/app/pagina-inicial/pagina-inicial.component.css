@@ -1,0 +1,317 @@
+/* Teste letreiro pg inicial */
+.cw-100{
+  width: 300vw;
+}
+.d-none {
+  display: none;
+}
+/* h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40pt;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+} */
+#letreiro{
+  color: #a013b3;
+}
+
+.typing {
+  color: #a013b3;
+  position: relative;
+  display: inline-block;
+}
+.typing::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  color: #282350;
+  background: white;
+  animation: typing 1s ease-out alternate infinite;
+}
+@keyframes typing {
+  to {
+    width: 0;
+ }
+}
+
+
+
+
+/* Teste letreiro pg inicial */
+
+
+
+.scroll-down{
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+}
+
+.scroll-min{
+  background-color: transparent!important;
+  transition: all 0.3s ease-in-out;
+}
+
+.scroll-up{
+  background: rgb(152, 59, 206)!important;
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.nav-button-clicked{
+  background: rgb(152, 59, 206)!important;
+}
+
+
+.vh-90{
+  height: 85vh;
+}
+.global{
+ /*  padding: 0% 19%; */
+  height: 100vh;
+  background-position: 48% 0%;
+  background-image: url(https://themexriver.com/appilo-theme/main/wp-content/uploads/sites/2/2020/11/slider-bg-1.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 150% ;
+}
+/* nav */
+
+.collapse.show, .nav-item, .collapsing .nav-item {
+  width: max-content;
+  margin-left: auto;
+}
+
+.navbar-brand img{
+  width: 4rem;
+  margin-left: 1rem;
+}
+.nav-item {
+  padding-right: 3rem;
+
+
+}
+.nav-link{
+
+  border: 2px solid transparent;
+  transition: 0.3s;
+  color: rgb(221, 221, 221);
+}
+
+.botao{
+text-align: center;
+color: black;
+width: 100px;
+height: 38px;
+background: #ffffff;
+border: 1px solid #D0AEAE;
+border-radius: 100px;
+
+}
+
+.navbar-toggler{
+  background-image: url(../../assets/img/cardapio1.png);
+  background-repeat: no-repeat;
+  background-size: 30px 30px ;
+  justify-content: flex-end;
+}
+
+.nav-link:hover{
+  color: white;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #D0AEAE;
+  border-radius: 100px;
+
+  -webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
+}
+
+.botao:hover{
+
+  text-align: center;
+  color: white;
+  width: 100px;
+  height: 38px;
+  background: transparent;
+  border: 2px solid #D0AEAE;
+
+  border-radius: 100px;
+  -webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         3px 7px 5px rgba(50, 50, 50, 0.77);
+
+  transition: 0.3s;
+}
+
+
+/* nav */
+
+/* secção-texto */
+.text {
+  width: 30%;
+  padding-left: 3%;
+  padding-right: 10%;
+}
+
+.titulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px;
+  color: #282350;
+
+
+}
+
+.subtitulo{
+  font-family: 'Poppins', sans-serif;
+  color: #282350;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.paragrafo {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #403b64;
+  font-size:20px;
+}
+
+
+
+.botao-saiba{
+  margin-top: 5%;
+
+  width: 200px;
+  height: 61px;
+  left: 84px;
+  top: 704px;
+
+  background: linear-gradient(90deg, #D0217E 0%, rgba(109, 44, 144, 0.97) 100%);
+  border: none;
+  border-radius: 100px;
+
+  transition: 0.6s;
+
+}
+.botao-saiba:hover{
+
+  background: linear-gradient(90deg, rgba(109, 44, 144, 0.97), #D0217E 100%  10%);
+
+  border: 1px solid white;
+  -webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
+-moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
+box-shadow:         3px 1px 5px rgba(50, 50, 50, 0.77);
+
+  transition: 0.6s;
+}
+/* /secção-texto */
+/* carrosel */
+
+
+/* carousel */
+.carrosel {
+ width: 90%;
+ height: 395px;
+ border-radius: 30px;
+ overflow: hidden;
+
+
+}
+
+.tamanho-imagem {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: 8s;
+
+}
+.carousel-item.active .efeito-imagem {
+ transform: scale(1.1);
+}
+
+/* /carousel */
+@media (max-width: 650px) {
+
+  .global{
+    padding: 5%;
+
+  }
+   .titulo{
+      margin-top: 40%;
+  }
+
+   .subtitulo {
+      margin-top: 40%;
+  }
+
+  .botao-saiba{
+      margin-top: 20%;
+  }
+  .nav-item{
+    display: flex;
+    padding: 0;
+    padding-right: 5%;
+    justify-content: flex-end;
+  }
+  .botao{
+    background: none;
+    border:none;
+    text-align: end;
+    color: white;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-link{
+    border: none;
+  }
+  .nav-link:hover{
+    color: white;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+    transition: 0s;
+  }
+  .botao{
+    text-align: center;
+    color: rgb(221, 221, 221);
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+  }
+  .botao:hover{
+    width: auto;
+    height: auto;
+  }
+
+}
+
+/* Texto Categorias */
+
+
+.d-none {
+  display: none;
+}
+
+.typing {
+  position: relative;
+  display: inline-block;
+}
+.typing::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  color: 1d1f20;
+  background: white;
+  animation: typing 1s ease-out alternate infinite;
+}
+@keyframes typing {
+  to {
+      width: 0;
+ }
+}

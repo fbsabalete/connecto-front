@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+
+body{
+  overflow-x: hidden;
+}
+
+h6 {
+    color: rgb(152, 59, 206);
+}
+
+html{
+  scroll-behavior: smooth;
+}

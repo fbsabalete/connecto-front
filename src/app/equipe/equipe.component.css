@@ -1,0 +1,195 @@
+.img-container{
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 60%;
+  background-color: gray;
+  z-index: 1;
+}
+
+.img-container:after{
+  content: '';
+  padding-bottom: 100%;
+}
+
+.coluna-membro:hover .borda{
+  opacity: 100%;
+  transform: translateX(7%);
+}
+
+.coluna-membro:hover .imagem-perfil{
+  transform: translateX(-8%);
+}
+
+.imagem-perfil{
+  transition: all .5s;
+}
+
+.conteudo{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.coluna-membro{
+  height: 350px;
+}
+
+.borda{
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  background-color: transparent;
+  border: 3px solid transparent;
+  overflow: visible;
+  opacity: 0;
+  transition: all .5s;
+  background-image: linear-gradient(white, white),
+                    linear-gradient(180deg, rgba(255,0,230,1) 0%, rgba(105,11,179,1) 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box
+}
+
+.z-index-1{
+  z-index: 1;
+}
+
+.coluna-membro:hover .transition-delay-0s{
+  transition: all 1s 0s;
+}
+.coluna-membro:hover .transition-delay-05s{
+  transition: all 1s .3s;
+
+}
+.coluna-membro:hover .transition-delay-1s{
+  transition: all 1s 0.6s;
+}
+
+.coluna-membro:hover .social-logo{
+  opacity: 1;
+}
+
+.social-logo{
+  width: 15%;
+  height: 15%;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 5px 1px #777777;
+  transition: .5s;
+  opacity: 0;
+}
+
+.social-logo:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(255,0,230,1) 0%, rgba(105,11,179,1) 100%);
+  transition: 0.5s;
+  opacity: 0;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.social-logo:hover::before{
+  opacity: 1;
+}
+
+.logo-start{
+  position: absolute;
+  right: 0;
+  top: 15%;
+}
+
+.logo-center{
+  position: absolute;
+  right: -7.6%;
+  top: 42.4%
+}
+
+.logo-end{
+  position: absolute;
+  right: 0;
+  bottom: 15%;
+}
+
+.img-container img{
+  object-fit: cover;
+  width: inherit;
+}
+
+.nome-membro{
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+  left: 10%;
+}
+
+@media (hover: none) {
+  .coluna-membro .borda{
+      opacity: 100%;
+      transform: translateX(7%);
+  }
+  .coluna-membro .imagem-perfil{
+      transform: translateX(-8%);
+  }
+  .social-logo{
+      opacity: 1;
+  }
+}
+
+@media (max-width: 576px){
+  .coluna-membro{
+      height: 70vw;
+  }
+  h2{
+      font-size: 2rem;
+  }
+}
+
+@media (min-width: 576px){
+  .coluna-membro{
+      height: 200px;
+  }
+}
+
+@media (min-width: 768px){
+  .coluna-membro{
+      height: 195px;
+  }
+}
+
+@media (min-width: 992px){
+  .coluna-membro{
+      height: 255px;
+  }
+}
+
+.botao-saiba{
+  margin-top: 5%;
+
+  width: 200px;
+  height: 61px;
+  left: 84px;
+  top: 704px;
+
+  background: linear-gradient(90deg, #D0217E 0%, rgba(109, 44, 144, 0.97) 100%);
+  border: none;
+  border-radius: 100px;
+
+  transition: 0.6s;
+
+}
+.botao-saiba:hover{
+
+  background: linear-gradient(90deg, rgba(109, 44, 144, 0.97), #D0217E 100%  10%);
+
+  border: 1px solid white;
+  -webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
+-moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
+box-shadow:         3px 1px 5px rgba(50, 50, 50, 0.77);
+
+  transition: 0.6s;
+}

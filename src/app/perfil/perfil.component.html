@@ -1,0 +1,354 @@
+<div class="voltar">
+  <a class="voltar-a" routerLink="/feed">
+    <fa-icon class="icone-voltar fa-2x" [icon]="faChevronCircleLeft"></fa-icon>  </a>
+</div>
+<div class="container-fluid capa">
+  <div class="foto-nome d-flex flex-column align-items-center ml-md-5">
+    <img class="foto-perfil " src="{{user.fotoPerfil}}" alt="">
+    <p class="nome font-weight-bolder mt-2">{{user.nomeCompleto}}</p>
+  </div>
+
+</div>
+<div class="d-flex border-bottom height-95px">
+  <ul class="nav nav-tabs d-none d-md-flex align-items-center justify-content-between h-100 m-auto" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a [ngClass]="!checarUrl() ? 'show active': ''" class="nav-link d-flex align-items-center flex-column" id="profile-tab" data-toggle="tab"
+        href="#perfil" role="tab" aria-controls="profile" aria-selected="false"><img src="../../assets/img/post.svg"
+          alt=""><span>Postagens</span> </a>
+    </li>
+    <li class="nav-item">
+      <a [ngClass]="checarUrl() ? 'show active': ''" class="nav-link d-flex align-items-center flex-column" id="contact-tab" data-toggle="tab" href="#contato"
+        role="tab" aria-controls="contact" aria-selected="false"><img src="../../assets/img/resume.svg" alt="">
+        <span>Portifolio</span></a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link d-flex align-items-center flex-column" id="home-tab" data-toggle="tab" href="#home" role="tab"
+        aria-controls="home" aria-selected="true"><img src="../../assets/img/user (1).svg"
+          alt=""><span>Informações</span> </a>
+    </li>
+  </ul>
+
+  <!-- <div class="edit position-absolute ">
+    <a href="#editarPerfil" data-toggle="modal" data-target="#editarPerfil">
+      <img src="../../assets/img/edit.png" alt="" width="30px">
+    </a>
+  </div> -->
+
+</div>
+
+
+
+<div class="container-fluid bg-light">
+  <div class="row pt-3">
+    <div class="col-md-3  ">
+      <div class="col-md-12 borda pt-3 bg-white">
+        <div class="row d-flex justify-content-center ">
+          <div class="col-6 text-center">
+            <p class="mb-0 color-roxo font-weight-bold ">5</p>
+            <p class="text-secondary">Conexões</p>
+          </div>
+          <div class="col-6 text-center">
+            <p class="mb-0 color-roxo font-weight-bold">6</p>
+            <p class="text-secondary">Serviços</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center ">
+            <h3 class="border-top pt-2">Sobre Mim</h3>
+            <p class="text-justify p-4 text-secondary"> {{user.sobreMim}} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 d-md-none d-flex">
+      <ul class="nav nav-tabs d-flex align-items-center justify-content-between m-auto" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a [ngClass]="!checarUrl() ? 'show active': ''" class="nav-link d-flex align-items-center flex-column" id="profile-tab" data-toggle="tab"
+            href="#perfil" role="tab" aria-controls="profile" aria-selected="false"><img src="../../assets/img/post.svg"
+              alt=""><span>Postagens</span> </a>
+        </li>
+        <li class="nav-item">
+          <a [ngClass]="checarUrl() ? 'show active': ''" class="nav-link d-flex align-items-center flex-column" id="contact-tab" data-toggle="tab" href="#contato"
+            role="tab" aria-controls="contact" aria-selected="false"><img src="../../assets/img/resume.svg" alt="">
+            <span>Portifolio</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link d-flex align-items-center flex-column" id="home-tab" data-toggle="tab" href="#home" role="tab"
+            aria-controls="home" aria-selected="true"><img src="../../assets/img/user (1).svg"
+              alt=""><span>Informações</span> </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div class="col-md-12 borda pt-3 bg-white">
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade pb-3 mb-2" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div>
+              <h4 class="mt-0">Informações de Contato</h4>
+              <p class="infC">Nome: {{user.nomeCompleto}} </p>
+              <p class="infC">Telefone: {{ user.telefone }}
+                <a target="_blank" class="verde" href="https://api.whatsapp.com/send?phone=55{{user.telefone}}&text=Ol%C3%A1%2C%20{{user.nomeCompleto}}!%20Tudo%20bem%3F%20Encontrei%20seu%20perfil%20na%20Connecto%2C%20tenho%20interesse%20nos%20seus%20servi%C3%A7os!">
+                  <fa-icon [icon]="faWhatsapp"></fa-icon></a>
+              </p>
+              <p class="infC">E-mail: {{ user.email }}</p>
+
+              <h4 class="mt-2 mb-3">Serviços Prestados</h4>
+              <div *ngFor="let item of listaCategoria">
+                <p class="infC">{{item}}</p>
+              </div>
+
+              <div *ngIf='user.id == idLogado' class="edit position-absolute ">
+                <a href="#editarPerfil" data-toggle="modal" data-target="#editarPerfil">
+                  <img src="../../assets/img/edit.png" alt="" width="30px">
+                </a>
+              </div>
+
+              <!-- Botão para acionar modal -->
+               <!--  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarPerfil">
+                  Abrir modal de demonstração
+                </button> -->
+                  <!-- Botão para acionar modal -->
+
+            </div>
+          </div>
+          <div [ngClass]="!checarUrl() ? 'show active': '' " class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
+            <app-postagem *ngFor="let item of user.postagem">
+              <img class="foto mr-2 rounded-circle" src="{{ user.fotoPerfil }}" alt="foto-perfil" width="50px"
+                height="50px" />
+              <h4 class="nome">{{ user.nomeCompleto }}</h4>
+              <p>{{ item.descricaoPost }}</p>
+              <img src="{{ item.linkImagem }}" alt="" width="100%" />
+              <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.prestadorServicos ? 'Disponivel ' +
+                item.tema.categoria : 'Buscando ' + item.tema.categoria}}</p>
+            </app-postagem>
+          </div>
+
+          <div [ngClass]="checarUrl() ? 'show active': ''" class="tab-pane fade p-4" id="contato" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="row justify-content-between borda-bottom">
+            <h2>Portfólio</h2>
+            <button *ngIf='user.id == idLogado' (click)="zerarPortfolio()" type="button" class="botao" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" aria-hidden="true"></i>  Adicionar</button>
+          </div>
+            <section class="container">
+              <div class="row row-cols-sm-2 row-cols-md-1 row-cols-lg-2">
+                <app-portfolio class="col d-flex justify-content-center" *ngFor="let item of user.portfolio | orderBy : key : reverse">
+                  <img role="button" (click)='findByIdPortfolio(item.id)' data-toggle="modal" data-target="#modalVerFoto" class="imagem-card" src="{{item.urlImagem}}">
+                  <h5 id="texto-portfolio">{{item.descricao}}</h5>
+                  <a href="" (click)='findByIdPortfolio(item.id)' *ngIf='user.id == idLogado' class="deletar"  data-toggle="modal" data-target="#modalDeletar" ><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
+                </app-portfolio>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="borda ">
+        <div class="d-sm-none d-md-block borda-amigos ">
+          <div class="row">
+              <div class="col-12 shadow-sm ">
+                  <div class="header-amigo mt-4 ml-3">
+                      <h3>Amigos</h3>
+                  </div>
+                  <div class="teste mb-2 mt-4 ml-3">
+                      <div class="amigo d-flex align-items-center">
+                          <div class="amigo-img mr-2">
+                              <img class="rounded-circle"
+                                  src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/3/6050ee5fe1cff-bpthumb.jpg"
+                                  alt="" width="40px" height="40px" />
+                          </div>
+                          <div class="texto-amigo">
+                              <h5 class="m-0">Manoel Souza</h5>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="teste mb-2 ml-3">
+                      <div class="amigo d-flex align-items-center">
+                          <div class="amigo-img mr-2">
+                              <img class="rounded-circle"
+                                  src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/6/5e2cccd55f95b-bpthumb.jpg"
+                                  alt="" width="40px" height="40px" />
+                          </div>
+                          <div class="texto-amigo">
+                              <h5 class="m-0">Renata Oliveira</h5>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="teste mb-2 ml-3">
+                      <div class="amigo d-flex align-items-center">
+                          <div class="amigo-img mr-2">
+                              <img class="rounded-circle"
+                                  src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/14/5e2d01291b6b9-bpthumb.jpg"
+                                  alt="" width="40px" height="40px" />
+                          </div>
+                          <div class="texto-amigo">
+                              <h5 class="m-0">Robson Nunes</h5>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="teste mb-2 ml-3">
+                      <div class="amigo d-flex align-items-center">
+                          <div class="amigo-img mr-2">
+                              <img class="rounded-circle"
+                                  src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/9/5e2ce3f5bcd91-bpthumb.jpg"
+                                  alt="" width="40px" height="40px" />
+                          </div>
+                          <div class="texto-amigo">
+                              <h5 class="m-0">Joaquim Gouveia</h5>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="teste ml-3">
+                      <div class="amigo d-flex align-items-center">
+                          <div class="amigo-img mr-2">
+                              <img class="rounded-circle"
+                                  src="https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/12/5e2cfd5d1d7c0-bpthumb.jpg"
+                                  alt="" width="40px" height="40px" />
+                          </div>
+                          <div class="texto-amigo">
+                              <h5 class="m-0">Amanda Lopes</h5>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade p-0" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title " id="exampleModalLabel">Adicionar foto ao portfolio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group d-flex flex-column justify-content-center align-items-center">
+
+              <input [(ngModel)]="portfolio.urlImagem" name="imagem-url" type="text" class="form-control input-portfolio"
+                placeholder="Insira a URL da imagem" id="imagem-url">
+
+              <input [(ngModel)]="portfolio.descricao" name="descricao-portfolio" type="text" class="form-control input-portfolio mt-3"
+              placeholder="Insira uma descrição" id="descricao-portfolio">
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+
+        <button (click)="cadastrarPortfolio()" type="button" class="btn " data-dismiss="modal">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade p-0" id="modalDeletar" tabindex="-1" aria-labelledby="modalDeletar" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title " id="modalDeletarLabel">Deseja deletar essa foto ?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <app-portfolio class="col d-flex justify-content-center">
+          <img class="imagem-card" src="{{portfolio.urlImagem}}">
+          <h5 id="texto-portfolio">{{portfolio.descricao}}</h5>
+        </app-portfolio>
+
+      </div>
+      <div class="modal-footer">
+
+        <button (click)="deletarPortfolio()" type="button" class="btn " data-dismiss="modal">Deletar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade p-0" id="modalVerFoto" tabindex="-1" aria-labelledby="modalVerFoto" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modalVerFotoLabel">{{portfolio.descricao}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12 img-modal-container d-flex justify-content-center">
+            <img class="imagem-modal" src="{{portfolio.urlImagem}}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="editarPerfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Perfil</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <input [(ngModel)]="user.nomeCompleto" (keyup)="validaNome($event)" class="form-control" type="text" name="name"
+            placeholder="Nome Completo" required>
+          <div class="invalid-tooltip">Digite um nome válido.</div>
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.email" (keyup)="validaEmail($event)" class="form-control" type="email" name="email" placeholder="E-mail"
+            required>
+          <div class="invalid-tooltip">Digite um email válido.</div>
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.fotoPerfil" (keyup)="validaFoto($event)" type="text" class="form-control is-valid" name="link-foto"
+            placeholder="Link Foto">
+          <div class="invalid-tooltip">A URL deve conter uma foto ou ser vazia.</div>
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="senha" (keyup)="validaSenha($event)" class="form-control" type="password" name="password"
+            placeholder="Senha" required>
+          <div class="invalid-tooltip">A senha deve conter entre 5 e 12 caracteres.</div>
+        </div>
+
+        <div class="form-group">
+          <input (keyup)="confirmSenha($event)" class="form-control" type="password" name="password" placeholder="Confirmar Senha" required>
+          <div class="invalid-tooltip">As senhas devem ser iguais.</div>
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.telefone" (keyup)="validaTelefone($event)" type="text" class="form-control " name="telefone"
+            placeholder="Telefone">
+          <div class="invalid-tooltip">O telefone deve conter o DDD.</div>
+        </div>
+        <div class="form-group">
+          <textarea name="descricao" class="form-control" [(ngModel)]="user.sobreMim" rows="5" placeholder="Sobre mim" style="resize: vertical; height: auto;" maxlength="3000"></textarea>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+        <button (click)='atualizar()' data-dismiss="modal" type="button" class="btn ibtn">Salvar</button>
+      </div>
+    </div>
+</div>
