@@ -5,7 +5,7 @@
                 <form class="post">
                     <div class="d-flex justify-content-between p-1 container-news">
                         <div class="img-nova-post">
-                            <img class="rounded-circle mr-1" src="{{foto}}" alt="Foto de perfil" width="50px" height="50px">
+                            <img class="rounded-circle mr-1" src="{{foto}}" alt="Foto de perfil" width="50px" height="50px" style="object-fit: cover;">
                         </div>
                         <textarea name="descricao" [(ngModel)]="postagem.descricaoPost" (focus)="aparecer()" cols="94" rows="2" placeholder="Escreva sua postagem" style="resize: vertical; height: auto;" maxlength="3000"></textarea>
                     </div>

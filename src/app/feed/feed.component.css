@@ -141,6 +141,10 @@ ul {
     color: rgba(128, 128, 128, 0.281);
 }
 
+.foto{
+  object-fit: cover;
+}
+
 .form-check {
     margin-right: 1rem;
     color: black;

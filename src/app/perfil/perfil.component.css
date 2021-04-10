@@ -39,13 +39,19 @@
 
 .foto-perfil {
   width: 200px;
+  height: 200px;
   border-radius: 10%;
   border: 2px solid white;
+  object-fit: cover;
 }
 
 .foto-nome {
   position: absolute;
   bottom: -35%;
+}
+
+.foto{
+  object-fit: cover;
 }
 .nav {
   height: 15vh;
