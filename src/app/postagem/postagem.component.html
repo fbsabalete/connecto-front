@@ -2,7 +2,7 @@
     <div class="row ">
         <div class="col-md-11 col-sm-12  m-auto bg-white post shadow-sm ">
 
-            <div class="dropdown ">
+            <div *ngIf="editarModal" class="dropdown ">
                 <button class="btn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           ...
         </button>
@@ -10,9 +10,13 @@
 
                     <!-- Button trigger modal -->
 
-                    <button (click)="findAllTema()" (click)="postagemModal()" type="button" class="btn botao-categoria" data-toggle="modal" data-target="#editar">
+                    <button (click)="findAllTema()" (click)="postagemModal()" type="button" class="btn botao-categoria dropdown-item" data-toggle="modal" data-target="#editar">
                      Editar
                     </button>
+
+                    <button type="button " (click)="excluirPostagem()" class="btn botao-categoria dropdown-item">
+                       Excluir
+                     </button>
                     <ng-content id="id" select=".id"> </ng-content>
                 </div>
                 <!-- Modal -->

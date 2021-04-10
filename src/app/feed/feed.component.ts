@@ -28,6 +28,8 @@ export class FeedComponent implements OnInit {
   listaFiltradaVagas: Postagem [] = [];
   faWhatsapp = faWhatsapp;
 
+  carregaPostagem;
+
   listaService: Postagem[];
   subscription: Subscription;
 
@@ -54,6 +56,7 @@ export class FeedComponent implements OnInit {
 
   onLista() {
     this.postagens();
+
   }
 
   postagens() {

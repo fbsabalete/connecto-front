@@ -6,30 +6,20 @@
                     <div class="tab-content mt-5 px-3 px-sm-1 " id="pills-tabContent">
                         <div class="tab-pane fade active show" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
                             <app-post-new (lista)="onLista()"></app-post-new>
-                            <app-postagem *ngFor="let item of listaPostagem" [data]="item.id">
+
+                            <app-postagem (carregaPostagem)="onLista()" *ngFor="let item of listaPostagem" [data]="item.id">
                                 <img [routerLink]="['/perfil', item.usuario.id]" role="button" class="foto rounded-circle mr-2" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
-                                <h4 class="nome m-0">{{ item.usuario.nomeCompleto }}</h4>
+                                <h4 [routerLink]="['/perfil', item.usuario.id]" role="button" class="nome m-0">{{ item.usuario.nomeCompleto }}</h4>
                                 <p class=" text-justify mt-3"> {{ item.descricaoPost }}</p>
                                 <img class=" rounded-lg " src="{{ item.linkImagem }}" alt="" width="100%" />
                                 <p class="etiqueta2 p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
                                 <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.prestadorServicos ? 'Disponivel ' + item.tema.categoria : 'Buscando ' + item.tema.categoria}}</p>
-
-
-
                                 <a target="_blank" class="zap a" href="https://api.whatsapp.com/send?phone=55{{item.usuario.telefone}}&text=Ol%C3%A1%20{{item.usuario.nomeCompleto}}%2C%20vi%20sua%20publica%C3%A7%C3%A3o%20na%20Connecto%20e%20tenho%20interesse%20no%20seu%20servi%C3%A7o%20!!">
                                     <fa-icon [icon]="faWhatsapp"></fa-icon>
                                     Contato
                                 </a>
-
-
-
-
-
-
-
-
-
                             </app-postagem>
+
                         </div>
                         <div class="tab-pane fade" id="nav-servicos" role="tabpanel" aria-labelledby="nav-servicos-tab">
                             <div class="filtros d-flex justify-content-end">
@@ -48,19 +38,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <app-postagem *ngFor="let item of listaFiltradaServico">
-                                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
-                                <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
-                                <p>{{ item.descricaoPost }}</p>
-                                <img src="{{ item.linkImagem }}" alt="" width="100%" />
-                                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
 
+                            <app-postagem (carregaPostagem)="onLista()" *ngFor="let item of listaFiltradaServico" [data]="item.id">
+                                <img [routerLink]="['/perfil', item.usuario.id]" role="button" class="foto rounded-circle mr-2" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
+                                <h4 [routerLink]="['/perfil', item.usuario.id]" role="button" class="nome m-0">{{ item.usuario.nomeCompleto }}</h4>
+                                <p class=" text-justify mt-3"> {{ item.descricaoPost }}</p>
+                                <img class=" rounded-lg " src="{{ item.linkImagem }}" alt="" width="100%" />
+                                <p class="etiqueta2 p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
+                                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.prestadorServicos ? 'Disponivel ' + item.tema.categoria : 'Buscando ' + item.tema.categoria}}</p>
                                 <a target="_blank" class="zap a" href="https://api.whatsapp.com/send?phone=55{{item.usuario.telefone}}&text=Ol%C3%A1%20{{item.usuario.nomeCompleto}}%2C%20vi%20sua%20publica%C3%A7%C3%A3o%20na%20Connecto%20e%20tenho%20interesse%20no%20seu%20servi%C3%A7o%20!!">
                                     <fa-icon [icon]="faWhatsapp"></fa-icon>
                                     Contato
                                 </a>
-
                             </app-postagem>
+
                         </div>
                         <div class="tab-pane fade" id="nav-vagas" role="tabpanel" aria-labelledby="nav-vagas-tab">
                             <div class="filtros d-flex justify-content-end">
@@ -79,19 +70,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <app-postagem *ngFor="let item of listaFiltradaVagas">
-                                <img class="foto rounded-circle" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
-                                <h4 class="nome">{{ item.usuario.nomeCompleto }}</h4>
-                                <p>{{ item.descricaoPost }}</p>
-                                <img src="{{ item.linkImagem }}" alt="" width="100%" />
-                                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
+                            <app-postagem (carregaPostagem)="onLista()" *ngFor="let item of listaFiltradaVagas" [data]="item.id">
+                                <img [routerLink]="['/perfil', item.usuario.id]" role="button" class="foto rounded-circle mr-2" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
+                                <h4 [routerLink]="['/perfil', item.usuario.id]" role="button" class="nome m-0">{{ item.usuario.nomeCompleto }}</h4>
+                                <p class=" text-justify mt-3"> {{ item.descricaoPost }}</p>
+                                <img class=" rounded-lg " src="{{ item.linkImagem }}" alt="" width="100%" />
+                                <p class="etiqueta2 p-0 m-0 text-white text-uppercase">{{ item.tema.categoria }}</p>
+                                <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.prestadorServicos ? 'Disponivel ' + item.tema.categoria : 'Buscando ' + item.tema.categoria}}</p>
+
+
 
                                 <a target="_blank" class="zap a" href="https://api.whatsapp.com/send?phone=55{{item.usuario.telefone}}&text=Ol%C3%A1%20{{item.usuario.nomeCompleto}}%2C%20vi%20sua%20publica%C3%A7%C3%A3o%20na%20Connecto%20e%20tenho%20interesse%20no%20seu%20servi%C3%A7o%20!!">
                                     <fa-icon [icon]="faWhatsapp"></fa-icon>
                                     Contato
                                 </a>
-
-
 
                             </app-postagem>
                         </div>

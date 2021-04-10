@@ -1,7 +1,7 @@
 import { PostagemService } from './../service/postagem.service';
 import { environment } from 'src/environments/environment.prod';
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
@@ -28,9 +28,13 @@ export class PostagemComponent implements OnInit {
   postagem: Postagem = new Postagem()
   idTema:number
   listaPostagem;
-  post: string
+  editarModal: boolean
+
+
 
   @Input() data:number
+
+  @Output() carregaPostagem = new EventEmitter()
 
   item;
 
@@ -48,7 +52,7 @@ export class PostagemComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    this.subscription = this.postagemService.listaAtualizada.subscribe(resp => this.listaService = resp)
+    this.idDiferente()
   }
 
   curtir(){
@@ -78,6 +82,7 @@ export class PostagemComponent implements OnInit {
   publicar(){
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp;
+      this.carregaPostagem.emit()
     })
   }
 
@@ -104,6 +109,28 @@ export class PostagemComponent implements OnInit {
 
   postagemModal(){
     this.findByIdPostagem();
+  }
+
+
+  excluirPostagem(){
+    this.postagemService.deletePostagem(this.data).subscribe(()=> {
+      this.carregaPostagem.emit()
+    })
+  }
+
+  idDiferente(){
+    this.postagemService.getByIdPostagem(this.data).subscribe((resp: Postagem) => {
+      this.postagem = resp;
+      if ( this.postagem.usuario.id == environment.id) {
+        this.editarModal = true
+      } else {
+        this.editarModal = false
+      }
+
+
+
+    });
+
   }
 
 
