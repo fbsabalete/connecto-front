@@ -175,13 +175,16 @@ export class PerfilComponent implements OnInit {
       this.authService.atualizar(this.user).subscribe((resp: Usuario) => {
         this.user = resp;
 
-        alert('Usuario atualizado com sucesso, faça o login novamente.');
-        environment.fotoPerfil = '';
-        environment.id = 0;
-        environment.nomeCompleto = '';
-        environment.token = '';
+        environment.fotoPerfil = this.user.fotoPerfil;
+        environment.nomeCompleto = this.user.nomeCompleto;
 
-        this.router.navigate(['/entrar']);
+        // alert('Usuario atualizado com sucesso, faça o login novamente.');
+        // environment.fotoPerfil = '';
+        // environment.id = 0;
+        // environment.nomeCompleto = '';
+        // environment.token = '';
+
+        // this.router.navigate(['/entrar']);
       });
     }
   }
