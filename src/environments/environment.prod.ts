@@ -1,3 +1,4 @@
+import { Postagem } from './../app/model/Postagem';
 export const environment = {
   production: true,
 
@@ -8,6 +9,6 @@ export const environment = {
   tipoAdmin: "",
   server: "http://localhost",
   port: ":8080",
-  listaPost: []
+  listaPost: Postagem
 
 };

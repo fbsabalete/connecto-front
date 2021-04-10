@@ -50,6 +50,11 @@ ul {
     outline: none;
 }
 
+.span {
+    color: black;
+    font-size: 0.8rem;
+}
+
 .link-foto {
     margin-bottom: 1rem;
     padding-bottom: 10px;

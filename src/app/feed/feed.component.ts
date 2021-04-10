@@ -1,3 +1,5 @@
+import { environment } from 'src/environments/environment.prod';
+
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { TemaService } from './../service/tema.service';
 import { PostagemService } from './../service/postagem.service';
@@ -5,6 +7,7 @@ import { Postagem } from './../model/Postagem';
 
 import { Component, OnInit } from '@angular/core';
 import { Tema } from '../model/Tema';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-feed',
@@ -25,9 +28,15 @@ export class FeedComponent implements OnInit {
   listaFiltradaVagas: Postagem [] = [];
   faWhatsapp = faWhatsapp;
 
+  listaService: Postagem[];
+  subscription: Subscription;
+
   ngOnInit() {
     this.postagens();
     this.checkLength();
+    this.subscription = this.postagemService.listaAtualizada.subscribe(resp => this.listaService = resp)
+
+
   }
 
   constructor(
@@ -38,6 +47,8 @@ export class FeedComponent implements OnInit {
   findAllTema() {
     this.temaService.getAllTema().subscribe((resp) => {
       this.listaTemas = resp;
+
+
     });
   }
 
@@ -48,6 +59,7 @@ export class FeedComponent implements OnInit {
   postagens() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagem = resp;
+
       this.listaPostagemServico = [];
       this.listaPostagemVagas = [];
       this.listaPostagem.forEach((item) => {
@@ -62,6 +74,7 @@ export class FeedComponent implements OnInit {
       this.listaPostagemVagas.reverse()
       this.listaFiltradaServico = this.listaPostagemServico;
       this.listaFiltradaVagas = this.listaPostagemVagas;
+
     });
   }
 

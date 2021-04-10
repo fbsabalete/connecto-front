@@ -15,12 +15,15 @@
                             <input type="text" name="link-foto" [(ngModel)]="postagem.linkImagem">
                         </div>
 
-                        <div class="p-1 b-b d-flex justify-content-between check-checkbox">
-                            <div class="select">
+                        <div class="p-1 b-b d-flex justify-content-between align-items-center check-checkbox">
+                            <div class="select d-flex flex-column justify-content-center align-items-center">
 
+                                <span class="span"> Escolha uma categoria </span>
                                 <select name="categoria" id="categoria" [(ngModel)]="idTema" (change)="findByIdTema()">
 
+
                                 <option *ngFor="let item of listaTema" value="{{item.id}}">{{item.categoria}}</option>
+
                               </select>
 
                             </div>
@@ -85,9 +88,9 @@
 
 
 
-      </div>
+            </div>
 
+        </div>
     </div>
-  </div>
 
 </div>
