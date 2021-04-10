@@ -84,6 +84,21 @@ ul {
     font-size: 0.8rem;
 }
 
+.titulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: #282350;
+
+
+}
+
+.subtitulo{
+  font-family: 'Poppins', sans-serif;
+  color: #282350;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
 @media (max-width: 576px) {
     .container-feed {
         width: 100%;
