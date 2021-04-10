@@ -178,13 +178,6 @@ export class PerfilComponent implements OnInit {
         environment.fotoPerfil = this.user.fotoPerfil;
         environment.nomeCompleto = this.user.nomeCompleto;
 
-        // alert('Usuario atualizado com sucesso, faça o login novamente.');
-        // environment.fotoPerfil = '';
-        // environment.id = 0;
-        // environment.nomeCompleto = '';
-        // environment.token = '';
-
-        // this.router.navigate(['/entrar']);
       });
     }
   }
