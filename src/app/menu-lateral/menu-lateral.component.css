@@ -48,6 +48,23 @@ ul {
     padding: 0;
 }
 
+.nav-link.active{
+  color: #6D2E8D;
+}
+
+.nav-link{
+  color:#636b81;
+  transition: all 0.3s;
+}
+
+.nav-link:hover{
+  color:#6D2E8D;
+}
+
+.nav-link:hover fa-icon{
+  transform: scale(1.05);
+}
+
 .card-texto ul li {
     display: flex;
     flex-direction: column;
@@ -97,7 +114,6 @@ ul {
 
 .lista-icones span {
     font-size: 1rem;
-    color: #838daa;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
     transition: 0.3s;
@@ -112,7 +128,6 @@ ul {
 }
 
 .lista-icones li fa-icon {
-    color: #838daa;
     transition: 0.3s;
 }
 
