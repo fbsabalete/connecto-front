@@ -27,6 +27,9 @@ ul {
   color: white;
   background-color: blueviolet;
 }
+.borda-bottom{
+  border-bottom: 2px solid slategrey;
+}
 
 
 /* amigos */

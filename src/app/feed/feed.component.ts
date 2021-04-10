@@ -14,6 +14,7 @@ import { Tema } from '../model/Tema';
 export class FeedComponent implements OnInit {
   lista;
 
+
   postagem: Postagem = new Postagem();
   listaPostagem: Postagem[];
   listaPostagemServico: Postagem[];
@@ -27,7 +28,7 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
     this.postagens();
-    window.scroll(0,0)
+    window.scroll(0,0);
     this.checkLength();
   }
 
@@ -107,5 +108,14 @@ export class FeedComponent implements OnInit {
       this.listaFiltradaServico = this.listaPostagemServico;
       this.listaFiltradaVagas = this.listaPostagemVagas;
     }
+  }
+
+  limparFiltros(){
+    this.listaFiltro = [];
+    this.checkLength()
+    var checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
+    checkboxes.forEach((resp: HTMLInputElement) => {
+      resp.checked = false;
+    })
   }
 }
