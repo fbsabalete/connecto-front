@@ -27,7 +27,9 @@ export class PostNewComponent implements OnInit {
 
   tema: Tema = new Tema()
   listaTema: Tema[]
-  idTema: number
+  idTema: number= 0
+  
+
 
   @Output() lista = new EventEmitter()
 
@@ -39,6 +41,7 @@ export class PostNewComponent implements OnInit {
 
   ngOnInit() {
     this.findAllTemas()
+    
 
   }
 
@@ -50,6 +53,7 @@ export class PostNewComponent implements OnInit {
     this.postagemService.postPostagem(this.postagem).subscribe((resp) => {
       this.postagem = resp;
       this.postagem = new Postagem();
+      this.idTema=0
       this.lista.emit()
       console.log(this.postagem.prestadorServicos)
 
@@ -102,7 +106,10 @@ export class PostNewComponent implements OnInit {
     var sumir = <HTMLElement>document.querySelector('.sumir')
     botao.style.display = "inline-block";
     sumir.style.display = "block";
+    
+  
   }
+
 
   cancelar() {
     var botao = <HTMLElement>document.querySelector('.botao')
