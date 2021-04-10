@@ -1,5 +1,5 @@
 import { Postagem } from './../model/Postagem';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
@@ -8,6 +8,9 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class PostagemService {
+
+  private listaSource = new BehaviorSubject([])
+  listaAtualizada = this.listaSource.asObservable();
 
   baseUrl: string = environment.server + environment.port + "/postagem"
 
@@ -20,7 +23,10 @@ export class PostagemService {
   }
 
   getAllPostagem(): Observable<Postagem[]>{
+
     return this.http.get<Postagem[]>(this.baseUrl, this.token)
+
+
   }
 
   getByIdPostagem(id: number): Observable<Postagem>{
@@ -38,4 +44,10 @@ export class PostagemService {
   deletePostagem(id: number){
     return this.http.delete(this.baseUrl + `/${id}`, this.token)
   }
+
+  atualizarLista(listaPostagem: Postagem[]){
+    this.listaSource.next(listaPostagem)
+  }
+
+
 }
