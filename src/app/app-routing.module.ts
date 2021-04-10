@@ -1,3 +1,4 @@
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'cadastrar', component: CadastrarComponent},
   { path: 'feed', component: InicioComponent },
   { path: 'perfil/:id', component: PerfilComponent},
-  { path: 'perfil/:id/portfolio', component: PerfilComponent}
+  { path: 'perfil/:id/portfolio', component: PerfilComponent},
+  { path: 'sobre-nos', component: SobreNosComponent},
+
 ];
 
 @NgModule({

@@ -23,9 +23,10 @@ import { OrderModule } from 'ngx-order-pipe';
 
 import { PerfilComponent } from './perfil/perfil.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     EquipeComponent,
     PaginaInicialComponent,
@@ -42,7 +43,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     PostNewComponent,
     PortfolioComponent,
     PerfilComponent,
-  ],
+      SobreNosComponent
+   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,

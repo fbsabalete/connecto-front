@@ -167,3 +167,29 @@
   }
 }
 
+.botao-saiba{
+  margin-top: 5%;
+
+  width: 200px;
+  height: 61px;
+  left: 84px;
+  top: 704px;
+
+  background: linear-gradient(90deg, #D0217E 0%, rgba(109, 44, 144, 0.97) 100%);
+  border: none;
+  border-radius: 100px;
+
+  transition: 0.6s;
+
+}
+.botao-saiba:hover{
+
+  background: linear-gradient(90deg, rgba(109, 44, 144, 0.97), #D0217E 100%  10%);
+
+  border: 1px solid white;
+  -webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
+-moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
+box-shadow:         3px 1px 5px rgba(50, 50, 50, 0.77);
+
+  transition: 0.6s;
+}
