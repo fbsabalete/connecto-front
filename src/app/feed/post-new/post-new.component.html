@@ -21,7 +21,7 @@
                                 <span class="span"> Escolha uma categoria </span>
                                 <select name="categoria" id="categoria" [(ngModel)]="idTema" (change)="findByIdTema()">
 
-
+                                <option value="0">Selecione</option>
                                 <option *ngFor="let item of listaTema" value="{{item.id}}">{{item.categoria}}</option>
 
                               </select>
@@ -43,9 +43,10 @@
                         </div>
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn botao-categoria" data-toggle="modal" data-target="#exampleModal">
+                        <button (click)="zerarCategoria()" type="button" class="btn botao-categoria" data-toggle="modal" data-target="#exampleModal">
                                                   + Categoria
                         </button>
+
 
                         <!-- Modal -->
                         <div class="modal fade p-0 " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
