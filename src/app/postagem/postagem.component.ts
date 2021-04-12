@@ -9,6 +9,7 @@ import { TemaService } from '../service/tema.service';
 import { Tema } from '../model/Tema';
 import { Postagem } from '../model/Postagem';
 import { Subscription } from 'rxjs';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -83,6 +84,20 @@ export class PostagemComponent implements OnInit {
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp;
       this.carregaPostagem.emit()
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Postagem realizada com sucesso ',
+        showConfirmButton: false,
+        timer: 1500
+  })
+        }, erro => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Não foi possível publicar essa postagem',
+            showConfirmButton: false,
+            timer: 1500
+      })
     })
   }
 
@@ -115,6 +130,20 @@ export class PostagemComponent implements OnInit {
   excluirPostagem(){
     this.postagemService.deletePostagem(this.data).subscribe(()=> {
       this.carregaPostagem.emit()
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Essa postagem foi excluída com sucesso',
+        showConfirmButton: false,
+        timer: 1500
+  })
+        }, erro => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Não excluir essa postagem',
+            showConfirmButton: false,
+            timer: 1500
+      })
     })
   }
 

@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faFacebook, faGooglePlus, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { AuthService } from '../service/auth.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -85,12 +86,27 @@ export class CadastrarComponent implements OnInit {
       this.auth.cadastrar(this.user).subscribe((resp) => {
       this.user = resp;
       this.router.navigate(["/entrar"]);
-       alert("Usuário cadastrado com sucesso.")
+       Swal.fire({
+      icon: 'success',
+      title: 'Usuario cadastrado com sucesso',
+      showConfirmButton: false,
+      timer: 1500
+})
       }, erro => {
-        alert("Usuário já cadastrado")
+        Swal.fire({
+          icon: 'error',
+          title: 'Usuario já cadastrado',
+          showConfirmButton: false,
+          timer: 1500
+    })
       })
     }else{
-      alert("Preencha corretamente os dados.")
+      Swal.fire({
+        icon: 'error',
+        title: 'Preencha corretamente as informações',
+        showConfirmButton: false,
+        timer: 1500
+  })
     }
   }
 
