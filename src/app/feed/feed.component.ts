@@ -64,6 +64,7 @@ export class FeedComponent implements OnInit {
   postagens() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagem = resp;
+      this.listaPostagem.reverse();
 
       this.listaPostagemServico = [];
       this.listaPostagemVagas = [];
@@ -74,9 +75,7 @@ export class FeedComponent implements OnInit {
           this.listaPostagemVagas.push(item);
         }
       });
-      this.listaPostagem.reverse();
-      this.listaPostagemServico.reverse()
-      this.listaPostagemVagas.reverse()
+
       this.listaFiltradaServico = this.listaPostagemServico;
       this.listaFiltradaVagas = this.listaPostagemVagas;
 
