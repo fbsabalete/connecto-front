@@ -6,6 +6,7 @@ import { PostagemService } from '../.././service/postagem.service';
 import {  AuthService } from '../.././service/auth.service';
 import {  TemaService } from '../.././service/tema.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 
 
@@ -28,7 +29,7 @@ export class PostNewComponent implements OnInit {
   tema: Tema = new Tema()
   listaTema: Tema[]
   idTema: number= 0
-  
+
 
 
   @Output() lista = new EventEmitter()
@@ -41,7 +42,7 @@ export class PostNewComponent implements OnInit {
 
   ngOnInit() {
     this.findAllTemas()
-    
+
 
   }
 
@@ -56,6 +57,20 @@ export class PostNewComponent implements OnInit {
       this.idTema=0
       this.lista.emit()
       console.log(this.postagem.prestadorServicos)
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Publicação realizada com sucesso',
+        showConfirmButton: false,
+        timer: 1500
+  })
+        }, erro => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Não foi possível fazer essa publicação',
+            showConfirmButton: false,
+            timer: 1500
+      })
 
     })
   }
@@ -106,8 +121,8 @@ export class PostNewComponent implements OnInit {
     var sumir = <HTMLElement>document.querySelector('.sumir')
     botao.style.display = "inline-block";
     sumir.style.display = "block";
-    
-  
+
+
   }
 
 

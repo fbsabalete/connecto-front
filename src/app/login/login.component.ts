@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { faFacebook, faGooglePlus, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { AuthService } from '../service/auth.service';
 import { UsuarioLogin } from '../model/UsuarioLogin';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -41,7 +41,12 @@ export class LoginComponent implements OnInit {
 
     } ,erro => {
       if(erro.status == 500 ){
-        alert('Email ou senha incorreta')
+        Swal.fire({
+          icon: 'error',
+          title: 'E-mail ou senha incorreta',
+          showConfirmButton: false,
+          timer: 1500
+    })
       }
     })
   }

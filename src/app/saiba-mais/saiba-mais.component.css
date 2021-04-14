@@ -23,7 +23,7 @@
     }
 
     .animacao.direita.na-tela, .animacao.esquerda.na-tela{
-        opacity: 100%;
+        opacity: 1;
         transform: translateX(0);
         transition: all 1s linear;
     }
@@ -31,4 +31,8 @@
 a.text-connecto{
 
   color:rgb(152, 59, 206); ;
+}
+
+.img-saiba-mais{
+  box-shadow: 10px 10px 21px -10px rgba(0,0,0,0.75);
 }

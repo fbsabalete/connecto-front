@@ -8,6 +8,7 @@ import { Postagem } from '../model/Postagem';
 import { environment } from 'src/environments/environment.prod';
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-perfil',
@@ -96,6 +97,21 @@ export class PerfilComponent implements OnInit {
       this.portfolio = resp;
       this.findByIdUser(this.idUser);
       this.portfolio = new Portfolio();
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Foto cadastrada com sucesso',
+        showConfirmButton: false,
+        timer: 1500
+  })
+        }, erro => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Não foi possível cadastrar essa foto',
+            showConfirmButton: false,
+            timer: 1500
+      })
+
     });
   }
 
@@ -109,6 +125,20 @@ export class PerfilComponent implements OnInit {
     this.portfolioService.deletePortfolio(this.portfolio.id).subscribe(() => {
       this.findByIdUser(this.idUser);
       this.portfolio = new Portfolio();
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Foto deletada com sucesso',
+        showConfirmButton: false,
+        timer: 1500
+  })
+        }, erro => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Não foi possível deletar está foto',
+            showConfirmButton: false,
+            timer: 1500
+      })
     });
   }
   /* Metodos validar forms */
@@ -175,10 +205,38 @@ export class PerfilComponent implements OnInit {
       this.authService.atualizar(this.user).subscribe((resp: Usuario) => {
         this.user = resp;
 
-        environment.fotoPerfil = this.user.fotoPerfil;
-        environment.nomeCompleto = this.user.nomeCompleto;
+        environment.fotoPerfil = '';
+        environment.nomeCompleto = '';
+        environment.id = 0;
+        environment.token = '';
+        environment.tipoAdmin = '';
 
+        this.router.navigate(['/entrar'])
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuario atualizado com sucesso. Faça Login novamente.',
+          showConfirmButton: false,
+          timer: 1500
+
+
+    })
+          }, erro => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Não foi possível atualizar o usuário',
+              showConfirmButton: false,
+              timer: 1500
+        })
       });
+    }else{
+
+      Swal.fire({
+        icon: 'error',
+        title: 'Coloque as informações corretamente',
+        showConfirmButton: false,
+        timer: 1500
+  })
+
     }
   }
   /* Metodos de Atualizar */
