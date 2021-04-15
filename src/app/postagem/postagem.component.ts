@@ -10,6 +10,7 @@ import { Tema } from '../model/Tema';
 import { Postagem } from '../model/Postagem';
 import { Subscription } from 'rxjs';
 import Swal from 'sweetalert2';
+import { Usuario } from '../model/Usuario';
 
 
 @Component({
@@ -81,6 +82,9 @@ export class PostagemComponent implements OnInit {
   }
 
   publicar(){
+    this.postagem.tema = this.tema;
+    this.postagem.usuario = new Usuario();
+    this.postagem.usuario.id = environment.id;
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp;
       this.carregaPostagem.emit()
