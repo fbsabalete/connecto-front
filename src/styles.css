@@ -10,3 +10,8 @@ h6 {
 html{
   scroll-behavior: smooth;
 }
+
+.font-primary{
+  font-family: 'Poppins', sans-serif;
+  color: #282350;
+}
