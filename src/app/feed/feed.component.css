@@ -8,10 +8,12 @@ ul {
 
 .container-feed {
     margin-left: 300px;
+    margin-right: 360px;
+    background-color: #f5f5f586;
 }
 
 .feed {
-    background-color: #f5f5f586;
+
 }
 
 .botao {
@@ -316,4 +318,10 @@ ul {
         justify-content: center;
         align-items: center;
     }
+}
+
+@media (max-width: 992px){
+  .container-feed{
+    margin-right: 0;
+  }
 }
