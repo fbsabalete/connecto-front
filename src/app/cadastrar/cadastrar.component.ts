@@ -23,7 +23,8 @@ export class CadastrarComponent implements OnInit {
   fotoValida: boolean = true;
   telefoneValido: boolean = false;
 
-  confirmarSenha: String
+  confirmarSenha: String;
+  termos: boolean = false;
 
   user: Usuario = new Usuario()
 
@@ -75,6 +76,14 @@ export class CadastrarComponent implements OnInit {
     return valid;
   }
 
+  validaTermo(event: any) {
+    if(event.target.checked){
+      this.termos = true;
+    } else{
+      this.termos = false;
+    }
+    console.log(this.termos)
+   }
   // tipoUser(event: any){
   //   this.tipoUsuario = event.target.value;
   // }
@@ -82,7 +91,7 @@ export class CadastrarComponent implements OnInit {
   cadastrar(){
     // this.user.tipo = this.tipoUsuario;
 
-    if(this.nomeValido && this.emailValido && this.senhaValida && this.fotoValida){
+    if(this.nomeValido && this.emailValido && this.senhaValida && this.fotoValida && this.termos){
       this.auth.cadastrar(this.user).subscribe((resp) => {
       this.user = resp;
       this.router.navigate(["/entrar"]);
@@ -109,5 +118,6 @@ export class CadastrarComponent implements OnInit {
   })
     }
   }
+
 
 }

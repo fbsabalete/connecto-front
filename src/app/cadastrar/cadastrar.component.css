@@ -384,11 +384,11 @@ body {
 }
 
 .form-content p {
-    color: #fff;
+    color: rgb(128, 126, 126);
     text-align: left;
-    font-size: 18px;
+    font-size: 7pt;
     font-weight: 300;
-    line-height: 20px;
+   /*  line-height: 20px; */
     margin-bottom: 30px;
 }
 
@@ -2335,5 +2335,10 @@ input.sm-content {
     }
     .form-body.without-side .website-logo .logo {
         background-image: url("../../assets/img/connecto.svg");
+    }
+
+    #pLGPD{
+      font-size: 6pt !important;
+      color: gray !important;
     }
 }

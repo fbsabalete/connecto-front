@@ -111,6 +111,7 @@ export class FeedComponent implements OnInit {
         }
       })
     })
+    
     this.listaPostagemVagas.forEach((resp) => {
       this.listaFiltro.forEach((e) => {
         if(resp.tema.categoria == e && !this.listaFiltradaVagas.includes(resp)){
