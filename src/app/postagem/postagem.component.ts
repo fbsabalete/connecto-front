@@ -110,11 +110,11 @@ export class PostagemComponent implements OnInit {
   }
 
   clicado(){
-    this.clique = true;
+    (<any>$(".collapse")).collapse('show');
   }
 
-  editar(){
-    this.edita = true;
+  sumir(){
+    (<any>$(".collapse")).collapse('hide');
   }
 
   findByIdPostagem(){

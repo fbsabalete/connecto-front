@@ -117,20 +117,13 @@ export class PostNewComponent implements OnInit {
 
   // STYLE
   aparecer() {
-    var botao = <HTMLElement>document.querySelector('.botao')
-    var sumir = <HTMLElement>document.querySelector('.sumir')
-    botao.style.display = "inline-block";
-    sumir.style.display = "block";
-
-
+    (<any>$(".collapse")).collapse('show');
   }
 
 
   cancelar() {
-    var botao = <HTMLElement>document.querySelector('.botao')
-    var sumir = <HTMLElement>document.querySelector('.sumir')
-    botao.style.display = "none";
-    sumir.style.display = "none";
+    (<any>$(".collapse")).collapse('hide');
+    this.postagem = new Postagem()
   }
 
 }
