@@ -1,5 +1,5 @@
-<div class="row d-flex flex container-feed ">
-    <div class="d-flex flex-column feed col-md-8">
+<div class="row d-flex flex container-feed justify-content-center">
+    <div class="d-flex flex-column feed col-10">
         <div class="container mt-3">
             <div class="row d-flex flex-column justify-content-center">
                 <div class="col-12">
@@ -23,7 +23,7 @@
                         </div>
                         <div class="tab-pane fade" id="nav-servicos" role="tabpanel" aria-labelledby="nav-servicos-tab">
                           <div class="pl-2 heading-servico d-flex justify-content-between">
-                            <h2 class="ml-5 titulo d-inline-block">Serviços</h2>
+                            <h2 class="ml-md-5 titulo d-inline-block">Serviços</h2>
                             <button (click)="findAllTema()" type="button" class="mr-3 botao dropdown-toggle"
                             data-toggle="collapse" data-target="#filter-servico-collapse" aria-haspopup="true" aria-expanded="false">
                             Filtros
@@ -32,13 +32,11 @@
 
                           <div class="collapse" id="filter-servico-collapse">
                             <div class="container d-flex flex-column justify-content-center" >
-                              <div class="pl-5 row">
-                                <div class="col">
+                              <div class="pl-md-5 row">
                                   <h3 class="subtitulo">Filtrar por categoria:</h3>
-                                </div>
                               </div>
-                              <form class="pl-5 d-flex row">
-                                <div class="custom-control custom-checkbox mb-1 col-3" *ngFor="let item of listaTemas">
+                              <form class="pl-md-5 d-flex row mx-auto">
+                                <div class="custom-control custom-checkbox mb-1 col-6 col-md-3" *ngFor="let item of listaTemas">
                                   <input (change)="atualizarFiltros($event)" type="checkbox" class="checkbox custom-control-input" value="{{item.categoria}}" id="{{item.categoria}}vagas">
                                   <label class="custom-control-label" for="{{item.categoria}}vagas">{{item.categoria}}</label>
                                 </div>
@@ -68,7 +66,7 @@
                         </div>
                         <div class="tab-pane fade" id="nav-vagas" role="tabpanel" aria-labelledby="nav-vagas-tab">
                           <div class="pl-2 heading-servico d-flex justify-content-between">
-                            <h2 class="ml-5 titulo d-inline-block">Vagas</h2>
+                            <h2 class="ml-md-5 titulo d-inline-block">Vagas</h2>
                             <button (click)="findAllTema()" type="button" class="mr-3 botao dropdown-toggle"
                             data-toggle="collapse" data-target="#filter-collapse" aria-haspopup="true" aria-expanded="false">
                             Filtros
@@ -77,13 +75,11 @@
 
                           <div class="collapse" id="filter-collapse">
                             <div class="container d-flex flex-column justify-content-center" >
-                              <div class="pl-5 row">
-                                <div class="col">
+                              <div class="pl-md-5 row">
                                   <h3 class="subtitulo">Filtrar por categoria:</h3>
-                                </div>
                               </div>
-                              <form class="pl-5 d-flex row">
-                                <div class="custom-control custom-checkbox mb-1 col-3" *ngFor="let item of listaTemas">
+                              <form class="pl-md-5 d-flex row mx-auto">
+                                <div class="custom-control custom-checkbox mb-1 col-6 col-md-3" *ngFor="let item of listaTemas">
                                   <input (change)="atualizarFiltros($event)" type="checkbox" class="checkbox custom-control-input" value="{{item.categoria}}" id="{{item.categoria}}">
                                   <label class="custom-control-label" for="{{item.categoria}}">{{item.categoria}}</label>
                                 </div>
@@ -123,7 +119,7 @@
   </div>
 </div>
 
-<div class="container-fluid d-sm-none d-md-block vh-100 borda-amigos position-fixed">
+<div class="container-fluid d-none d-lg-block vh-100 borda-amigos position-fixed">
   <div class="row">
     <div class="col-8 container-amigos shadow-sm">
       <div class="header-amigo mt-4 ml-3">

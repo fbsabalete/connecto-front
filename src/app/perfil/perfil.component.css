@@ -47,7 +47,7 @@
 
 .foto-nome {
   position: absolute;
-  bottom: -35%;
+  bottom: -100px;
 }
 
 .foto{
@@ -270,6 +270,12 @@
   .foto-nome{
     left: 10%;
     right: 10%;
+  }
+
+  .imagem-modal{
+    object-fit: scale-down;
+    width: 100%;
+    height: auto;
   }
 }
 
