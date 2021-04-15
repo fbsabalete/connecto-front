@@ -7,7 +7,7 @@
                         <div class="tab-pane fade active show" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
                             <app-post-new (lista)="onLista()"></app-post-new>
 
-                            <app-postagem (carregaPostagem)="onLista()" *ngFor="let item of listaPostagem" [data]="item.id">
+                            <app-postagem (carregaPostagem)="onLista()" *ngFor="let item of listaPostagem" [data] ="item.id"  [editavel]="true">
                                 <img [routerLink]="['/perfil', item.usuario.id]" role="button" class="foto rounded-circle mr-2" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
                                 <h4 [routerLink]="['/perfil', item.usuario.id]" role="button" class="nome m-0">{{ item.usuario.nomeCompleto }}</h4>
                                 <p class=" text-justify mt-3"> {{ item.descricaoPost }}</p>
@@ -50,7 +50,7 @@
                           </div>
                           <div class="borda-bottom"></div>
 
-                            <app-postagem (carregaPostagem)="onLista()" *ngFor="let item of listaFiltradaServico" [data]="item.id">
+                            <app-postagem (carregaPostagem)="onLista()" *ngFor="let item of listaFiltradaServico" [data]="item.id" [editavel]="false">
                                 <img [routerLink]="['/perfil', item.usuario.id]" role="button" class="foto rounded-circle mr-2" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
                                 <h4 [routerLink]="['/perfil', item.usuario.id]" role="button" class="nome m-0">{{ item.usuario.nomeCompleto }}</h4>
                                 <p class=" text-justify mt-3"> {{ item.descricaoPost }}</p>
@@ -92,7 +92,7 @@
                             </div>
                           </div>
                           <div class="borda-bottom"></div>
-                            <app-postagem (carregaPostagem)="onLista()" *ngFor="let item of listaFiltradaVagas" [data]="item.id">
+                            <app-postagem (carregaPostagem)="onLista()" *ngFor="let item of listaFiltradaVagas" [data]="item.id" [editavel]="false">
                                 <img [routerLink]="['/perfil', item.usuario.id]" role="button" class="foto rounded-circle mr-2" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
                                 <h4 [routerLink]="['/perfil', item.usuario.id]" role="button" class="nome m-0">{{ item.usuario.nomeCompleto }}</h4>
                                 <p class=" text-justify mt-3"> {{ item.descricaoPost }}</p>

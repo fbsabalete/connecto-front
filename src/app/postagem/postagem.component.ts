@@ -36,6 +36,8 @@ export class PostagemComponent implements OnInit {
 
   @Input() data:number
 
+  @Input() editavel:boolean
+
   @Output() carregaPostagem = new EventEmitter()
 
   item;
@@ -154,7 +156,7 @@ export class PostagemComponent implements OnInit {
   idDiferente(){
     this.postagemService.getByIdPostagem(this.data).subscribe((resp: Postagem) => {
       this.postagem = resp;
-      if ( this.postagem.usuario.id == environment.id) {
+      if ( this.postagem.usuario.id == environment.id && this.editavel ) {
         this.editarModal = true
       } else {
         this.editarModal = false
