@@ -288,3 +288,12 @@
 }
 /* botao zap */
 
+.zap {
+  color: rgb(44, 44, 44);
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.zap:hover {
+  color: #6D2C90;
+}

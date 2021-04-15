@@ -1,3 +1,5 @@
+
+
 <div class="mt-5">
   <div class="row ">
     <div class="col-md-11 col-sm-12  m-auto bg-white post shadow ">
@@ -21,79 +23,7 @@
           </button>
           <ng-content id="id" select=".id"> </ng-content>
         </div>
-        <!-- Modal -->
-        <div class="modal fade p-0 " id="editar" tabindex="-1" aria-labelledby="editar" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Editar Postagem</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="form-group d-flex flex-column">
-                    <label for="postagem"> Postagem</label>
-                    <textarea [(ngModel)]="postagem.descricaoPost" class="text-area" name="postagem" id="postagem"
-                      cols="50" rows="5"></textarea>
-                  </div>
-                  <div class="form-group d-flex flex-column">
-                    <label for="link-foto"> Link Foto </label>
-                    <input [(ngModel)]="postagem.linkImagem" class="link-foto " type="text" name="link-foto">
-                  </div>
-                  <div class="form-group d-flex flex-column">
-                    <label for="link-foto"> Escolha uma categoria </label>
-                    <select name="categoria" id="categoria" [(ngModel)]="idTema" (change)="findByIdTema()">
-                      <option *ngFor="let item of listaTemas" value="{{item.id}}">{{item.categoria}}</option>
-                    </select>
 
-                  </div>
-                  <div class="form-group d-flex flex-column">
-                    <div class="check d-flex  ">
-                      <div class="form-check">
-                        <input (click)="prestador($event)" value="disponivel" class="form-check-input" type="radio"
-                          id="autonomo" name="tipo-servico">
-                        <label class="form-check-label" for="autonomo">Disponivel para serviço</label>
-                      </div>
-                      <div class="form-check">
-                        <input (click)="prestador($event)" value="buscando" class="form-check-input" type="radio"
-                          id="contratante" name="tipo-servico">
-                        <label class="form-check-label" for="contratante">Buscando profisional</label>
-                      </div>
-                    </div>
-
-                  </div>
-
-
-                </form>
-              </div>
-              <div class="modal-footer">
-
-                <button (click)="publicar()" type="button" class="btn " data-dismiss="modal">Salvar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade p-0 " id="excluir" tabindex="-1" aria-labelledby="excluir" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Excluir Postagem</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <h4 class="text-center">Deseja mesmo excluir essa postagem?</h4>
-              </div>
-              <div class="modal-footer">
-                <button (click)="excluirPostagem()" type="button" class="btn " data-dismiss="modal">Excluir</button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
 
@@ -176,4 +106,79 @@
 
   </div>
 
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade p-0 " id="editar" tabindex="-1" aria-labelledby="editar" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Postagem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group d-flex flex-column">
+            <label for="postagem"> Postagem</label>
+            <textarea [(ngModel)]="postagem.descricaoPost" class="text-area" name="postagem" id="postagem"
+              cols="50" rows="5"></textarea>
+          </div>
+          <div class="form-group d-flex flex-column">
+            <label for="link-foto"> Link Foto </label>
+            <input [(ngModel)]="postagem.linkImagem" class="link-foto " type="text" name="link-foto">
+          </div>
+          <div class="form-group d-flex flex-column">
+            <label for="link-foto"> Escolha uma categoria </label>
+            <select name="categoria" id="categoria" [(ngModel)]="idTema" (change)="findByIdTema()">
+              <option *ngFor="let item of listaTemas" value="{{item.id}}">{{item.categoria}}</option>
+            </select>
+
+          </div>
+          <div class="form-group d-flex flex-column">
+            <div class="check d-flex  ">
+              <div class="form-check">
+                <input (click)="prestador($event)" value="disponivel" class="form-check-input" type="radio"
+                  id="autonomo" name="tipo-servico">
+                <label class="form-check-label" for="autonomo">Disponivel para serviço</label>
+              </div>
+              <div class="form-check">
+                <input (click)="prestador($event)" value="buscando" class="form-check-input" type="radio"
+                  id="contratante" name="tipo-servico">
+                <label class="form-check-label" for="contratante">Buscando profisional</label>
+              </div>
+            </div>
+
+          </div>
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+
+        <button (click)="publicar()" type="button" class="btn " data-dismiss="modal">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade p-0 " id="excluir" tabindex="-1" aria-labelledby="excluir" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Excluir Postagem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4 class="text-center">Deseja mesmo excluir essa postagem?</h4>
+      </div>
+      <div class="modal-footer">
+        <button (click)="excluirPostagem()" type="button" class="btn " data-dismiss="modal">Excluir</button>
+      </div>
+    </div>
+  </div>
 </div>

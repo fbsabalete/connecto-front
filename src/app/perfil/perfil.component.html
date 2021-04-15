@@ -112,7 +112,7 @@
             </div>
           </div>
           <div [ngClass]="!checarUrl() ? 'show active': '' " class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
-            <app-postagem *ngFor="let item of user.postagem.reverse()">
+            <app-postagem *ngFor="let item of user.postagem.reverse()" [data]="item.id">
               <img class="foto mr-2 rounded-circle" src="{{ user.fotoPerfil }}" alt="foto-perfil" width="50px"
                 height="50px" />
               <h4 class="nome">{{ user.nomeCompleto }}</h4>
@@ -120,6 +120,11 @@
               <img src="{{ item.linkImagem }}" alt="" width="100%" />
               <p class="etiqueta p-0 m-0 text-white text-uppercase">{{ item.prestadorServicos ? 'Disponivel ' +
                 item.tema.categoria : 'Buscando ' + item.tema.categoria}}</p>
+                <a target="_blank" class="zap a" href="https://api.whatsapp.com/send?phone=55{{user.telefone}}&text=Ol%C3%A1%20{{user.nomeCompleto}}%2C%20vi%20sua%20publica%C3%A7%C3%A3o%20na%20Connecto%20e%20tenho%20interesse%20no%20seu%20servi%C3%A7o%20!!">
+                  <fa-icon [icon]="faWhatsapp"></fa-icon>
+                  Contato
+              </a>
+
             </app-postagem>
           </div>
 
