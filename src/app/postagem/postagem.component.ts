@@ -1,3 +1,5 @@
+import { ComentarioService } from './../service/comentario.service';
+import { ComentarioPostagem } from './../model/ComentarioPostagem';
 import { PostagemService } from './../service/postagem.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -19,6 +21,12 @@ import { Usuario } from '../model/Usuario';
   styleUrls: ['./postagem.component.css']
 })
 export class PostagemComponent implements OnInit {
+  user: Usuario = new Usuario()
+  idUserLogado = environment.id
+
+  comentario: ComentarioPostagem = new ComentarioPostagem()
+  listaComentarios: ComentarioPostagem[]
+
   foto = environment.fotoPerfil
   nome = environment.nomeCompleto
   public comentarios = []
@@ -49,12 +57,14 @@ export class PostagemComponent implements OnInit {
 
   constructor(
     private temaService: TemaService,
-    private postagemService: PostagemService
+    private postagemService: PostagemService,
+    private comentarioService: ComentarioService
 
   ) { }
 
   ngOnInit(){
     this.idDiferente()
+    this.findByIdPostagem()
   }
 
   curtir(){
@@ -118,9 +128,10 @@ export class PostagemComponent implements OnInit {
   }
 
   findByIdPostagem(){
-    this.postagem.id = this.idTema
+    this.postagem.id = this.data
     this.postagemService.getByIdPostagem(this.data).subscribe((resp: Postagem) => {
       this.postagem = resp;
+
 
 
     });
@@ -163,6 +174,29 @@ export class PostagemComponent implements OnInit {
 
 
     });
+
+  }
+
+  findAllPostagens(){
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
+      this.listaPostagem = resp
+    })
+  }
+
+  comentar(id: number){
+   this.user.id = this.idUserLogado;
+   this.comentario.usuario = this.user
+
+   this.postagem.id = id;
+   this.comentario.postagem = this.postagem
+
+   this.comentarioService.postComentario(this.comentario).subscribe((resp: ComentarioPostagem) => {
+     this.comentario = resp
+    /*  console.log(resp) */
+     this.comentario = new ComentarioPostagem()
+     this.findByIdPostagem()
+     this.carregaPostagem.emit()
+   })
 
   }
 

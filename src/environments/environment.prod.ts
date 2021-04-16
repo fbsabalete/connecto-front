@@ -7,7 +7,7 @@ export const environment = {
   fotoPerfil: "",
   token: "",
   tipoAdmin: "",
-  server: "https://connecto-app.herokuapp.com",
+  server: "http://localhost:8080",
   port: "",
   listaPost: Postagem
 
