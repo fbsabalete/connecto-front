@@ -117,7 +117,8 @@
                                 <fa-icon [icon]="faThumbsUp"></fa-icon> Gostei
                             </li>
                             <li (click)="clicado()">
-                                <fa-icon [icon]="faComments"></fa-icon> Comentar
+                                <fa-icon [icon]="faComments"></fa-icon>Comentar <span *ngIf="postagem.comentario.length != 0"
+                                >({{postagem.comentario.length}}) </span>
                             </li>
                             <li>
                                 <ng-content select='.zap'></ng-content>
@@ -137,19 +138,20 @@
                     <div class="comentario collapse">
                       <div *ngFor="let comentario of postagem.comentario" class="comentario-post pt-md-3">
                         <div class="header d-flex ">
-                            <div class="img-comentario mr-1">
+                            <div class="img-comentario mr-2">
                                 <img class="rounded-circle " src="{{comentario.usuario.fotoPerfil}}" alt="" width="30px" height="30px">
                             </div>
                             <h5 class="mr-1 mt-0">{{comentario.usuario.nomeCompleto}}</h5>
                             <span class="">comentou</span>
-                        </div>
-                        <div class="conteudo">
+                            
+                          </div>
+                          <div class="conteudo">
                             <p class="p-md-0 m-md-0">{{comentario.comentario}}</p>
-                        </div>
+                          </div>
 
 
                     </div>
-                        <div class="d-flex justify-content-between p-1 container-news">
+                        <div class="d-flex justify-content-between p-1 container-news mt-3">
                             <div class="img-comentario">
                                 <img class="rounded-circle mr-1" src="{{foto}}" alt="Foto de perfil" width="30px" height="30px">
                             </div>
