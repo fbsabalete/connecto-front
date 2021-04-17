@@ -25,7 +25,6 @@ export class PostagemComponent implements OnInit {
   idUserLogado = environment.id
 
   comentario: ComentarioPostagem = new ComentarioPostagem()
-  listaComentarios: ComentarioPostagem[]
 
   foto = environment.fotoPerfil
   nome = environment.nomeCompleto
@@ -195,9 +194,25 @@ export class PostagemComponent implements OnInit {
     /*  console.log(resp) */
      this.comentario = new ComentarioPostagem()
      this.findByIdPostagem()
+
      this.carregaPostagem.emit()
    })
 
+  }
+
+  apagarComentario(id: number){
+    this.comentarioService.deleteComentario(id).subscribe(()=>{
+      Swal.fire({
+        icon: 'success',
+        title: 'Muito bom',
+        text: 'Comentario apagado com sucesso!',
+        showConfirmButton: false,
+        timer: 2000
+      })
+       this.findAllPostagens()
+       this.findByIdPostagem()
+       this.carregaPostagem.emit()
+    })
   }
 
 

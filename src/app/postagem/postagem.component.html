@@ -143,7 +143,9 @@
                             </div>
                             <h5 class="mr-1 mt-0">{{comentario.usuario.nomeCompleto}}</h5>
                             <span class="">comentou</span>
-                            
+                            <div *ngIf="comentario.usuario.id == idUserLogado" class="d-flex justify-content-end">
+                             <a class="text-danger ml-5"(click)='apagarComentario(comentario.id)'>Excluir</a>
+                            </div>
                           </div>
                           <div class="conteudo">
                             <p class="p-md-0 m-md-0">{{comentario.comentario}}</p>
