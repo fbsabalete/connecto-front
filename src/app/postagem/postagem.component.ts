@@ -27,6 +27,7 @@ export class PostagemComponent implements OnInit {
   idUserLogado = environment.id
 
   comentario: ComentarioPostagem = new ComentarioPostagem()
+  comentarioLength: number
 
   curtida: CurtidaPostagem = new CurtidaPostagem()
   postagemCurtida: boolean = false
@@ -71,9 +72,7 @@ export class PostagemComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    this.idDiferente()
     this.findByIdPostagem()
-    /* this.confCurtir() */
   }
 
 
@@ -103,7 +102,6 @@ export class PostagemComponent implements OnInit {
       }
 
     })
-    console.log(this.postagemCurtida)
   }
 
   postCurtida(){
@@ -174,11 +172,11 @@ export class PostagemComponent implements OnInit {
   }
 
   clicado(){
-    (<any>$(".comentario")).collapse('show');
+    (<any>$(`#comentario-${this.data}`)).collapse('toggle');
   }
 
   sumir(){
-    (<any>$(".comentario")).collapse('hide');
+    (<any>$(`#comentario-${this.data}`)).collapse('hide');
   }
 
   findByIdPostagem(){
@@ -186,7 +184,9 @@ export class PostagemComponent implements OnInit {
     this.postagemService.getByIdPostagem(this.data).subscribe((resp: Postagem) => {
       this.postagem = resp;
       this.confCurtir()
+      this.idDiferente()
       this.curtidas = this.postagem.curtir.length
+      this.comentarioLength = this.postagem.comentario.length
 
 
     });
@@ -218,18 +218,11 @@ export class PostagemComponent implements OnInit {
   }
 
   idDiferente(){
-    this.postagemService.getByIdPostagem(this.data).subscribe((resp: Postagem) => {
-      this.postagem = resp;
-      if ( this.postagem.usuario.id == environment.id && this.editavel ) {
-        this.editarModal = true
-      } else {
-        this.editarModal = false
-      }
-
-
-
-    });
-
+    if ( this.postagem.usuario.id == environment.id && this.editavel ) {
+      this.editarModal = true
+    } else {
+      this.editarModal = false
+    }
   }
 
   findAllPostagens(){
@@ -239,11 +232,11 @@ export class PostagemComponent implements OnInit {
   }
 
   comentar(id: number){
-   this.user.id = this.idUserLogado;
-   this.comentario.usuario = this.user
+    this.comentario.usuario = new Usuario()
+    this.comentario.usuario.id = this.idUserLogado;
 
-   this.postagem.id = id;
-   this.comentario.postagem = this.postagem
+    this.comentario.postagem = new Postagem()
+    this.comentario.postagem.id = this.data
 
    this.comentarioService.postComentario(this.comentario).subscribe((resp: ComentarioPostagem) => {
      this.comentario = resp

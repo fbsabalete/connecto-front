@@ -20,6 +20,8 @@ export class PerfilComponent implements OnInit {
   user: Usuario = new Usuario();
   listaCategoria: string[];
 
+  listaPostagem: Postagem[]
+
   portfolio: Portfolio = new Portfolio();
 
   faChevronCircleLeft = faChevronCircleLeft;
@@ -80,6 +82,7 @@ export class PerfilComponent implements OnInit {
     this.authService.getByIdUser(id).subscribe((resp: Usuario) => {
       this.user = resp;
       this.listaCategoria = [];
+      this.listaPostagem = resp.postagem.reverse()
       resp.postagem.forEach((item) => {
         if (
           item.prestadorServicos &&
@@ -92,7 +95,8 @@ export class PerfilComponent implements OnInit {
   }
 
   cadastrarPortfolio() {
-    this.portfolio.usuario = this.user;
+    this.portfolio.usuario = new Usuario();
+    this.portfolio.usuario.id = environment.id
     this.portfolioService.postPortfolio(this.portfolio).subscribe((resp) => {
       this.portfolio = resp;
       this.findByIdUser(this.idUser);

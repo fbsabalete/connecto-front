@@ -47,7 +47,7 @@
               </li>
               <li (click)="clicado()">
                 <fa-icon [icon]="faComments"></fa-icon>Comentar <span
-                  *ngIf="postagem.comentario.length != 0">({{postagem.comentario.length}}) </span>
+                  *ngIf="comentarioLength != 0">({{comentarioLength}}) </span>
               </li>
               <li>
                 <ng-content select='.zap'></ng-content>
@@ -57,7 +57,7 @@
 
 
 
-          <div class="comentario collapse">
+          <div id="comentario-{{data}}" class="comentario collapse pb-3">
             <div *ngFor="let comentario of postagem.comentario" class="comentario-post pt-md-3">
               <div class="header d-flex ">
                 <div class="img-comentario mr-2">
@@ -102,7 +102,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade p-0 " id="editar" tabindex="-1" aria-labelledby="editar" aria-hidden="true">
+<div class="modal fade p-0 " id="editar" tabindex="-1" aria-labelledby="editar" aria-hidden="true" *ngIf="editarModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -114,8 +114,8 @@
       <div class="modal-body">
         <form>
           <div class="form-group d-flex flex-column">
-            <label for="postagem"> Postagem</label>
-            <textarea [(ngModel)]="postagem.descricaoPost" class="text-area" name="postagem" id="postagem" cols="50"
+            <label for="postagem-edit-{{data}}"> Postagem</label>
+            <textarea [(ngModel)]="postagem.descricaoPost" class="text-area" name="postagem" id="postagem-edit-{{data}}" cols="50"
               rows="5"></textarea>
           </div>
           <div class="form-group d-flex flex-column">
@@ -123,8 +123,8 @@
             <input [(ngModel)]="postagem.linkImagem" class="link-foto " type="text" name="link-foto">
           </div>
           <div class="form-group d-flex flex-column">
-            <label for="link-foto"> Escolha uma categoria </label>
-            <select name="categoria" id="categoria" [(ngModel)]="idTema" (change)="findByIdTema()">
+            <label for="categoria-edit-{{data}}"> Escolha uma categoria </label>
+            <select name="categoria" id="categoria-edit-{{data}}" [(ngModel)]="idTema" (change)="findByIdTema()">
               <option *ngFor="let item of listaTemas" value="{{item.id}}">{{item.categoria}}</option>
             </select>
 
@@ -133,13 +133,13 @@
             <div class="check d-flex  ">
               <div class="form-check">
                 <input (click)="prestador($event)" value="disponivel" class="form-check-input" type="radio"
-                  id="autonomo" name="tipo-servico">
-                <label class="form-check-label" for="autonomo">Disponivel para serviço</label>
+                  id="autonomo-edit-{{data}}" name="tipo-servico">
+                <label class="form-check-label" for="autonomo-edit-{{data}}">Disponivel para serviço</label>
               </div>
               <div class="form-check">
                 <input (click)="prestador($event)" value="buscando" class="form-check-input" type="radio"
-                  id="contratante" name="tipo-servico">
-                <label class="form-check-label" for="contratante">Buscando profisional</label>
+                  id="contratante-edit-{{data}}" name="tipo-servico">
+                <label class="form-check-label" for="contratante-edit-{{data}}">Buscando profisional</label>
               </div>
             </div>
 
