@@ -17,6 +17,9 @@ import { Subscription } from 'rxjs';
 export class FeedComponent implements OnInit {
   lista;
 
+  key = 'date'
+  reverse = true
+
   carregando: boolean
   carregandoTemas: boolean
 

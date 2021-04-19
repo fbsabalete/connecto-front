@@ -150,7 +150,6 @@ export class PostagemComponent implements OnInit {
     this.postagem.usuario.id = environment.id;
     this.postagem.comentario = []
     this.postagem.curtir = []
-    console.log(this.postagem)
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp;
       this.carregaPostagem.emit()
@@ -200,12 +199,7 @@ export class PostagemComponent implements OnInit {
     this.findByIdPostagem();
   }
 
-  log(){
-    console.log(this.postagem)
-  }
-
   excluirPostagem(){
-    console.log(this.postagem.id)
     this.postagemService.deletePostagem(this.postagem.id).subscribe(()=> {
       this.carregaPostagem.emit()
 
@@ -251,7 +245,6 @@ export class PostagemComponent implements OnInit {
 
    this.comentarioService.postComentario(this.comentario).subscribe((resp: ComentarioPostagem) => {
      this.comentario = resp
-    /*  console.log(resp) */
      this.comentario = new ComentarioPostagem()
      this.findByIdPostagem()
 

@@ -27,7 +27,7 @@ export class PerfilComponent implements OnInit {
   faChevronCircleLeft = faChevronCircleLeft;
   faWhatsapp = faWhatsapp;
 
-  key = 'data';
+  key = 'date';
   reverse = true;
 
   idLogado = environment.id;

@@ -112,7 +112,7 @@
             </div>
           </div>
           <div [ngClass]="!checarUrl() ? 'show active': '' " class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
-            <app-postagem *ngFor="let item of listaPostagem" [data]="item.id" [editavel]="true">
+            <app-postagem *ngFor="let item of listaPostagem | orderBy : key : reverse" [data]="item.id" [editavel]="true">
               <img class="foto mr-2 rounded-circle" src="{{ user.fotoPerfil }}" alt="foto-perfil" width="50px"
                 height="50px" />
               <h4 class="nome">{{ user.nomeCompleto }}</h4>
