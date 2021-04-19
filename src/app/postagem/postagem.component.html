@@ -115,16 +115,16 @@
         <form>
           <div class="form-group d-flex flex-column">
             <label for="postagem-edit-{{data}}"> Postagem</label>
-            <textarea [(ngModel)]="postagem.descricaoPost" class="text-area" name="postagem" id="postagem-edit-{{data}}" cols="50"
+            <textarea [(ngModel)]="postagem.descricaoPost" class="form-control text-area" name="postagem" id="postagem-edit-{{data}}" cols="50"
               rows="5"></textarea>
           </div>
           <div class="form-group d-flex flex-column">
             <label for="link-foto"> Link Foto </label>
-            <input [(ngModel)]="postagem.linkImagem" class="link-foto " type="text" name="link-foto">
+            <input [(ngModel)]="postagem.linkImagem" class="form-control link-foto " type="text" name="link-foto">
           </div>
           <div class="form-group d-flex flex-column">
             <label for="categoria-edit-{{data}}"> Escolha uma categoria </label>
-            <select name="categoria" id="categoria-edit-{{data}}" [(ngModel)]="idTema" (change)="findByIdTema()">
+            <select name="categoria" class="form-control" id="categoria-edit-{{data}}" [(ngModel)]="idTema" (change)="findByIdTema()">
               <option *ngFor="let item of listaTemas" value="{{item.id}}">{{item.categoria}}</option>
             </select>
 
@@ -150,7 +150,7 @@
       </div>
       <div class="modal-footer">
 
-        <button (click)="publicar()" type="button" class="btn " data-dismiss="modal">Salvar</button>
+        <button (click)="publicar()" type="button" class="btn" data-dismiss="modal">Salvar</button>
       </div>
     </div>
   </div>

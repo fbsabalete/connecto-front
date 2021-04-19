@@ -136,6 +136,10 @@ ul {
     color: rebeccapurple;
 }
 
+.z-index{
+  z-index: 1!important;
+}
+
 @media (max-width: 576px) {
     .menu-lateral {
         transform: translateX(-300px);
