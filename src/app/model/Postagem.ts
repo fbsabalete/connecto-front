@@ -1,3 +1,4 @@
+import { CurtidaPostagem } from './CurtidaPostagem';
 import { ComentarioPostagem } from './ComentarioPostagem';
 import { Tema } from './Tema';
 import { Usuario } from './Usuario';
@@ -12,4 +13,5 @@ export class Postagem{
   public tema: Tema
   public usuario: Usuario
   public comentario: ComentarioPostagem[]
+  public curtir: CurtidaPostagem[]
 }

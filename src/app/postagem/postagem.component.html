@@ -114,7 +114,7 @@
                     <div class="interacoes mt-3">
                         <ul class="d-flex justify-content-around list-icones p-0">
                             <li class="gostei" (click)="curtir()">
-                                <fa-icon [icon]="faThumbsUp"></fa-icon> Gostei
+                                <fa-icon [icon]="faThumbsUp"></fa-icon> Gostei <span>({{curtidas}}) </span>
                             </li>
                             <li (click)="clicado()">
                                 <fa-icon [icon]="faComments"></fa-icon>Comentar <span *ngIf="postagem.comentario.length != 0"
