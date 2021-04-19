@@ -117,12 +117,12 @@ export class PostNewComponent implements OnInit {
 
   // STYLE
   aparecer() {
-    (<any>$(".collapse")).collapse('show');
+    (<any>$("#collapse")).collapse('show');
   }
 
 
   cancelar() {
-    (<any>$(".collapse")).collapse('hide');
+    (<any>$("#collapse")).collapse('hide');
     this.postagem = new Postagem()
   }
 
