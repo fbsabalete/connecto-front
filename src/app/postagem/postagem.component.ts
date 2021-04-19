@@ -144,9 +144,13 @@ export class PostagemComponent implements OnInit {
   }
 
   publicar(){
-    this.postagem.tema = this.tema;
+    this.postagem.tema = new Tema();
+    this.postagem.tema.id = this.tema.id
     this.postagem.usuario = new Usuario();
     this.postagem.usuario.id = environment.id;
+    this.postagem.comentario = []
+    this.postagem.curtir = []
+    console.log(this.postagem)
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp;
       this.carregaPostagem.emit()
@@ -196,9 +200,13 @@ export class PostagemComponent implements OnInit {
     this.findByIdPostagem();
   }
 
+  log(){
+    console.log(this.postagem)
+  }
 
   excluirPostagem(){
-    this.postagemService.deletePostagem(this.data).subscribe(()=> {
+    console.log(this.postagem.id)
+    this.postagemService.deletePostagem(this.postagem.id).subscribe(()=> {
       this.carregaPostagem.emit()
 
       Swal.fire({

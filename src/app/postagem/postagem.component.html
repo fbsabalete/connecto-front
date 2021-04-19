@@ -11,12 +11,12 @@
 
           <!-- Button trigger modal -->
 
-          <button (click)="findAllTema()" (click)="postagemModal()" type="button"
-            class="btn botao-categoria dropdown-item" data-toggle="modal" data-target="#editar">
+          <button (click)="log()" (click)="findAllTema()" (click)="postagemModal()" type="button"
+            class="btn botao-categoria dropdown-item" data-toggle="modal" [attr.data-target]="'#editar-' + data">
             Editar
           </button>
 
-          <button type="button " data-toggle="modal" data-target="#excluir" class="btn botao-categoria dropdown-item">
+          <button type="button " data-toggle="modal" [attr.data-target]="'#excluir-' + data" class="btn botao-categoria dropdown-item">
             Excluir
           </button>
           <ng-content id="id" select=".id"> </ng-content>
@@ -102,7 +102,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade p-0 " id="editar" tabindex="-1" aria-labelledby="editar" aria-hidden="true" *ngIf="editarModal">
+<div class="modal fade p-0 " id="editar-{{data}}" tabindex="-1" aria-labelledby="editar" aria-hidden="true" *ngIf="editarModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -156,7 +156,7 @@
   </div>
 </div>
 
-<div class="modal fade p-0 " id="excluir" tabindex="-1" aria-labelledby="excluir" aria-hidden="true">
+<div class="modal fade p-0 " id="excluir-{{data}}" tabindex="-1" aria-labelledby="excluir" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

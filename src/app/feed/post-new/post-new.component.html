@@ -36,7 +36,7 @@
                               </div>
                           </div>
                           <!-- Button trigger modal -->
-                          <button (click)="zerarCategoria()" type="button" class="btn botao-categoria" data-toggle="modal" data-target="#exampleModal">
+                          <button type="button" class="btn botao-categoria" data-toggle="modal" data-target="#exampleModal">
                                                     + Categoria
                           </button>
                           <!-- Modal -->
@@ -52,7 +52,7 @@
                                       <div class="modal-body">
                                           <form>
                                               <div class="form-group d-flex justify-content-center align-items-center">
-                                                  <input [(ngModel)]="tema.categoria" name="categoria" type="text" class="categoria" placeholder="Digite uma nova categoria" id="categoria-new">
+                                                  <input [(ngModel)]="novoTema.categoria" name="categoria" type="text" class="categoria" placeholder="Digite uma nova categoria" id="categoria-new">
                                               </div>
                                           </form>
                                       </div>

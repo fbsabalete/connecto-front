@@ -27,6 +27,7 @@ export class PostNewComponent implements OnInit {
   postagem: Postagem = new Postagem()
 
   tema: Tema = new Tema()
+  novoTema: Tema = new Tema()
   listaTema: Tema[]
   idTema: number= 0
 
@@ -76,9 +77,9 @@ export class PostNewComponent implements OnInit {
   }
 
   cadastrarTema(){
-    this.temaService.postTema(this.tema).subscribe((resp) => {
-      this.tema = resp;
-      this.tema = new Tema();
+    this.temaService.postTema(this.novoTema).subscribe((resp) => {
+      this.novoTema = resp;
+      this.novoTema = new Tema();
       this.findAllTemas();
     })
 
