@@ -17,6 +17,8 @@ import { Subscription } from 'rxjs';
 export class FeedComponent implements OnInit {
   lista;
 
+  carregando: boolean
+  carregandoTemas: boolean
 
   postagem: Postagem = new Postagem();
   listaPostagem: Postagem[];
@@ -39,7 +41,7 @@ export class FeedComponent implements OnInit {
     window.scroll(0,0);
     this.checkLength();
     this.subscription = this.postagemService.listaAtualizada.subscribe(resp => this.listaService = resp)
-
+    console.log(environment.tipoAdmin)
 
   }
 
@@ -49,8 +51,10 @@ export class FeedComponent implements OnInit {
   ) {}
 
   findAllTema() {
+    this.carregandoTemas = true;
     this.temaService.getAllTema().subscribe((resp) => {
       this.listaTemas = resp;
+      this.carregandoTemas = false;
 
 
     });
@@ -62,9 +66,11 @@ export class FeedComponent implements OnInit {
   }
 
   postagens() {
+    this.carregando = true;
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagem = resp;
       this.listaPostagem.reverse();
+      this.carregando = false;
 
       this.listaPostagemServico = [];
       this.listaPostagemVagas = [];
@@ -78,7 +84,6 @@ export class FeedComponent implements OnInit {
 
       this.listaFiltradaServico = this.listaPostagemServico;
       this.listaFiltradaVagas = this.listaPostagemVagas;
-
     });
   }
 
@@ -111,7 +116,7 @@ export class FeedComponent implements OnInit {
         }
       })
     })
-    
+
     this.listaPostagemVagas.forEach((resp) => {
       this.listaFiltro.forEach((e) => {
         if(resp.tema.categoria == e && !this.listaFiltradaVagas.includes(resp)){

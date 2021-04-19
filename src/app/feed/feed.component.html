@@ -6,7 +6,14 @@
                     <div class="tab-content mt-5 px-3 px-sm-1 " id="pills-tabContent">
                         <div class="tab-pane fade active show" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
                             <app-post-new (lista)="onLista()"></app-post-new>
-
+                            <div class="sk-chase mx-auto mt-5" *ngIf="carregando">
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                            </div>
                             <app-postagem (carregaPostagem)="onLista()" *ngFor="let item of listaPostagem" [data] ="item.id"  [editavel]="true">
                                 <img [routerLink]="['/perfil', item.usuario.id]" role="button" class="foto rounded-circle mr-2" src="{{ item.usuario.fotoPerfil }}" alt="foto-perfil" width="50px" height="50px" />
                                 <h4 [routerLink]="['/perfil', item.usuario.id]" role="button" class="nome m-0">{{ item.usuario.nomeCompleto }}</h4>
@@ -34,6 +41,14 @@
                             <div class="container d-flex flex-column justify-content-center" >
                               <div class="pl-md-5 row">
                                   <h3 class="subtitulo">Filtrar por categoria:</h3>
+                              </div>
+                              <div class="sk-chase mx-auto mt-3" *ngIf="carregandoTemas">
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
                               </div>
                               <form class="pl-md-5 d-flex row mx-auto">
                                 <div class="custom-control custom-checkbox mb-1 col-6 col-md-3" *ngFor="let item of listaTemas">
@@ -72,7 +87,14 @@
                             Filtros
                           </button>
                           </div>
-
+                          <div class="sk-chase mx-auto mt-3" *ngIf="carregandoTemas">
+                            <div class="sk-chase-dot"></div>
+                            <div class="sk-chase-dot"></div>
+                            <div class="sk-chase-dot"></div>
+                            <div class="sk-chase-dot"></div>
+                            <div class="sk-chase-dot"></div>
+                            <div class="sk-chase-dot"></div>
+                          </div>
                           <div class="collapse" id="filter-collapse">
                             <div class="container d-flex flex-column justify-content-center" >
                               <div class="pl-md-5 row">

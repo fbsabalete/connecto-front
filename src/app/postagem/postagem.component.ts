@@ -218,10 +218,13 @@ export class PostagemComponent implements OnInit {
   }
 
   idDiferente(){
-    if ( this.postagem.usuario.id == environment.id && this.editavel ) {
+    if ( this.postagem.usuario.id == environment.id && this.editavel) {
       this.editarModal = true
     } else {
       this.editarModal = false
+    }
+    if(environment.tipoAdmin == "adm"){
+      this.editarModal = true
     }
   }
 
